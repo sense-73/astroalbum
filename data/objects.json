@@ -1,0 +1,1444 @@
+[
+  {
+    "id": "M13",
+    "name": "Grande Ammasso d'Ercole",
+    "ra": 250.35000000000002,
+    "dec": 36.46,
+    "type": "Ammasso Globulare",
+    "magnitude": 5.8,
+    "distance": "22.200 al",
+    "constellation": "Ercole",
+    "info": "Il più celebre e luminoso ammasso globulare boreale.",
+    "photos": [
+      {
+        "id": "M13_1777494251509",
+        "title": "M13",
+        "date": "2024-03-14",
+        "comment": "Una delle prime foto di M13, ancora alle prime armi e con pochi strumenti software , si vede molto rumore, difetti di  messa a fuoco (probabilmente anche un po' di tilt della telecamera).  Nonostante tutto, rimane il fascino di questo spettacolare ammasso stellare. Ho modificato con nuovi strumenti software ma il risultato non trasmette le stesse emozioni e ho deciso di lasciare questa foto così com'è nonostante gli errori..",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777414064/astrogallery/M13/M13-140324_2_wdxz5l.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777414064/astrogallery/M13/M13-140324_2_wdxz5l.jpg",
+        "acquisition": {
+          "telescope": "Maksutov 127/1500",
+          "mount": "SW GoTo ALTAZ",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Tilt della fotocamera"
+        }
+      },
+      {
+        "id": "M13_1777494079577",
+        "title": "M13 la difficile",
+        "date": "2025-03-23",
+        "comment": "L'ammasso di Ercole è una bella sfida, questo bagliore fortissimo ostacola la definizione delle singole stelle, non sono ancora soddisfatto, ma meglio della prima... ma indovina un po'? Preferisco la prima anche se piena di errori.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777493890/astrogallery/M13/M13_21MAR25_rp0nmq.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777493890/astrogallery/M13/M13_21MAR25_rp0nmq.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "M42",
+    "name": "Nebulosa di Orione",
+    "ra": 83.82208333333332,
+    "dec": -5.391111111111112,
+    "type": "Nebulosa a Emissione",
+    "magnitude": 4,
+    "distance": "1.344 al",
+    "constellation": "Orione",
+    "info": "La Nebulosa di Orione (nota anche come Messier 42 o M 42, NGC 1976) è una delle nebulose diffuse più brillanti del cielo notturno. Chiaramente riconoscibile a occhio nudo come un oggetto di natura non stellare, è posta a sud del famoso asterismo della Cintura di Orione, al centro della cosiddetta Spada di Orione, nell'omonima costellazione.\n\nM42 cela anche un'affascinante fenomeno fisico nella sua forma e geometria spaziale, la sfera di Strömgren, spiegata [in questo video](https://youtu.be/xBtKhxO0U6o)",
+    "photos": [
+      {
+        "id": "M42_1777467713798",
+        "title": "M42  2023",
+        "date": "2023-12-19",
+        "comment": "La nebulosa di Orione è uno dei primissimi se non il primo DSO che tutti gli astrofotografi amano immortalare. Io non ho fatto eccezione, questa foto era già eccezionale per me, ancora non sapevo dove mi avrebbe portato la passione",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777414528/astrogallery/M42/M42_19_DIC_23_BELLA_3_imxl7c.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777414528/astrogallery/M42/M42_19_DIC_23_BELLA_3_imxl7c.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      },
+      {
+        "id": "M42_1777453168492",
+        "title": "M42 14 Dic 2025",
+        "date": "2025-12-14",
+        "comment": "Ritorno su M42 questa volta con un campo più ampio grazie al nuovo setup, in questa foto cercando di preservare i contrasti di luminosità della nebulosa sperimento uno stretching che metta bene in evidenza il bagliore più tenue. Il campo più ampio esalta la magnificenza di questa nebulosa. .",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777452927/astrogallery/M42/M42_14DIC25_kzmmpp.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777452927/astrogallery/M42/M42_14DIC25_kzmmpp.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "Playerone PoseidonC",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7"
+        }
+      },
+      {
+        "id": "M42_1777453836750",
+        "title": "M42 29 Sett 2024",
+        "date": "2024-09-29",
+        "comment": "Una delle foto più belle che abbia scattato. Nonostante non fosse passato molto dall'inizio dell'avventura. La bellezza di questa foto sta oltre che nel fascino di questa nebulosa luminosissima e complessa nel contrasto tra il trapezio luminosissimo e nella nebulosità più tenue, In questa foto ho fatto un ottimo lavoro. Una copia in formato gigante è appesa in una parete della mia casa.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777453278/astrogallery/M42/M42_29SET24_e0vkpj.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777453278/astrogallery/M42/M42_29SET24_e0vkpj.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "M101",
+    "name": "Galassia Girandola",
+    "ra": 210.80208333333334,
+    "dec": 54.34861111111111,
+    "type": "Galassia a Spirale",
+    "magnitude": 7.8,
+    "distance": "20 Milioni al",
+    "constellation": "Orsa Maggiore",
+    "info": "Galassia a spirale vista perfettamente di faccia, molto estesa.\nIn condizioni eccellenti, M101 può essere osservata anche con un semplice binocolo; infatti, grazie alla sua estensione e alla sua relativa vicinanza a noi, M101 è una delle galassie più brillanti del cielo. La sua individuazione è facile, grazie alla presenza di un'appariscente concatenazione di stelle di sesta e settima magnitudine ad est della brillante stella Mizar. Le sue dimensioni impongono l'uso di ingrandimenti abbastanza bassi per la sua osservazione; occorre comunque un telescopio di almeno 250 mm per iniziare a distinguere il nucleo, più brillante, e i frammenti dei bracci a spirale. Gli stessi bracci offrono, in buone condizioni, un bello spettacolo con un telescopio da 400 mm a largo campo.",
+    "photos": [
+      {
+        "id": "M101_1777470515458",
+        "title": "M101 BIN2X",
+        "date": "2026-04-06",
+        "comment": "Questa foto della galassia girandola seppur non bellissima, ha un valore affettivo: è la prima foto realizzata con un progetto creato con la mia app [AstrodashboardPro](https://astrodashboardpro.com/), testimonianza che la app funzionava bene.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777468169/astrogallery/M101/m101_prova_bin2x_jze69s.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777468169/astrogallery/M101/m101_prova_bin2x_jze69s.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "LRGB",
+          "frames": 115,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7, Cielo parzialmente coperto con umidità."
+        }
+      },
+      {
+        "id": "M101_1777478529115",
+        "title": "M101 luminance",
+        "date": "2026-04-10",
+        "comment": "Anche solo l'uso del filtro di Luminanza rende giustizia a questa bellissima galassia. Anche questa foto fa parte dell'esperimento di funzionalità della mia applicazione [AstrodashboardPro](https://astrodashboardpro.com/)",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777470825/astrogallery/M101/M101_L_qcb7lb.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777470825/astrogallery/M101/M101_L_qcb7lb.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "LRGB",
+          "frames": 115,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7."
+        }
+      },
+      {
+        "id": "M101_1777817974864",
+        "title": "M101 Girandola 05 Mag 2026",
+        "date": "2026-05-03",
+        "comment": "Quattro notti di progetto, lottando col meteo, ma finalmente sono riuscito ad ottenere un'immagine che mi soddisfa di questa meravigliosa galassia coloratissima.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777816680/astrogallery/M101/M101_03MAG26_lqrqaw.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777816680/astrogallery/M101/M101_03MAG26_lqrqaw.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "LRGBHa",
+          "frames": null,
+          "exposure": null,
+          "gain": 80,
+          "temp": -10,
+          "notes": "Udine, Bortle 7.  \nHa: Pose: 7  x 180.0s    00h:21m:00s\nBlue: 10  x 120.0s          00h:20m:00s\nGreen: 10  x  120.0s       00h:20m:00s\nRed:  10 x 120.0s            00h:20m:00s\n\nTOTALE POSE GLOBALI : 37\nINTEGRAZIONE TOTALE : 01h:21m:00s"
+        }
+      }
+    ]
+  },
+  {
+    "id": "M31",
+    "name": "Galassia di Andromeda",
+    "ra": 10.684583333333332,
+    "dec": 41.26916666666666,
+    "type": "Galassia a Spirale",
+    "magnitude": 3.4,
+    "distance": "2.5 Milioni al",
+    "constellation": "Andromeda",
+    "info": "Il nostro colossale vicino galattico. Estesa per oltre 6 volte la luna piena.\n\nLa Galassia di Andromeda (nota talvolta anche con il vecchio nome Grande Nebulosa di Andromeda o con le sigle di catalogo M 31 e NGC 224) è una grande galassia a spirale barrata che dista circa 2,538 milioni di anni luce dalla Terra in direzione della costellazione di Andromeda, da cui prende il nome. Si tratta della galassia di grandi dimensioni più vicina alla nostra, la Via Lattea; è visibile anche a occhio nudo ed è tra gli oggetti più lontani visibili senza l'ausilio di strumenti.",
+    "photos": [
+      {
+        "id": "M31_1777483696807",
+        "title": "Andromeda mosaico",
+        "date": "2024-07-13",
+        "comment": "Un altro oggetto molto ambito dagli astrofotografi per la sua bellezza e per la sua luminosità (uguale facilità di acquisizione del segnale) è la galssia di Andormeda. C'è un piccolo problema... è enorme! Non potevo aspettare. Per fare questa foto con gli strumenti che avevo a disposizione all'inizio ho dovuto fare un mosaico da 9 pannelli (cioè ripetere 9 volte una serie di foto in punti diversi e poi unire come un puzzle). Il risultato per quanto poco elegante rimane affascinante.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777483469/astrogallery/M31/andromeda_prova_lpwrsx.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777483469/astrogallery/M31/andromeda_prova_lpwrsx.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. \nMosaico da 9 pannelli."
+        }
+      },
+      {
+        "id": "M31_1777484155020",
+        "title": "Andromeda LRGB",
+        "date": "2025-09-06",
+        "comment": "Finalmente con nuovo setup a campo più largo ho potuto inquadrare l'immensa Andromeda. In questa foto in colore.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777483753/astrogallery/M31/andromeda_06set25_c0w8pd.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777483753/astrogallery/M31/andromeda_06set25_c0w8pd.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "PlayerOne Poseidon C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7."
+        }
+      },
+      {
+        "id": "M31_1777484382768",
+        "title": "Andromeda C+HaOIII",
+        "date": "2025-09-07",
+        "comment": "Per rendere ancora più profonda l'osservazione ho aggiunto segnale di Idrogeno e Ossigeno attraverso il filtro.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777484180/astrogallery/M31/andromeda_haoiii_a307tz.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777484180/astrogallery/M31/andromeda_haoiii_a307tz.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "PlayerOne Poseidon C",
+          "filters": "HaOIII",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "M51",
+    "name": "Galassia Vortice",
+    "ra": 202.46958333333333,
+    "dec": 47.195277777777775,
+    "type": "Galassia a Spirale",
+    "magnitude": 8.4,
+    "distance": "23 Milioni al",
+    "constellation": "Cani da Caccia",
+    "info": "M 51 è un oggetto astronomico del catalogo di Messier che comprende due galassie distinte, nella costellazione boreale dei Cani da Caccia:\n\nLa più grande e famosa Galassia Vortice (anche nota come NGC 5194 e talvolta M51A) è una classica galassia a spirale. Fu scoperta da Charles Messier il 13 ottobre del 1773.\nLa più piccola galassia compagna nota come NGC 5195 (o anche M51B), è parzialmente coperta da un braccio di polvere della spirale Vortice (con la quale interagisce) ed è stata scoperta da Pierre Méchain nel 1781.",
+    "photos": [
+      {
+        "id": "M51_1777483375963",
+        "title": "M51",
+        "date": "2024-12-21",
+        "comment": "",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777483183/astrogallery/M51/NGC5194_21DIC24_vercvv.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777483183/astrogallery/M51/NGC5194_21DIC24_vercvv.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Group of 321 Light frames (321 active)\nSIZE : 3856x2180\nBINNING : 1\nFilter : Antlia Quad Band da 2''\nExposure : 60.00s\n\nGroup of 110 Light frames (110 active)\nSIZE : 3856x2180\nBINNING : 1\nFilter : Antlia Quad Band da 2''\nExposure : 180.00s"
+        }
+      },
+      {
+        "id": "M51_1777494608403",
+        "title": "Vortice gen 25",
+        "date": "2025-02-06",
+        "comment": "Il bello dell'astrofotografia è che puoi ripetere un soggetto per migliorarti. Ancora di più con soggetti appetitosi come la Galassia Vortice, bella luminosa e particolare ...c'è anche una piccola galassia lì in basso. a sinistra.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777494480/astrogallery/M51/M51_06FEB25_qxpehz.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777494480/astrogallery/M51/M51_06FEB25_qxpehz.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "VdB-141",
+    "name": "Vdb-141",
+    "ra": 319.1083333333333,
+    "dec": 68.26027777777777,
+    "type": "Nebulosa a riflessione",
+    "magnitude": null,
+    "distance": "1470",
+    "constellation": "Cefeo",
+    "info": "vdB 141 (nota anche come Sh2-136) è una nebulosa a riflessione congiunta a una nebulosa a emissione visibile nella costellazione di Cefeo.\n\nSi individua nella parte occidentale della costellazione, circa un grado a est della celebre nebulosa NGC 7023; il periodo più indicato per la sua osservazione nel cielo serale ricade fra i mesi di luglio e dicembre ed è notevolmente facilitata per osservatori posti nelle regioni dell'emisfero boreale terrestre, dove si presenta circumpolare fino alle regioni temperate calde.",
+    "photos": [
+      {
+        "id": "VdB-141_1777488532173",
+        "title": "VdB-141 Neverending Story",
+        "date": "2025-03-04",
+        "comment": "Questa nebulosa a riflessione è il primo soggetto \"debole\" che ho fotografato... mi fa una simpatia incredibile perché sembra un omino che saluta con le braccia allargate sul dorso di un cane galattico.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777487858/astrogallery/VdB-141/VDB141_04MAR25_b_v7mtmk.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777487858/astrogallery/VdB-141/VDB141_04MAR25_b_v7mtmk.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7.\nGroup of 331 Light frames (331 active)\nSIZE  : 3856x2180\nBINNING  : 1\nFilter   : quad band Antlia\nExposure : 180.00s\nColor    : RGB"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ngc2359",
+    "name": "Elmo di Thor",
+    "ra": 109.62916666666666,
+    "dec": -13.227222222222222,
+    "type": "Nebulosa a Emissione",
+    "magnitude": 11.4,
+    "distance": "15.000 al",
+    "constellation": "Cane Maggiore",
+    "info": "Struttura a bolle creata dal vento stellare della stella Wolf-Rayet WR7, nella costellazione del Cane Maggiore.\nReperire la sua esatta posizione in cielo non è affatto semplice; l'unico modo meno difficile è seguire l'allineamento tra le stelle ι e γ Canis Majoris e poi, proseguendo di circa due volte la loro distanza, deviare la direzione di circa 10° verso est. Al di fuori della portata di qualunque binocolo, è invece visibile attraverso Telescopi di aperture di almeno 120mm di diametro, nei quali si presenta come una macchietta a forma di lettera Q. In fotografia appare invece un oggetto meraviglioso. Al centro della nebulosa si trova una caldissima stella di Wolf-Rayet, che la illumina, eccitandone l'idrogeno e ionizzandolo; questa stella è catalogata come WR 7, o HD 56925, e possiede una magnitudine pari a 10,40,[1] e sarebbe la principale responsabile della formazione della nebulosa, composta dal gas espulso dalla stella stessa.",
+    "photos": [
+      {
+        "id": "ngc2359_1777488916032",
+        "title": "Elmetto di Thor",
+        "date": "2025-12-02",
+        "comment": "Questo maledetto è sempre basso all'orizzonte e debole, ma.... alla fine si è fatto fotografare. Affascinante la sua forma ed entusiasmante vederlo prendere forma nonostante la bassa integrazione.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777488745/astrogallery/ngc2359/ELMO_DI_THOR_02DIC25_oxhlvy.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777488745/astrogallery/ngc2359/ELMO_DI_THOR_02DIC25_oxhlvy.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "HSO",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": -10,
+          "notes": "Ha: 22 lights\nOIII: 17 lights\nSII: 21 lights\nSIZE  : 3856x2180\nBINNING  : 1\nExposure : 180.00s\nCamera    : mono"
+        }
+      }
+    ]
+  },
+  {
+    "id": "VdB-142",
+    "name": "Nebulosa Proboscide di Elefante",
+    "ra": 324.40000000000003,
+    "dec": 57.483333333333334,
+    "type": "Nebulosa oscura",
+    "magnitude": null,
+    "distance": "3000 a.l.",
+    "constellation": "Cefeo",
+    "info": "vdB 142 è una piccola nebulosa oscura, visibile nella costellazione di Cefeo.\n\nSi individua verso l'area centrale del grande complesso nebuloso noto come IC 1396, pochi primi d'arco ad ovest dell'ammasso aperto associato alla nebulosa; nonostante le sue ridotte dimensioni, si evidenzia con una discreta facilità, a causa della sua profonda oscurità e per la sua forma, che le ha conferito il soprannome di Proboscide di Elefante. Trovandosi a declinazioni molto settentrionali, si presenta circumpolare dalla gran parte dell'emisfero boreale; tutt'attorno appare circondata da un campo stellare relativamente ricco, e la presenza della nebulosità diffusa di IC 1396 ne risalta ulteriormente la sua natura di nebulosa oscura. La scia scura è interrotta da due stelle di ottava magnitudine.",
+    "photos": [
+      {
+        "id": "VdB-142_1777490154554",
+        "title": "Proboscide di elefante",
+        "date": "",
+        "comment": "Questa foto è una delle prime scattate con filtro HaOII, un filtro che permette di tagliare tutto e prendere solo le frequenze di Idrogeno ed Ossigeno, sperimentavo la gratificazione di avere molto più segnale grazie al filtro.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777489934/astrogallery/VdB-142/ELEFANTE2_4_xe5pjn.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777489934/astrogallery/VdB-142/ELEFANTE2_4_xe5pjn.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7"
+        }
+      },
+      {
+        "id": "VdB-142_1777490586308",
+        "title": "Proboscide d'elefante Marzo 2025",
+        "date": "2025-03-10",
+        "comment": "Un'altra proboscide d'elefante, questa volta con più tempo di ntegrazione e qualche competenza in più .",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777490281/astrogallery/VdB-142/ELEPHANT_TRUNK_10mar25_gxdobi.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777490281/astrogallery/VdB-142/ELEPHANT_TRUNK_10mar25_gxdobi.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "M33",
+    "name": "Galassia del Triangolo",
+    "ra": 23.462083333333336,
+    "dec": 30.66,
+    "type": "Galassia a Spirale",
+    "magnitude": 5.7,
+    "distance": "2.7 Milioni al",
+    "constellation": "Triangolo",
+    "info": "La terza galassia per grandezza del Gruppo Locale. Spirale vista di faccia.\n\nLa Galassia del Triangolo è la seconda galassia non nana più vicina alla Via Lattea dopo la Galassia di Andromeda (M31). Può essere vista con un binocolo sotto cieli bui, attraverso il quale si presenta come una macchia ovaleggiante e dai contorni irregolari; sotto un cielo eccezionalmente buono, dove l'inquinamento luminoso è sufficientemente basso, è persino possibile notarla ad occhio nudo, tramite la visione distolta.[6] Infatti, essendo un oggetto diffuso, la sua visibilità è fortemente influenzata anche da una piccola quantità di inquinamento luminoso e può variare dalla possibilità di vedere facilmente l'oggetto in visione diretta in cieli molto scuri fino a scrutarlo con molta difficoltà in visione distolta in cieli sopra aree rurali e suburbane.[6] Se per la maggior parte delle persone la galassia del Triangolo è l'oggetto visibile più distante in assoluto, osservatori esperti affermano di aver osservato ad occhio nudo M81 e Centaurus A, due galassie più lontane e con una luminosità apparente più bassa di M33.",
+    "photos": [
+      {
+        "id": "M33_1777585245312",
+        "title": "Galassia del Triangolo",
+        "date": "2024-08-16",
+        "comment": "Questa foto è per me ipnotica. All'inizio dopo averla fotografata la trovavo banale perché l'avevo conquistata troppo facilmente, ma più la guardavo (ancora oggi) e più mi perdo nel suo infinito, C'è tutto: le culle delle stelle nascenti nelle aree rosse, le giovani stelle blu, le stelle coetanee del nostro sole gialle, la polvere, e poi e poi e poi.... A volte è intollerabile la bellezza.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777534605/astrogallery/M33/NGC598_16AGO24_B_qibvis.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777534605/astrogallery/M33/NGC598_16AGO24_B_qibvis.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7  Udine"
+        }
+      },
+      {
+        "id": "M33_1777535468981",
+        "title": "Triangolo Nov 25",
+        "date": "2025-11-19",
+        "comment": "Con un campo più largo si perde qualche dettaglio, in questa foto ho aggiunto un po' di segnale di Idrogeno... mi riprometto una terza foto ancora più dettagliata.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777535302/astrogallery/M33/M33_RGB_ha_wilbnb.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777535302/astrogallery/M33/M33_RGB_ha_wilbnb.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "LRGBHa",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "LRGBHa x 168 min\nASKAR FRA 400+QHY 8-mono\nPixinsight - Affinity photo"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Sh2-190",
+    "name": "Nebulosa Cuore",
+    "ra": 38.14833333333333,
+    "dec": 61.48388888888889,
+    "type": "Nebulosa ad emissione",
+    "magnitude": null,
+    "distance": "7500 a.l.",
+    "constellation": "Cassiopea",
+    "info": "IC 1805 (nota anche come Nebulosa Cuore o con la sigla W4) è una nebulosa diffusa in associazione ad un ammasso aperto, visibile nella costellazione di Cassiopea, verso il confine con la Giraffa.",
+    "photos": [
+      {
+        "id": "Sh2-190_1777537647206",
+        "title": "Cuore del Cuore",
+        "date": "2025-06-25",
+        "comment": "La nebulosa Cuore è molto estesa, ma nel suo nucleo ci si perde ... ancora non avevo la telecamera adatta a riprendere tutta la sua grandezza. In questa foto applico i primi tentativi di falsi colori in Hubble Palette con uso di camera a colori (una simulazione visto che per la Hubble palette si usano filtri  idrogeno ossigeno e zolfo).",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777537359/astrogallery/Sh2-190/HEART_25GIU25_lebje3.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777537359/astrogallery/Sh2-190/HEART_25GIU25_lebje3.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7.\n3 ore totali"
+        }
+      },
+      {
+        "id": "Sh2-190_1777537759644",
+        "title": "Nebulosa Cuore",
+        "date": "2025-09-19",
+        "comment": "Questa magnifica nebulosa sembra proprio un cuore umano, per fotografarla ci vuole un campo largo. Questa foto ha un significato affettivo perché è dedicata a mia sorella Francesca, in un periodo intenso della nostra vita che abbiamo condiviso qui a Udine.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777536278/astrogallery/Sh2-190/SH2_190_19SET25_BAA_wbjkqx.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777536278/astrogallery/Sh2-190/SH2_190_19SET25_BAA_wbjkqx.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "PlayerOne Poseidon C",
+          "filters": "",
+          "frames": 212,
+          "exposure": 180,
+          "gain": 80,
+          "temp": -10,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "Sh2-190_1777582312093",
+        "title": "Cuore drammatico",
+        "date": "2025-06-19",
+        "comment": "Quando elaboro le foto cerco sempre di trovare il giusto compromesso artistico mantenendo una rigorosità scientifica nel rispetto del segnale, ma a volete bisogna osare e giocare, questo è un esempio, una palette che non esiste, ma mi piaceva la drammaticità del risultato.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777581763/astrogallery/Sh2-190/SH2-190_19GIU25_HOO_gtyyyh.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777581763/astrogallery/Sh2-190/SH2-190_19GIU25_HOO_gtyyyh.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC5907",
+    "name": "Galassia Scheggia",
+    "ra": 228.97083333333333,
+    "dec": 56.32777777777778,
+    "type": "Galassia a Spirale",
+    "magnitude": 11,
+    "distance": "50 Milioni al",
+    "constellation": "Dragone",
+    "info": "Galassia a spirale vista perfettamente di taglio (edge-on) nel Dragone.\nNGC 5907 è una galassia a spirale situata nella costellazione del Dragone, che dista dalla Terra circa 50 milioni di anni luce[2]. Possiede un'insolita scarsa metallicità e un'anomala carenza di stelle giganti, essendo composta per la maggior parte da giovani stelle nane. Fa parte del Gruppo di NGC 5866, un piccolo gruppo di galassie contenente la Galassia Fuso.",
+    "photos": [
+      {
+        "id": "NGC5907_1777583643044",
+        "title": "Galassia Scheggia",
+        "date": "2025-02-21",
+        "comment": "Di questa foto adoro il dettaglio delle polveri di questa galassia presa di taglio, non so perché ma mi perdo nell'immaginare chissà cosa dentro quella polvere galattica, sembra un disco volante.....",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777583036/astrogallery/NGC5907/NGC5906_21FEB25_mizksd.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777583036/astrogallery/NGC5907/NGC5906_21FEB25_mizksd.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": 420,
+          "exposure": 120,
+          "gain": 80,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ngc891",
+    "name": "Galassia Ago",
+    "ra": 35.63916666666667,
+    "dec": 42.34916666666667,
+    "type": "Galassia a Spirale",
+    "magnitude": 9.9,
+    "distance": "30 Milioni al",
+    "constellation": "Andromeda",
+    "info": "Magnifica galassia edge-on in Andromeda con una marcata fascia di polveri.\nSi individua con facilità 3,5 gradi ad est della stella γ Andromedae; appare vista perfettamente di taglio, così ad un telescopio rifrattore si presenta come un lungo fuso chiaro, privo di dettagli. Ad ingrandimenti maggiori si nota bene la presenza di un bulbo centrale molto luminoso, mentre in grandi telescopi si evidenzia la banda oscura di polveri e gas interstellari che la rendono molto simile alla nostra Via Lattea. Fa parte di un gruppo di galassie distanti dalla nostra circa 40 milioni di anni luce. Nel 1986 vi fu scoperta, via radio, una supernova, 1986J.",
+    "photos": [
+      {
+        "id": "ngc891_1777584121924",
+        "title": "Galassia Ago",
+        "date": "2024-08-13",
+        "comment": "Sembra uno squarcio nell'universo, un'apertura verso altri mondi a noi proibiti, accidenti quanto è bello il cielo, così distante ci porta a luoghi così profondi della nostra immaginazione.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777583891/astrogallery/ngc891/NGC891_13AGO24_g3cnff.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777583891/astrogallery/ngc891/NGC891_13AGO24_g3cnff.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "HEQ5 PRO",
+          "camera": "PlayerOne UranusC",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "M45",
+    "name": "Le Pleiadi",
+    "ra": 56.75,
+    "dec": 24.116666666666667,
+    "type": "Ammasso Aperto",
+    "magnitude": 1.6,
+    "distance": "444 al",
+    "constellation": "Toro",
+    "info": "Magnifico ammasso aperto circondato da polvere interstellare a riflessione azzurra.\nLe Pleiadi (conosciute anche come le Sette sorelle, la Chioccetta o con la sigla M45 del catalogo di Charles Messier) sono un ammasso aperto visibile nella costellazione del Toro.[5]\n\nÈ un ammasso piuttosto vicino, a 440 anni luce dalla Terra, di giovane età stimata in circa 100 milioni di anni (con una vita prevista di soli altri 250 milioni di anni, dato che le stelle sono troppo lontane tra loro), e conta diverse stelle visibili a occhio nudo: negli ambienti cittadini se ne vedono solo quattro o cinque fra le più brillanti, ma in un luogo più buio anche dodici; tutte le componenti sono circondate da leggere nebulose a riflessione, osservabili specialmente in fotografie a lunga esposizione prese con telescopi di dimensioni ragguardevoli. Data la loro distanza, le stelle visibili tra le Pleiadi sono molto più calde del normale, e ciò si riflette nel loro colore: sono giganti blu o bianche; oltre a queste, l'ammasso conta centinaia di altre stelle, molte delle quali sono troppo lontane e fredde per poter essere visibili a occhio nudo.\n\nA causa della loro brillantezza e vicinanza fra loro, le stelle più luminose delle Pleiadi sono note dall'antichità e citate, fra gli altri, da Omero e Tolomeo.[6] Il disco di Nebra, un manufatto di bronzo del 1600 a.C. trovato nell'estate del 1999 a Nebra, in Germania, è una delle più antiche rappresentazioni note del cosmo: in questo disco le Pleiadi sono il terzo oggetto celeste chiaramente distinguibile dopo il Sole e la Luna.\n\nAl contrario di altri asterismi, le stelle delle Pleiadi sono realmente vicine tra loro, hanno un'origine comune e sono legate da forza di gravità, il che le rende un caso notevole fra gli astri osservabili dalla Terra. Da quando si scoprì che le stelle sono corpi celesti simili al Sole, si iniziò a ipotizzare che alcune fossero in qualche modo legate fra loro: grazie allo studio del moto proprio e alla determinazione scientifica delle distanze degli astri, divenne chiaro che le Pleiadi sono realmente legate gravitazionalmente e che hanno un'origine comune.",
+    "photos": [
+      {
+        "id": "M45_1777585011703",
+        "title": "Pleiadi",
+        "date": "2025-10-05",
+        "comment": "Fai zoom, guarda quelle strisciate azzurre che si incrociano, ma come si fa? Non posso e non voglio usare parole per questa foto, solo guarda....",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777584853/astrogallery/M45/pleiadi_05ott25_baa_ie80bl.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777584853/astrogallery/M45/pleiadi_05ott25_baa_ie80bl.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "HEQ5 PRO",
+          "camera": "PLayerOne Poseidon C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC3628",
+    "name": "Galassia Hamburger",
+    "ra": 170.07083333333333,
+    "dec": 13.589722222222223,
+    "type": "Galassia a Spirale",
+    "magnitude": 9.5,
+    "distance": "35 Milioni al",
+    "constellation": "Leone",
+    "info": "Si tratta della terza compagna del Tripletto del Leone, un gruppo di tre galassie molto brillanti che comprende, oltre a questa, le ben note M65 e M66. Questa galassia si presenta come una compagna minore, meno luminosa ma molto estesa, con un lungo fuso luminoso che attraversa tutta la sua lunghezza, ben visibile in un telescopio amatoriale",
+    "photos": [
+      {
+        "id": "NGC3628_1777585524796",
+        "title": "Galassia Hamburger",
+        "date": "2025-01-11",
+        "comment": "Il nome non può suggestionare e la galassia fa subito simpatia, anche perché diciamocelo, è molto figa!",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777585415/astrogallery/NGC3628/NGC3628_11gen25_wduxvj.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777585415/astrogallery/NGC3628/NGC3628_11gen25_wduxvj.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine."
+        }
+      },
+      {
+        "id": "NGC3628_1777585985098",
+        "title": "M66 - Tripletto del Leone",
+        "date": "2025-12-16",
+        "comment": "Qui la galassia Hamburger è insieme alle sue due sorelline M65 ed M66.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777585820/astrogallery/NGC3628/NGC2238_aaghbl.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777585820/astrogallery/NGC3628/NGC2238_aaghbl.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "PLayerOne Poseidon C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC6888",
+    "name": "Nebulosa Crescente (C17)",
+    "ra": 303.025,
+    "dec": 38.355000000000004,
+    "type": "Nebulosa a emissione",
+    "magnitude": 10,
+    "distance": "5.000 al",
+    "constellation": "Cigno",
+    "info": "NGC 6888 (nota anche come Nebulosa Crescente o con la sigla C 27) è una nebulosa diffusa visibile nella parte meridionale della costellazione del Cigno.\nBolla di gas creata dal potente vento di una stella centrale [Wolf-Rayet](https://it.wikipedia.org/wiki/Stella_di_Wolf-Rayet).",
+    "photos": [
+      {
+        "id": "NGC6888_1777670571064",
+        "title": "Crescent Nebula",
+        "date": "2024-07-09",
+        "comment": "Questo per me è un cervellone spaziale, del tipo Mars Attack, questa nebulosa mi intriga e incuriosisce,",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777670322/astrogallery/NGC6888/CRESCENT_09LUG24_afam_exulzd.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777670322/astrogallery/NGC6888/CRESCENT_09LUG24_afam_exulzd.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 5. Dorgali"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC6960",
+    "name": "Nebulosa Velo",
+    "ra": 311.4083333333333,
+    "dec": 30.708333333333332,
+    "type": "Resto di Supernova",
+    "magnitude": 7,
+    "distance": "1.470 al",
+    "constellation": "Cigno",
+    "info": "La Nebulosa Velo (nota anche con le sigle del Catalogo Caldwell C 33 e C 34) è una vasta nebulosa diffusa visibile nella parte sudorientale della costellazione del Cigno.\nQuesto intricato sistema di nebulose è visibile con un binocolo con obiettivi da 80-90mm o con un piccolo telescopio a patto di avere un cielo buio, meglio ancora se si utilizza un filtro (UHC, OIII): si rivela meglio nelle foto a lunga posa (persino con una camera CCD occorrono diversi minuti). L'oggetto apparirà formato da tre delicatissimi filamenti nebulosi, disposti a formare una sorta di circonferenza. La parte più luminosa è quella più ad est, noto come NGC 6992. Ingrandimenti sempre maggiori rivelano che ogni filamento è in realtà costituito da una rete di altri filamenti minori, sempre più sottili.",
+    "photos": [
+      {
+        "id": "NGC6960_1777671924814",
+        "title": "Nebulosa filamentosa",
+        "date": "",
+        "comment": "Questa foto è credo la prima con la quale ho usato un filtro HO (idrogeno ossigeno), Quel blu e quel rosso insieme sono sorprendenti, all'inizio del percorso astrofotografico ogni foto è una rivelazione, ma quando usi un filtro e se lo usi sulla velo.... Boom!",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777671611/astrogallery/NGC6960/vela-rgbc_3_zgub1n.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777671611/astrogallery/NGC6960/vela-rgbc_3_zgub1n.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV220",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "NGC6960_1777672192721",
+        "title": "Velo est",
+        "date": "2024-06-28",
+        "comment": "Un anno dopo la prima velo e con più esperienza decido di riprendere la velo, e di nuovo non si può che rimanere affascinanti da tutti i suoi filamenti colorati.\nQuesta è la parte est della nebulosa.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777672004/astrogallery/NGC6960/C33_28GIU24_BAA_m1m9lz.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777672004/astrogallery/NGC6960/C33_28GIU24_BAA_m1m9lz.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "NGC6960_1777672567853",
+        "title": "Velo est wide",
+        "date": "2025-06-14",
+        "comment": "Arrivato il rifrattore ASKAR FRA400 con campo più ampio potevo allargare l'osservazione della porzione est della nebulosa, e qui elaborata in Hubble palette.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777672230/astrogallery/NGC6960/VELOEST_14GIU25_awjt9g.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777672230/astrogallery/NGC6960/VELOEST_14GIU25_awjt9g.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC2237",
+    "name": "Nebulosa Rosetta",
+    "ra": 98.4375,
+    "dec": 4.998333333333333,
+    "type": "Regione H II",
+    "magnitude": 6,
+    "distance": "5200 a.l.",
+    "constellation": "Unicorno",
+    "info": "La Nebulosa Rosetta è una delle nebulose più brillanti del cielo notturno; la sua posizione, ad appena 5° dall'equatore celeste, fa sì che possa essere osservata da tutte le aree abitate della Terra, dalla punta settentrionale della Penisola scandinava fino alla Terra del Fuoco, in Sudamerica.",
+    "photos": [
+      {
+        "id": "NGC2237_1777713146327",
+        "title": "Nebulosa Rosetta",
+        "date": "2025-12-20",
+        "comment": "Questa nebulosa è caratterizzata da quella polvere centrale che contrasta il cluster di stelle. Quello che non sapevo è che anche la nebulosa Rosetta è un esempio di [Sfera di Strömgren](https://youtu.be/xBtKhxO0U6o)",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777712924/astrogallery/NGC2237/NGC2237_20DIC25_BAA_qkjouc.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777712924/astrogallery/NGC2237/NGC2237_20DIC25_BAA_qkjouc.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "Playerone PoseidonC",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC6946",
+    "name": "Galassia Fuochi d'artificio",
+    "ra": 308.71666666666664,
+    "dec": 60.15361111111111,
+    "type": "Galassia a Spirale",
+    "magnitude": 8.8,
+    "distance": "25 Milioni a.l.",
+    "constellation": "Cigno",
+    "info": "Galassia ricchissima di supernove (10 in un secolo!) al confine tra Cigno e Cefeo.\n\nQuesta galassia è famosa presso la comunità scientifica col nome di Fireworks Galaxy (Galassia fuochi d'artificio), proprio a causa del numero di supernovae osservate, ben dieci negli ultimi 100 anni (1917A, 1939C, 1948B, 1968D, 1969P, 1980K, 2002hh, 2004et, 2008S e 2017eaw) l'esplosione del 1980, di tipo II, fu la più appariscente, raggiungendo un picco di magnitudine 11,4.",
+    "photos": [
+      {
+        "id": "NGC6946_1777713739471",
+        "title": "Galassia Fuochi d'artificio (C12)",
+        "date": "2024-07-07",
+        "comment": "Guarda le aree rosse, zone di Idrogeno dove si formano le stelle.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777713646/astrogallery/NGC6946/C12_affinity_ktwhwu.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777713646/astrogallery/NGC6946/C12_affinity_ktwhwu.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC7635",
+    "name": "Nebulosa Bolla",
+    "ra": 350.18958333333336,
+    "dec": 61.212500000000006,
+    "type": "Nebuosa ad emissione",
+    "magnitude": 11,
+    "distance": "11000 a.l.",
+    "constellation": "Cassiopea",
+    "info": "NGC 7635 (nota talvolta come Nebulosa Bolla o C 11) è una nebulosa diffusa visibile nella costellazione di Cassiopea, verso il confine con Cefeo.",
+    "photos": [
+      {
+        "id": "NGC7635_1777714447486",
+        "title": "Nebulosa Bolla",
+        "date": "2024-07-15",
+        "comment": "2000 Km al secondo. E' la velocità del vento stellare che crea quella bolla lì nel cielo. Questa è un'altra di quelle meraviglie che quando le fotografi ti senti grato.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777714271/astrogallery/NGC7635/NGC7635_bnb6mf.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777714271/astrogallery/NGC7635/NGC7635_bnb6mf.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      },
+      {
+        "id": "NGC7635_1777714874916",
+        "title": "Hubble bubble",
+        "date": "2025-06-21",
+        "comment": "Qui con un campo più ampio e in Hubble palette",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777714541/astrogallery/NGC7635/BOLLA_HUBLE_21GIU25_du1op5.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777714541/astrogallery/NGC7635/BOLLA_HUBLE_21GIU25_du1op5.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "HSO",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine."
+        }
+      },
+      {
+        "id": "NGC7635_1777714856648",
+        "title": "Bolla wide",
+        "date": "2025-06-10",
+        "comment": "Qui in LRGB sempre campo largo.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777714797/astrogallery/NGC7635/NGC7635_10GIU25_zp7cdm.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777714797/astrogallery/NGC7635/NGC7635_10GIU25_zp7cdm.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine"
+        }
+      }
+    ]
+  },
+  {
+    "id": "sH2-142",
+    "name": "Nebulosa Mago",
+    "ra": 341.8833333333334,
+    "dec": 58.04833333333333,
+    "type": "Regione H II",
+    "magnitude": 7.2,
+    "distance": "11530 a.l.",
+    "constellation": "Cefeo",
+    "info": "Regione di formazione stellare in Cefeo contenente l'ammasso aperto NGC 7380.\nSh2-142 è una regione H II situata sul Braccio di Perseo, alla distanza di 3537 parsec (quasi 11530 anni luce). Appare legata al giovane ammasso aperto NGC 7380 e possiede una massa di circa 4000 M⊙; la responsabile della sua ionizzazione è la stella binaria a eclisse DH Cephei, formata da due stelle di classe spettrale O6. Alla nebulosa è anche legata una nube molecolare contenente da 6000 a 15000 M⊙, oltre all'ammasso aperto NGC 7382; tutti questi oggetti fanno parte della grande associazione Cepheus OB1.",
+    "photos": [
+      {
+        "id": "sH2-142_1777728839313",
+        "title": "Nebulosa Mago (con NGC7380)",
+        "date": "2024-06-20",
+        "comment": "Questa foto rappresenta la mia prima testimonianza di qunato un cielo scuro faccia la differenza in astrofotografia. Qui siamo a Dorgali a Est della Sardegna e con una attrezzatura per l'occasione (un rifrattore messomi a disposizione da Skypoint per provarlo) i miei occhi  sono brillati per l'ennesima volta, ma questa volta di più, perché cielo scuro più dettagli nitidi del rifrattore fanno una bella combinata.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777728554/astrogallery/sH2-142/NGC7380-06_24_h40dut.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777728554/astrogallery/sH2-142/NGC7380-06_24_h40dut.jpg",
+        "acquisition": {
+          "telescope": "Askar 71f",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Dorgali. Bortle 5."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC7320",
+    "name": "Quintetto di Stephan",
+    "ra": 338.9895833333333,
+    "dec": 33.96,
+    "type": "Galassie interagenti",
+    "magnitude": null,
+    "distance": "210-340 milioni a.l.",
+    "constellation": "Pegaso",
+    "info": "Il Quintetto di Stephan è un gruppo visuale di cinque galassie situato in direzione della costellazione di Pegaso; fu il primo gruppo di galassie ad essere scoperto: fu scoperto dall'astronomo francese Édouard Stephan nel 1877 all'Osservatorio di Marsiglia[3] ed è il più studiato di tutti i gruppi compatti di galassie.[2] Il membro più luminoso è la galassia a spirale NGC 7320, che mostra estese regioni HII, visibili come globi rossastri, dove c'è un'intensa formazione stellare.\n\nSecondo alcuni studi, non tutte queste galassie si troverebbero realmente vicine fra loro: infatti NGC 7320 si trova in sovrapposizione casuale per via della nostra linea di osservazione, mentre le restanti sembrano essere relativamente vicine fra loro.",
+    "photos": [
+      {
+        "id": "NGC7320_1777729547216",
+        "title": "Quintetto Stephan & Deer Lick",
+        "date": "2024-06-14",
+        "comment": "Questa foto è un'altra pietra miliare nel mio percorso astrofotografico: sperimentavo per la prima volta la potenza dello strumento software Blurxterminator di Pixinisght, grazie a Federico Luciani che non smetterò mai di ringraziare.  Finalmente potevo vedere il dettalgio della galassia nel gruppo Deer Lick; ma poi voglio dire.... ma ci rendiamo conto di quante galassie si vedono?",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777729162/astrogallery/NGC7320/NGC7320-14-06-24_znk7or.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777729162/astrogallery/NGC7320/NGC7320-14-06-24_znk7or.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine."
+        }
+      }
+    ]
+  },
+  {
+    "id": "Sh2-101",
+    "name": "Nebulosa Tulipano",
+    "ra": 299.9791666666667,
+    "dec": 35.276666666666664,
+    "type": "Regione H II",
+    "magnitude": null,
+    "distance": "8.750 al",
+    "constellation": "Cigno",
+    "info": "Nebulosa a emissione nel Cigno, famosa per la vicinanza alla sorgente di raggi X Cygnus X-1.\nSi individua nella parte centro-meridionale della costellazione, al centro di un tratto della Via Lattea molto luminoso e ricco di campi stellari; si trova circa 45' a nordest della stella η Cygni e si estende per una ventina di primi in senso NE-SW. Possiede una forma allungata e irregolare; il periodo migliore per la sua osservazione nel cielo serale ricade fra i mesi di giugno e novembre.",
+    "photos": [
+      {
+        "id": "Sh2-101_1777730090399",
+        "title": "Nebulosa Tulipano",
+        "date": "2024-07-12",
+        "comment": "Un delicato fiore cosmico sboccia nel cuore del Cigno.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777730028/astrogallery/Sh2-101/tulipano_12lug24_ntakqh.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777730028/astrogallery/Sh2-101/tulipano_12lug24_ntakqh.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "Sh2-185",
+    "name": "Nebulosa Fantasma di Cassiopea",
+    "ra": 14.225,
+    "dec": 60.764722222222225,
+    "type": "Nebulosa ad emissione",
+    "magnitude": 2.6,
+    "distance": "613 a.l.",
+    "constellation": "Cassiopea",
+    "info": "Sh2-185 è una nebulosa a emissione e a riflessione, visibile nella costellazione di Cassiopea; consiste in due regioni nebulose distinte dalle caratteristiche differenti fra di loro.",
+    "photos": [
+      {
+        "id": "Sh2-185_1777732977863",
+        "title": "Fantasma di Cassiopea",
+        "date": "2024-06-28",
+        "comment": "Un altro gioiello di Cassiopea, suggestivo come il suo nome che fa giustizia a questa complessa nebulosa..... Boooohhhh!!!!",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777732728/astrogallery/Sh2-185/IC63_28GIU24_vdo7vf.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777732728/astrogallery/Sh2-185/IC63_28GIU24_vdo7vf.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "IC 443",
+    "name": "Nebulosa Medusa",
+    "ra": 112.2625,
+    "dec": 13.246666666666666,
+    "type": "Resto di Supernova",
+    "magnitude": null,
+    "distance": "5000 a.l.",
+    "constellation": "—",
+    "info": "IC 443 è un resto di supernova situato nella costellazione dei Gemelli. Si crede che sia stato originato da una supernova esplosa in un periodo compreso fra 3000 e 30.000 anni fa, e che il nucleo della stella progenitrice responsabile di tale evento abbia formato la stella di neutroni CXOU J061705.3+222127. Si tratta di un oggetto molto studiato a causa della sua interazione con altre nubi molecolari.",
+    "photos": [
+      {
+        "id": "IC 443_1777831872830",
+        "title": "Nebulosa Medusa",
+        "date": "2026-01-25",
+        "comment": "Quando progetti un soggetto non sai mai come verrà fuori, Per questa nebulosa avevo poche aspettative e invece la nebulosità è emersa in maniera più che soddisfacente.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777831752/astrogallery/IC%20443/MEDUSA_25GEN26_02_zwfnnj.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777831752/astrogallery/IC%20443/MEDUSA_25GEN26_02_zwfnnj.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "Playerone PoseidonC",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC1499",
+    "name": "Nebulosa California",
+    "ra": 60.824999999999996,
+    "dec": 36.42166666666667,
+    "type": "Nebulosa a Emissione",
+    "magnitude": 6,
+    "distance": "1.000 al",
+    "constellation": "Perseo",
+    "info": "Lunga e immensa nebulosa nel Perseo che ricorda lo stato della California.\n\nFu scoperta da Edward Emerson Barnard nel 1884 ed è stata battezzata così perché la sua forma, ritratta nelle fotografie a lunga esposizione, ricorda lo Stato statunitense della California. È lunga circa 2,5°, ma si può osservare solo con dei potenti binocoli o un telescopio amatoriale; si osserva nella parte meridionale della costellazione. La sua distanza è stimata sui circa 1.000 anni luce dalla Terra.",
+    "photos": [
+      {
+        "id": "NGC1499_1777832338382",
+        "title": "California",
+        "date": "2025-01-06",
+        "comment": "Questa nebulosa l'ho fatta più per dovere che non per piacere, ma ha comunque un suo perché. Meriterebbe più integrazione per far emergere anche l'ossigeno.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777832064/astrogallery/NGC1499/california_ngc1499_06gen25_lvun4r.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777832064/astrogallery/NGC1499/california_ngc1499_06gen25_lvun4r.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "Playerone PoseidonC",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC 4490",
+    "name": "Galassia Bozzolo con NGC4485",
+    "ra": 187.6508333333333,
+    "dec": 41.64388888888889,
+    "type": "Galassia interagente",
+    "magnitude": 9.8,
+    "distance": "23 Milioni di a.l.",
+    "constellation": "Cani da caccia",
+    "info": "NGC 4490, (soprannominata Cocoon Galaxy) é una galassia a spirale barrata nella costellazione dei Cani da Caccia.\n\nÈ individuabile ad appena 30' dalla stella β Canum Venaticorum; si mostra come un fuso fortemente irregolare a causa dell'interazione con una piccola galassia vicina, NGC 4485. Entrambe sono visibili con uno strumento di 120-150mm di apertura, sebbene quest'ultima sia molto meno appariscente. Il nucleo è molto luminoso e domina sull'intera galassia; i bracci sono disposti in senso est-ovest, con quello occidentale rivolto verso la compagna NGC 4485. Il sistema dista dalla Via Lattea circa 23 milioni di anni-luce.",
+    "photos": [
+      {
+        "id": "NGC 4490_1777832801275",
+        "title": "Lampada di Aladino",
+        "date": "2024-12-30",
+        "comment": "Questa galassia mi fa impazzire, sembra un disegno Disney della Lampada di Aladino e così la vedrò sempre, un gioello incastonato di diamanti stellari.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777832797/astrogallery/NGC%204490/NGC4490_30DIC24_meqcm8.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777832797/astrogallery/NGC%204490/NGC4490_30DIC24_meqcm8.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC 6611",
+    "name": "Nebulosa Aquila",
+    "ra": 274.7,
+    "dec": -13.816666666666666,
+    "type": "Regione H II",
+    "magnitude": 6,
+    "distance": "5700 a.l.",
+    "constellation": "Serpente",
+    "info": "La Nebulosa Aquila (nota anche come M 16 o NGC 6611) è una grande regione H II visibile nella costellazione della Coda del Serpente; è formata da un giovane ammasso aperto di stelle associato ad una nebulosa a emissione composta da idrogeno ionizzato, catalogata come IC 4703.",
+    "photos": [
+      {
+        "id": "NGC 6611_1777847284822",
+        "title": "Aquila Hubble wide",
+        "date": "2025-07-05",
+        "comment": "Qui mi divertivo con i primi esperimenti di Hubble palette, ma è osservando questa nebulosa che mi sono accorto delle somiglianze della geometria di questa nebulosa con altre (M42, e nebulosa Gabbiano) ed è grazie a questa osservazione che ho scoperto il fenomeno del Champagne Flow della [Sfera di Strömgren](https://youtu.be/xBtKhxO0U6o)",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777846687/astrogallery/NGC%206611/eagle_nebula_b_05lug25_gbuahm.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777846687/astrogallery/NGC%206611/eagle_nebula_b_05lug25_gbuahm.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "HSO",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "NGC 6611_1777847086584",
+        "title": "Aquila Hubble dettaglio",
+        "date": "2025-07-05",
+        "comment": "",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777847053/astrogallery/NGC%206611/eagle_part_05lug25_usgb4k.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777847053/astrogallery/NGC%206611/eagle_part_05lug25_usgb4k.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      },
+      {
+        "id": "NGC 6611_1777847223340",
+        "title": "Pilastri starless",
+        "date": "2025-07-05",
+        "comment": "Qui ho voluto esaltare l'iconica formazione di polveri, fotografata e resa mitica da Hubble : i pilastri della creazione.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777847117/astrogallery/NGC%206611/eagle_corelli_dfr0fg.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777847117/astrogallery/NGC%206611/eagle_corelli_dfr0fg.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC2264",
+    "name": "Nebulosa Albero di Natale",
+    "ra": 100.24291666666667,
+    "dec": 9.895555555555555,
+    "type": "Regione H II",
+    "magnitude": 3.9,
+    "distance": "2.450 al",
+    "constellation": "Unicorno",
+    "info": "Regione di formazione stellare che include la famosa Nebulosa Cono e l'ammasso Albero di Natale.\n\nNGC 2264 indica un brillante ammasso aperto circondato da un grande sistema di nebulosità diffuse (la Nebulosa Cono), all'interno della costellazione dell'Unicorno.\n\nIn effetti, la prima caratteristica che colpisce esplorando quest'area di cielo con un binocolo è proprio un gruppo di circa venti stelline di colore blu, dominato dalla stella S Monocerotis, di magnitudine compresa fra la quinta e la nona, disposte a triangolo, con il vertice puntato verso sud, caratteristica che nell'emisfero australe (dove la cima appare rivolta verso l'alto) lo rende simile ad un Albero di Natale (quest'ultimo è il nome proprio dell'ammasso).",
+    "photos": [
+      {
+        "id": "NGC2264_1777889032428",
+        "title": "Albero di Natale 2024",
+        "date": "2024-12-21",
+        "comment": "Molto spesso i nomi affibbiati  agli oggetti del cielo profondo non c'entrano proprio con la suggestione delle forme.... In questo caso il nome non può essere più appropriato, la nebulosa colorata da idrogeno e ossigeno ha proprio la forma di un albero di Natale, è visibile a Dicembre e la nebulosa Cono sulla punta sembra una stella o le ali di un angelo.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777888779/astrogallery/NGC2264/NGC2264_21DIC24_bokiz1.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777888779/astrogallery/NGC2264/NGC2264_21DIC24_bokiz1.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7"
+        }
+      },
+      {
+        "id": "NGC2264_1777889277491",
+        "title": "Albero di Natale con Variabile",
+        "date": "2026-01-01",
+        "comment": "Con un campo più ampio l'albero di Natale è meno appariscente, ma in questa immagine possiamo scorgere anche una interessante nebulosa, la nebulosa variabile di Hubble (zooma e individua all'incrocio delle linee), un oggetto che se fotografato a distanza di \"poco\" tempo mostra variazioni di forma.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777889065/astrogallery/NGC2264/NGC2264_01GEN26_BAA_zvmerw.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777889065/astrogallery/NGC2264/NGC2264_01GEN26_BAA_zvmerw.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "Scorpio Astro SA-17",
+          "camera": "Playerone PoseidonC",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M1",
+    "name": "Nebulosa Granchio",
+    "ra": 83.625,
+    "dec": 22.016,
+    "type": "Resto di Supernova",
+    "magnitude": 8.4,
+    "distance": "6.500 al",
+    "constellation": "Toro",
+    "info": "Il resto in espansione della supernova esplosa nel 1054, osservata dagli astronomi cinesi.\n\nLa Nebulosa Granchio (nota anche come Nebulosa del Granchio o con le sigle di catalogo M 1 e NGC 1952) è un resto di supernova visibile nella costellazione del Toro. Scoperta nel 1731 da John Bevis, la nebulosa è il primo oggetto del catalogo di oggetti astronomici pubblicato da Charles Messier nel 1774.",
+    "photos": [
+      {
+        "id": "M1_1777919315177",
+        "title": "Nebulosa Granchio",
+        "date": "2024-10-29",
+        "comment": "E anche qui il dettaglio che si riesce ad ottenere con attrezzatura amatoriale è impressionante.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777891223/astrogallery/M1/M1_CRAB_NEBULA_29OTT24_2_qsbklv.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777891223/astrogallery/M1/M1_CRAB_NEBULA_29OTT24_2_qsbklv.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "HaOIII",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "M27",
+    "name": "Nebulosa Manubrio",
+    "ra": 299.9026666666667,
+    "dec": 22.72113611111111,
+    "type": "Nebulosa Planetaria",
+    "magnitude": 7.5,
+    "distance": "1.360 al",
+    "constellation": "Volpetta",
+    "info": "Nebulosa planetaria grande e vicina. La forma ricorda una clessidra.\nLa Nebulosa Manubrio (nota anche come Nebulosa Dumbbell, dalla corrispondente denominazione inglese) o con le sigle di catalogo M 27 e NGC 6853) è una celebre e brillante nebulosa planetaria visibile nella costellazione della Volpetta.",
+    "photos": [
+      {
+        "id": "M27_1777920134255",
+        "title": "Nebulosa Manubrio",
+        "date": "2024-09-14",
+        "comment": "Queta devo rifarla assolutamente, merita una migliore integrazione.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777919644/astrogallery/M27/M27_GraXpert_3_wlxouz.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777919644/astrogallery/M27/M27_GraXpert_3_wlxouz.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7"
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC1491",
+    "name": "Nebulosa impronta fossile",
+    "ra": 60.80833333333332,
+    "dec": 51.316111111111105,
+    "type": "Nebulosa ad emossione",
+    "magnitude": null,
+    "distance": "11.400 a.l.",
+    "constellation": "Perseo",
+    "info": "NGC 1491 è una regione H II situata sul bordo di una vasta regione occupata da nubi di gas neutro; la fonte della ionizzazione dei gas della nube proviene dal vento stellare della stella BD+50° 886, una stella blu di classe spettrale O5 di magnitudine 11,22, dall'elevata temperatura superficiale,[4] che produce un fronte di ionizzazione che avanza alla velocità di 0,03 s−1. Strutturalmente si tratta di una nube evoluta, una delle poche conosciute ad essere ionizzate da una stella di classe O5 non fuggitiva, facente parte del Braccio di Perseo;",
+    "photos": [
+      {
+        "id": "NGC1491_1777921094304",
+        "title": "Impronta fossile",
+        "date": "2024-09-29",
+        "comment": "Ecco io qui di impronte fossili non ci vedo niente, sarà una mancanza di fantasia...",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777921025/astrogallery/NGC1491/NGC1491_29SET24_tp5sje.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777921025/astrogallery/NGC1491/NGC1491_29SET24_tp5sje.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M81",
+    "name": "Galassia di Bode",
+    "ra": 148.8875,
+    "dec": 69.06527777777778,
+    "type": "Galassia a Spirale",
+    "magnitude": 6.8,
+    "distance": "11.7 Milioni al",
+    "constellation": "Orsa Maggiore",
+    "info": "Maestosa galassia a spirale. Spesso inquadrata con la vicina galassia Sigaro (M82).\n\nLa Galassia di Bode, (nota anche come M 81 o NGC 3031) è una galassia a spirale situata a circa 12 milioni di anni luce dalla Terra, nella costellazione boreale dell'Orsa Maggiore.\nLa Galassia Sigaro (nota anche come M 82 o NGC 3034) è una galassia attiva nella costellazione dell'Orsa Maggiore; si trova a circa 12 milioni di anni luce ed è associata alla più grande e famosa M81. Si tratta di un ottimo esempio di galassia starburst.",
+    "photos": [
+      {
+        "id": "M81_1777925221589",
+        "title": "Bode e Sigaro M81 e M82",
+        "date": "2024-11-02",
+        "comment": "Quando si inizia la palestra sono sempre le galassie circumpolari (vicino alla stella polare), semplicemente perché son sempre lì, visibili...Ma questo non significa che siano semplici; qui abbiamo una doppia sfida, la galassia sigaro ha uno sbuffo rosso che necessita di tantissima integrazione, e la Galassia Bode (M81)  che un nucleo luminosissimo e le braccia tenui... un bel casino. E infatti fotografarle insieme è difficilissimo.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777924933/astrogallery/M81/BODECIGAR_mziizg.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777924933/astrogallery/M81/BODECIGAR_mziizg.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "M81_1777925322596",
+        "title": "Ancora Bode e Sigaro",
+        "date": "2024-08-26",
+        "comment": "",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777925273/astrogallery/M81/NGC3031_256AGO24_m0ygvg.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777925273/astrogallery/M81/NGC3031_256AGO24_m0ygvg.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      },
+      {
+        "id": "M81_1777925494064",
+        "title": "Sigaro con sbuffo",
+        "date": "2024-11-04",
+        "comment": "Qui finalmente si vede lo sbuffo della galassia sigaro, ci sono 15 ore di esposizione circa.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777925377/astrogallery/M81/M81M82_04NOV24_zk9o0x.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777925377/astrogallery/M81/M81M82_04NOV24_zk9o0x.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  }
+]
