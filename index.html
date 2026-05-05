@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroGallery — Stellario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── Canvas stellario ──────────────────────────────────────────────────────── -->
+<canvas id="starmap"></canvas>
+<div id="vignette"></div>
+
+<!-- ── Loading screen ───────────────────────────────────────────────────────── -->
+<div id="loading">
+  <div class="ltitle">ASTRO GALLERY</div>
+  <div class="lsub">CARICAMENTO CATALOGO STELLARE</div>
+  <div class="ltrack"><div class="lfill" id="lfill"></div></div>
+</div>
+
+<!-- ── Auth modal ─────────────────────────────────────────────────────────────── -->
+<div id="auth-modal" style="display:none">
+  <div id="auth-box">
+    <div class="auth-title">ASTRO GALLERY</div>
+    <div class="auth-sub">Come vuoi accedere?</div>
+    <div id="auth-buttons">
+      <button class="auth-btn" id="auth-explore">ESPLORA</button>
+      <button class="auth-btn" id="auth-admin-btn">GESTIONE</button>
+    </div>
+    <div id="auth-pw-section" style="display:none">
+      <input type="password" id="auth-pw-input" placeholder="Password" autocomplete="current-password">
+      <button id="auth-pw-submit">ACCEDI</button>
+      <div id="auth-pw-error"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── No-password toast ──────────────────────────────────────────────────────── -->
+<div id="no-pw-toast">Nessuna password configurata — imposta una password in GESTIONE → IMPOSTAZIONI</div>
+
+<!-- ── UI Panels ─────────────────────────────────────────────────────────────── -->
+<div class="panel" id="panel-title">
+  <h1>ASTRO GALLERY</h1>
+  <p>TRASCINA · ROTELLA PER ZOOM</p>
+</div>
+
+<div class="panel" id="panel-coords">
+  <div class="lbl">COORDINATE</div>
+  <div class="val">
+    <div id="ra-disp">AR ··h ··m</div>
+    <div id="dec-disp">Dec ±··° ··'</div>
+  </div>
+</div>
+
+<div class="panel" id="panel-fov">FOV &nbsp;<span id="fov-disp">60.0°</span></div>
+
+<!-- ── Layer toggles ─────────────────────────────────────────────────────────── -->
+<div id="panel-toggles">
+  <button class="tog-btn active" id="tog-lines"><span class="dot"></span>LINEE COST.</button>
+  <button class="tog-btn"        id="tog-cnames"><span class="dot"></span>NOMI COST.</button>
+  <button class="tog-btn"        id="tog-snames"><span class="dot"></span>NOMI STELLE</button>
+  <button class="tog-btn"        id="tog-crosshair"><span class="dot"></span>CENTRO</button>
+</div>
+
+<!-- ── Admin button ──────────────────────────────────────────────────────────── -->
+<button id="admin-btn"><span class="dot"></span>GALLERIA</button>
+
+<!-- ── Admin panel ───────────────────────────────────────────────────────────── -->
+<div id="admin-panel">
+  <div id="admin-head">
+    <h2>GESTIONE CATALOGO</h2>
+    <button id="admin-close-btn" title="Chiudi (Esc)">✕</button>
+  </div>
+
+  <div id="admin-tabs">
+    <button class="atab active" data-tab="add">AGGIUNGI</button>
+    <button class="atab"        data-tab="list">CATALOGO</button>
+    <button class="atab"        data-tab="settings" id="tab-settings-btn">IMPOSTAZIONI</button>
+  </div>
+
+  <div id="admin-body">
+
+    <!-- ── Tab: Nuovo DSO ─────────────────────────────────────────────────── -->
+    <div id="tab-add">
+      <p class="fmap-hint">Clicca sulla mappa per inserire le coordinate</p>
+
+      <div class="frow">
+        <div class="fgroup">
+          <label>ID CATALOGO</label>
+          <input type="text" id="f-id" placeholder="M42, NGC7000…">
+        </div>
+        <div class="fgroup">
+          <label>NOME</label>
+          <input type="text" id="f-name" placeholder="Nebulosa di Orione">
+        </div>
+      </div>
+
+      <div class="frow full">
+        <div class="fgroup">
+          <label>ASCENSIONE RETTA</label>
+          <div class="coord-row">
+            <input type="number" id="f-ra-h" min="0" max="23" step="1"     placeholder="05"><span class="cu">h</span>
+            <input type="number" id="f-ra-m" min="0" max="59" step="1"     placeholder="35"><span class="cu">m</span>
+            <input type="number" id="f-ra-s" min="0" max="59.9" step="0.1" placeholder="17.3"><span class="cu">s</span>
+          </div>
+          <div class="fhint" id="ra-hint"></div>
+        </div>
+      </div>
+
+      <div class="frow full">
+        <div class="fgroup">
+          <label>DECLINAZIONE</label>
+          <div class="coord-row">
+            <select id="f-dec-sign"><option value="+">+</option><option value="-">−</option></select>
+            <input type="number" id="f-dec-d" min="0" max="90" step="1"     placeholder="05"><span class="cu">°</span>
+            <input type="number" id="f-dec-m" min="0" max="59" step="1"     placeholder="23"><span class="cu">'</span>
+            <input type="number" id="f-dec-s" min="0" max="59.9" step="0.1" placeholder="28"><span class="cu">"</span>
+          </div>
+          <div class="fhint" id="dec-hint"></div>
+        </div>
+      </div>
+
+      <div class="frow">
+        <div class="fgroup">
+          <label>TIPO</label>
+          <input type="text" id="f-type" placeholder="Nebulosa a emissione">
+        </div>
+        <div class="fgroup">
+          <label>MAGNITUDINE</label>
+          <input type="number" id="f-mag" step="0.01" placeholder="4.0">
+        </div>
+      </div>
+
+      <div class="frow">
+        <div class="fgroup">
+          <label>DISTANZA</label>
+          <input type="text" id="f-dist" placeholder="1.344 al">
+        </div>
+        <div class="fgroup">
+          <label>COSTELLAZIONE</label>
+          <input type="text" id="f-const" placeholder="Orione">
+        </div>
+      </div>
+
+      <div class="frow full">
+        <div class="fgroup">
+          <label>DESCRIZIONE</label>
+          <textarea id="f-info" placeholder="Testo descrittivo del DSO…"></textarea>
+        </div>
+      </div>
+
+      <div id="admin-msg"></div>
+      <button id="submit-btn">CREA DSO</button>
+    </div>
+
+    <!-- ── Tab: Catalogo DSO ───────────────────────────────────────────────── -->
+    <div id="tab-list" style="display:none">
+      <div id="obj-list"></div>
+      <div id="list-actions">
+        <button class="act-btn" id="export-btn">ESPORTA JSON</button>
+        <button class="act-btn" id="import-btn">IMPORTA JSON</button>
+        <input type="file" id="import-file" accept=".json">
+      </div>
+    </div>
+
+    <!-- ── Tab: Impostazioni ──────────────────────────────────────────────── -->
+    <div id="tab-settings" style="display:none">
+      <div class="fsep">SICUREZZA</div>
+      <div class="frow full">
+        <div class="fgroup">
+          <label>NUOVA PASSWORD</label>
+          <input type="password" id="pw-new" placeholder="••••••••" autocomplete="new-password">
+        </div>
+      </div>
+      <div class="frow full">
+        <div class="fgroup">
+          <label>CONFERMA PASSWORD</label>
+          <input type="password" id="pw-confirm" placeholder="••••••••" autocomplete="new-password">
+        </div>
+      </div>
+      <button id="pw-save-btn">SALVA PASSWORD</button>
+      <div id="pw-msg"></div>
+    </div>
+
+    <!-- ── Pannello foto (aperto da CATALOGO → Aggiungi foto) ─────────────── -->
+    <div id="tab-photo" style="display:none">
+
+      <!-- Breadcrumb -->
+      <div class="photo-breadcrumb">
+        <button id="photo-back-btn">&#x2190; CATALOGO</button>
+        <span id="photo-dso-label"></span>
+      </div>
+
+      <div class="frow full">
+        <div class="fgroup">
+          <label>TITOLO FOTO</label>
+          <input type="text" id="ph-title" placeholder="Prima luce H-alpha">
+        </div>
+      </div>
+
+      <div class="frow">
+        <div class="fgroup">
+          <label>DATA (facoltativa)</label>
+          <input type="date" id="ph-date">
+        </div>
+        <div class="fgroup">
+          <label>&nbsp;</label>
+          <button id="add-photo-btn" style="height:100%">&#x2601; CARICA SU CLOUDINARY</button>
+        </div>
+        <div class="fgroup">
+          <label>&nbsp;</label>
+          <button id="browse-cloudinary-btn" class="act-btn" style="height:100%;width:100%">&#x1F5BC; SFOGLIA LIBRERIA</button>
+        </div>
+      </div>
+
+      <div class="frow full">
+        <div class="fgroup">
+          <label>COMMENTO</label>
+          <textarea id="ph-comment" placeholder="Note sulla sessione…" style="min-height:56px"></textarea>
+        </div>
+      </div>
+
+      <!-- Acquisizione collassabile -->
+      <button class="acq-toggle" id="acq-toggle-btn">
+        <span class="arr" id="acq-arr">&#x25bc;</span> DATI DI ACQUISIZIONE
+      </button>
+      <div id="acq-section" style="display:none">
+        <div class="frow">
+          <div class="fgroup"><label>TELESCOPIO</label>
+            <div class="equip-wrap">
+              <input type="text" id="acq-telescope" placeholder="Celestron EdgeHD 11" autocomplete="off">
+              <span class="equip-arrow">&#9660;</span>
+              <div class="equip-dropdown" id="dd-telescope"></div>
+            </div>
+          </div>
+          <div class="fgroup"><label>MONTATURA</label>
+            <div class="equip-wrap">
+              <input type="text" id="acq-mount" placeholder="EQ6-R Pro" autocomplete="off">
+              <span class="equip-arrow">&#9660;</span>
+              <div class="equip-dropdown" id="dd-mount"></div>
+            </div>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fgroup"><label>CAMERA</label>
+            <div class="equip-wrap">
+              <input type="text" id="acq-camera" placeholder="ASI2600MC Pro" autocomplete="off">
+              <span class="equip-arrow">&#9660;</span>
+              <div class="equip-dropdown" id="dd-camera"></div>
+            </div>
+          </div>
+          <div class="fgroup"><label>FILTRI</label>
+            <div class="equip-wrap">
+              <input type="text" id="acq-filters" placeholder="Optolong L-eXtreme" autocomplete="off">
+              <span class="equip-arrow">&#9660;</span>
+              <div class="equip-dropdown" id="dd-filters"></div>
+            </div>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fgroup"><label>N. POSE</label><input type="number" id="acq-frames"   min="1" placeholder="120"></div>
+          <div class="fgroup"><label>POSA (sec)</label><input type="number" id="acq-exposure" min="1" placeholder="300"></div>
+        </div>
+        <div class="frow">
+          <div class="fgroup"><label>GAIN</label><input type="number" id="acq-gain" min="0" placeholder="100"></div>
+          <div class="fgroup"><label>TEMPERATURA (°C)</label><input type="number" id="acq-temp" placeholder="-10"></div>
+        </div>
+        <div class="frow full">
+          <div class="fgroup"><label>NOTE ACQUISIZIONE</label><textarea id="acq-notes" placeholder="Condizioni cielo, seeing…" style="min-height:52px"></textarea></div>
+        </div>
+      </div>
+
+      <!-- Anteprima foto caricata -->
+      <div id="ph-preview" style="display:none">
+        <div class="fsep">FOTO CARICATA</div>
+        <div id="ph-preview-inner"></div>
+      </div>
+
+      <div id="photo-msg"></div>
+      <button id="submit-photo-btn">AGGIUNGI FOTO AL CATALOGO</button>
+    </div>
+
+  </div><!-- /admin-body -->
+</div><!-- /admin-panel -->
+
+<!-- ── Popup DSO hover ────────────────────────────────────────────────────────── -->
+<div id="popup">
+  <div id="popup-header">
+    <div id="popup-name"></div>
+    <div id="popup-meta"></div>
+  </div>
+  <div id="popup-grid"></div>
+</div>
+
+<!-- ── Lightbox galleria ──────────────────────────────────────────────────────── -->
+<div id="lightbox">
+
+  <!-- Topbar -->
+  <div id="lb-topbar">
+    <div id="lb-obj-name"></div>
+    <div id="lb-counter"></div>
+    <button id="lb-close" title="Chiudi (Esc)">&#x2715;</button>
+  </div>
+
+  <!-- Area principale: foto a tutto campo -->
+  <div id="lb-main">
+
+    <!-- Foto occupa tutto -->
+    <img id="lb-img" src="" alt="">
+
+    <!-- Pannello info overlay sinistro -->
+    <div id="lb-info-panel">
+      <div id="lb-info-scroll">
+
+        <!-- DSO -->
+        <div class="lbi-section">
+          <div class="lbi-section-title">OGGETTO</div>
+          <div class="lbi-field"><span class="lbi-lbl">Tipo</span><span id="li-type">—</span></div>
+          <div class="lbi-field"><span class="lbi-lbl">Distanza</span><span id="li-dist">—</span></div>
+          <div class="lbi-field"><span class="lbi-lbl">Magnitudine</span><span id="li-mag">—</span></div>
+          <div class="lbi-field"><span class="lbi-lbl">AR</span><span id="li-ra">—</span></div>
+          <div class="lbi-field"><span class="lbi-lbl">Dec</span><span id="li-dec">—</span></div>
+          <div class="lbi-field"><span class="lbi-lbl">Costellazione</span><span id="li-const">—</span></div>
+          <div id="lb-info-text"></div>
+        </div>
+
+        <!-- Foto -->
+        <div class="lbi-section" id="lbi-photo-section" style="display:none">
+          <div class="lbi-section-title">FOTO</div>
+          <div class="lbi-field"><span class="lbi-lbl">Titolo</span><span id="li-ph-title">—</span></div>
+          <div class="lbi-field" id="li-ph-date-wrap" style="display:none">
+            <span class="lbi-lbl">Data</span><span id="li-ph-date">—</span>
+          </div>
+          <div id="li-ph-comment" style="margin-top:8px;display:none"></div>
+        </div>
+
+        <!-- Acquisizione -->
+        <div class="lbi-section" id="lbi-acq-section" style="display:none">
+          <div class="lbi-section-title">ACQUISIZIONE</div>
+          <div class="lbi-field" id="li-acq-telescope-w" style="display:none"><span class="lbi-lbl">Telescopio</span><span id="li-acq-telescope">—</span></div>
+          <div class="lbi-field" id="li-acq-mount-w"     style="display:none"><span class="lbi-lbl">Montatura</span><span id="li-acq-mount">—</span></div>
+          <div class="lbi-field" id="li-acq-camera-w"    style="display:none"><span class="lbi-lbl">Camera</span><span id="li-acq-camera">—</span></div>
+          <div class="lbi-field" id="li-acq-filters-w"   style="display:none"><span class="lbi-lbl">Filtri</span><span id="li-acq-filters">—</span></div>
+          <div class="lbi-field" id="li-acq-frames-w"    style="display:none"><span class="lbi-lbl">Pose</span><span id="li-acq-frames">—</span></div>
+          <div class="lbi-field" id="li-acq-exposure-w"  style="display:none"><span class="lbi-lbl">Posa</span><span id="li-acq-exposure">—</span></div>
+          <div class="lbi-field" id="li-acq-gain-w"      style="display:none"><span class="lbi-lbl">Gain</span><span id="li-acq-gain">—</span></div>
+          <div class="lbi-field" id="li-acq-temp-w"      style="display:none"><span class="lbi-lbl">Temp.</span><span id="li-acq-temp">—</span></div>
+          <div id="li-acq-notes" style="margin-top:8px;display:none"></div>
+        </div>
+
+      </div><!-- /lb-info-scroll -->
+    </div><!-- /lb-info-panel -->
+
+    <!-- Tab linguetta toggle info -->
+    <button id="lb-info-tab" title="Mostra/nascondi info">
+      <span id="lb-info-tab-icon">&#x2139;</span>
+    </button>
+
+    <!-- Zoom indicator -->
+    <div id="lb-zoom-indicator">
+      <span id="lb-zoom-label">100%</span>
+      <button id="lb-zoom-reset">RESET</button>
+    </div>
+
+  </div><!-- /lb-main -->
+
+  <!-- Navigazione in basso centrata -->
+  <div id="lb-nav-bar">
+    <button class="lb-nav" id="lb-prev" title="Precedente (←)">&#x2039;</button>
+    <div id="lb-nav-dots"></div>
+    <button class="lb-nav" id="lb-next" title="Successiva (→)">&#x203a;</button>
+  </div>
+
+</div><!-- /lightbox -->
+
+<!-- ── Error toast ────────────────────────────────────────────────────────────── -->
+<div id="error-toast">Catalogo non disponibile — usando stelle principali</div>
+
+<!-- ── Entry point (ES module, deferred automaticamente) ─────────────────────── -->
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>
