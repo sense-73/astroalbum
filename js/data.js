@@ -71,9 +71,23 @@ export const DSO_DEFAULTS = [
   },
 ];
 
-// ── Carica da localStorage → /data/objects.json → DSO_DEFAULTS ───────────────
+// ── Carica da /data/objects.json → localStorage → DSO_DEFAULTS ──────────────
 export async function loadObjects() {
-  // 1. localStorage — priorità massima (modifiche recenti dell'utente)
+  // 1. /data/objects.json — fonte di verità aggiornata su GitHub
+  try {
+    const res = await fetch('./data/objects.json', { cache: 'no-cache' });
+    if (res.ok) {
+      const parsed = await res.json();
+      if (Array.isArray(parsed) && parsed.length) {
+        state.allObjects = parsed;
+        // Aggiorna localStorage per uso offline
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+        return;
+      }
+    }
+  } catch (e) { /* fetch fallito, prova localStorage */ }
+
+  // 2. localStorage — fallback se server non raggiungibile (offline)
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
@@ -84,20 +98,6 @@ export async function loadObjects() {
       }
     }
   } catch (e) { /* localStorage non disponibile */ }
-
-  // 2. /data/objects.json — catalogo dell'utente versionato su disco
-  try {
-    const res = await fetch('./data/objects.json', { cache: 'no-cache' });
-    if (res.ok) {
-      const parsed = await res.json();
-      if (Array.isArray(parsed) && parsed.length) {
-        state.allObjects = parsed;
-        // Ricopiamo in localStorage per le sessioni successive
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
-        return;
-      }
-    }
-  } catch (e) { /* file non presente o non raggiungibile */ }
 
   // 3. DSO_DEFAULTS hardcoded — ultima spiaggia
   state.allObjects = JSON.parse(JSON.stringify(DSO_DEFAULTS));
