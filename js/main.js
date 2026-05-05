@@ -10,8 +10,9 @@ import { loadData }                           from './catalog.js';
 import { D2R, R2D, s2c, c2s, raToHMSParts, declToDMSParts, sha256 } from './math.js';
 
 // ── Auth ───────────────────────────────────────────────────────────────────────
-const PW_HASH_KEY = 'astrogallery_pw_hash';
-const SESSION_KEY = 'astrogallery_session';
+const PW_HASH_KEY  = 'astrogallery_pw_hash';
+const SESSION_KEY  = 'astrogallery_session';
+const DEFAULT_HASH = '9917686c6c9f7c29c7dab503cc3c8a44b064b13a2bbf793799d9a8dc033ec1bd';
 
 function setAdmin(value) {
   state.isAdmin = value;
@@ -26,24 +27,16 @@ function closeAuthModal() {
 }
 
 async function initAuth() {
-  const storedHash = localStorage.getItem(PW_HASH_KEY);
+  const storedHash = localStorage.getItem(PW_HASH_KEY) || DEFAULT_HASH;
   const session    = sessionStorage.getItem(SESSION_KEY);
 
   // Sessione valida → auto-login admin
-  if (storedHash && session === storedHash) {
+  if (session === storedHash) {
     setAdmin(true);
     return;
   }
 
-  // Nessuna password configurata → primo avvio, entra come admin con avviso
-  if (!storedHash) {
-    setAdmin(true);
-    const toast = document.getElementById('no-pw-toast');
-    if (toast) { toast.style.display = 'block'; setTimeout(() => toast.style.display = 'none', 6000); }
-    return;
-  }
-
-  // Mostra modale auth
+  // Mostra sempre la modale auth
   const modal = document.getElementById('auth-modal');
   modal.style.display = 'flex';
   modal.style.opacity = '0';
@@ -70,7 +63,7 @@ function initAuthModal() {
 
   const tryLogin = async () => {
     const hash   = await sha256(pwInput.value);
-    const stored = localStorage.getItem(PW_HASH_KEY);
+    const stored = localStorage.getItem(PW_HASH_KEY) || DEFAULT_HASH;
     if (hash === stored) {
       sessionStorage.setItem(SESSION_KEY, hash);
       setAdmin(true);
