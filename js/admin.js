@@ -378,6 +378,7 @@ function renderPhotoList(dsoId) {
 
   const grid = document.createElement('div');
   grid.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px';
+  grid.classList.add('photo-cascade-grid');
 
   obj.photos.forEach((ph, i) => {
     const card = document.createElement('div');
@@ -988,11 +989,6 @@ export function initAdmin() {
     const settingsTab = document.getElementById('tab-settings-btn');
     if (addTab)      addTab.style.display      = state.isAdmin ? '' : 'none';
     if (settingsTab) settingsTab.style.display = state.isAdmin ? '' : 'none';
-    // Nascondi export/import per utenti non admin
-    const exportBtn = document.getElementById('export-btn');
-    const importBtn = document.getElementById('import-btn');
-    if (exportBtn) exportBtn.style.display = state.isAdmin ? '' : 'none';
-    if (importBtn) importBtn.style.display = state.isAdmin ? '' : 'none';
     // Se visitatore, assicura che sia sul tab catalogo
     if (!state.isAdmin) showTab('list');
     openAdmin();

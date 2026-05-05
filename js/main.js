@@ -10,9 +10,8 @@ import { loadData }                           from './catalog.js';
 import { D2R, R2D, s2c, c2s, raToHMSParts, declToDMSParts, sha256 } from './math.js';
 
 // ── Auth ───────────────────────────────────────────────────────────────────────
-const PW_HASH_KEY  = 'astrogallery_pw_hash';
-const SESSION_KEY  = 'astrogallery_session';
-const DEFAULT_HASH = '9917686c6c9f7c29c7dab503cc3c8a44b064b13a2bbf793799d9a8dc033ec1bd';
+const PW_HASH_KEY = 'astrogallery_pw_hash';
+const SESSION_KEY = 'astrogallery_session';
 
 function setAdmin(value) {
   state.isAdmin = value;
@@ -27,16 +26,24 @@ function closeAuthModal() {
 }
 
 async function initAuth() {
-  const storedHash = localStorage.getItem(PW_HASH_KEY) || DEFAULT_HASH;
+  const storedHash = localStorage.getItem(PW_HASH_KEY);
   const session    = sessionStorage.getItem(SESSION_KEY);
 
   // Sessione valida → auto-login admin
-  if (session === storedHash) {
+  if (storedHash && session === storedHash) {
     setAdmin(true);
     return;
   }
 
-  // Mostra sempre la modale auth
+  // Nessuna password configurata → primo avvio, entra come admin con avviso
+  if (!storedHash) {
+    setAdmin(true);
+    const toast = document.getElementById('no-pw-toast');
+    if (toast) { toast.style.display = 'block'; setTimeout(() => toast.style.display = 'none', 6000); }
+    return;
+  }
+
+  // Mostra modale auth
   const modal = document.getElementById('auth-modal');
   modal.style.display = 'flex';
   modal.style.opacity = '0';
@@ -63,7 +70,7 @@ function initAuthModal() {
 
   const tryLogin = async () => {
     const hash   = await sha256(pwInput.value);
-    const stored = localStorage.getItem(PW_HASH_KEY) || DEFAULT_HASH;
+    const stored = localStorage.getItem(PW_HASH_KEY);
     if (hash === stored) {
       sessionStorage.setItem(SESSION_KEY, hash);
       setAdmin(true);
@@ -460,6 +467,23 @@ window.addEventListener('keydown', e => {
   }
   if (e.key === 'Escape' && state.adminOpen) closeAdmin();
 });
+
+// ── Layers menu mobile ──────────────────────────────────────
+const layersBtn    = document.getElementById('layers-btn');
+const panelToggles = document.getElementById('panel-toggles');
+if (layersBtn) {
+  layersBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    panelToggles.classList.toggle('mobile-open');
+    layersBtn.classList.toggle('active');
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#panel-toggles') && !e.target.closest('#layers-btn')) {
+      panelToggles.classList.remove('mobile-open');
+      layersBtn.classList.remove('active');
+    }
+  });
+}
 
 // ── Layer toggle ──────────────────────────────────────────────────────────────
 [

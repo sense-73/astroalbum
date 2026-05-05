@@ -261,7 +261,11 @@ function drawConstellations() {
 // ── Nomi costellazioni ────────────────────────────────────────────────────────
 function drawConstNames() {
   if (!state.constNamesAlpha || !state.constData.length) return;
-  const sz = Math.max(27, Math.min(42, Math.round(1440 / state.fov)));
+  const isMobile = state.W < 600;
+  const sz = isMobile
+    ? Math.max(11, Math.min(18, Math.round(600  / state.fov)))
+    : Math.max(16, Math.min(28, Math.round(900  / state.fov)));
+  const col = isMobile ? 'rgba(210,185,100,0.68)' : 'rgba(210,185,100,0.68)';
   ctx.save();
   ctx.globalAlpha  = state.constNamesAlpha;
   ctx.font         = `400 ${sz}px Cinzel,serif`;
@@ -273,7 +277,7 @@ function drawConstNames() {
     if (!p || p.x < 0 || p.x > state.W || p.y < 0 || p.y > state.H) continue;
     ctx.fillStyle = 'rgba(0,4,16,0.7)';
     ctx.fillText(c.name, p.x + 1, p.y + 1);
-    ctx.fillStyle = 'rgba(160,200,245,0.58)';
+    ctx.fillStyle = col;
     ctx.fillText(c.name, p.x, p.y);
   }
 
@@ -324,7 +328,7 @@ function drawStars() {
 function drawStarNames() {
   if (!state.starNamesAlpha || !state.stars.length) return;
   const magLim = state.fov < 10 ? 4.5 : state.fov < 25 ? 3.5 : state.fov < 50 ? 2.5 : 1.8;
-  const sz     = Math.max(16, Math.min(22, Math.round(640 / state.fov)));
+  const sz     = Math.max(8, Math.min(11, Math.round(320 / state.fov)));
 
   ctx.save();
   ctx.globalAlpha  = state.starNamesAlpha;
