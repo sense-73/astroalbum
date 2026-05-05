@@ -1440,5 +1440,88 @@
         }
       }
     ]
+  },
+  {
+    "id": "NGC2403",
+    "name": "C7",
+    "ra": 114.2125,
+    "dec": 65.60249999999999,
+    "type": "Galassia a Spirale",
+    "magnitude": 8.87,
+    "distance": "8 Milioni al",
+    "constellation": "Giraffa",
+    "info": "Galassia a spirale nella Giraffa, una delle più vicine al Gruppo Locale e ricca di regioni HII.\nSi individua in un'area povera di stelle brillanti, diversi gradi a nord-ovest del Grande Carro; si può scorgere nelle notti più limpide anche con un semplice binocolo 10x50, dove si presenta come una piccola macchia chiara. Un telescopio amatoriale consente di distinguere la regione del nucleo dalle aree esterne.",
+    "photos": [
+      {
+        "id": "NGC2403_1777996731330",
+        "title": "C7",
+        "date": "2024-11-11",
+        "comment": "Anche questa foto f parte delle prime, e mi riprometto di riprendere questa bellissima galassia.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777996641/astrogallery/NGC2403/C7_11NOV24_obeghr.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777996641/astrogallery/NGC2403/C7_11NOV24_obeghr.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "PlayerOne Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "B33",
+    "name": "Nebulosa testa di cavallo",
+    "ra": 85.24583333333334,
+    "dec": -2.4583333333333335,
+    "type": "Nebulosa oscura",
+    "magnitude": null,
+    "distance": "1500 a.l.",
+    "constellation": "Orione",
+    "info": "La Nebulosa Testa di Cavallo (nota anche come Barnard 33, B33, in inglese HorseHead Nebula) è una nebulosa oscura situata nella costellazione di Orione. La nebulosa si trova appena sotto Alnitak, la stella più a est della cintura di Orione.\nÈ parte di un turbine di gas e polveri, sagomato come la testa di un cavallo, da cui il nome. È una delle nebulose maggiormente riconoscibili e note del cielo, anche se è difficile poterla osservare visualmente: la sua forma caratteristica si può individuare solo attraverso le fotografie dell'area. Venne infatti scoperta nel 1888 da Williamina Fleming esaminando alcune lastre fotografiche presso l'Harvard College Observatory.",
+    "photos": [
+      {
+        "id": "B33_1777997475723",
+        "title": "Testa di Cavallo Nov 24",
+        "date": "2024-11-12",
+        "comment": "Questa è un'altra nebulosa iconica. La testa di cavallo era uno dei miei primi obbiettivi quando ho iniziato; quando ero ragazzino avevo visto la foto in una rivista e Mario (mio Padre) mi aveva trasmesso tutta la magia e lo stupore per il cosmo.... Fotografare questa nebulosa esprime la mia gratitudine a Mario per questo regalo che mi ha fatto.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777996991/astrogallery/B33/horsehead_12NOV24_qqudwg.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777996991/astrogallery/B33/horsehead_12NOV24_qqudwg.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "B33_1777997434376",
+        "title": "More Horsehead",
+        "date": "2024-12-30",
+        "comment": "Avevo capito che per foto migliori ci vuole più segnale... e così sia!",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1777997353/astrogallery/B33/horsehead_30dic24_omfkbs.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1777997353/astrogallery/B33/horsehead_30dic24_omfkbs.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
   }
 ]
