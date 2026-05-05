@@ -22,24 +22,6 @@
 </div>
 
 <!-- ── Auth modal ─────────────────────────────────────────────────────────────── -->
-<div id="auth-modal" style="display:none">
-  <div id="auth-box">
-    <div class="auth-title">ASTRO GALLERY</div>
-    <div class="auth-sub">Come vuoi accedere?</div>
-    <div id="auth-buttons">
-      <button class="auth-btn" id="auth-explore">ESPLORA</button>
-      <button class="auth-btn" id="auth-admin-btn">GESTIONE</button>
-    </div>
-    <div id="auth-pw-section" style="display:none">
-      <input type="password" id="auth-pw-input" placeholder="Password" autocomplete="current-password">
-      <button id="auth-pw-submit">ACCEDI</button>
-      <div id="auth-pw-error"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ── No-password toast ──────────────────────────────────────────────────────── -->
-<div id="no-pw-toast">Nessuna password configurata — imposta una password in GESTIONE → IMPOSTAZIONI</div>
 
 <!-- ── UI Panels ─────────────────────────────────────────────────────────────── -->
 <div class="panel" id="panel-title">
@@ -68,7 +50,18 @@
 </div>
 
 <!-- ── Admin button ──────────────────────────────────────────────────────────── -->
-<button id="admin-btn"><span class="dot"></span>GALLERIA</button>
+<button id="admin-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M15 8h.01" />
+    <path d="M12 21h-6a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6" />
+    <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l3.993 3.993" />
+    <path d="M14 14l1 -1c.47 -.452 .995 -.675 1.52 -.67" />
+    <path d="M19 22.5a4.75 4.75 0 0 1 3.5 -3.5a4.75 4.75 0 0 1 -3.5 -3.5a4.75 4.75 0 0 1 -3.5 3.5a4.75 4.75 0 0 1 3.5 3.5" />
+  </svg>
+  GALLERIA
+</button>
+<button id="mode-switch-btn" style="display:none">● VISTA OSPITE</button>
 
 <!-- ── Admin panel ───────────────────────────────────────────────────────────── -->
 <div id="admin-panel">
@@ -170,21 +163,21 @@
 
     <!-- ── Tab: Impostazioni ──────────────────────────────────────────────── -->
     <div id="tab-settings" style="display:none">
-      <div class="fsep">SICUREZZA</div>
+      <div class="fsep">URL SEGRETO ADMIN</div>
       <div class="frow full">
         <div class="fgroup">
-          <label>NUOVA PASSWORD</label>
-          <input type="password" id="pw-new" placeholder="••••••••" autocomplete="new-password">
+          <label>NUOVA PAROLA SEGRETA</label>
+          <input type="text" id="secret-word" placeholder="es. galassia-m31" autocomplete="off">
         </div>
       </div>
-      <div class="frow full">
+      <div class="frow full" id="secret-url-row" style="display:none">
         <div class="fgroup">
-          <label>CONFERMA PASSWORD</label>
-          <input type="password" id="pw-confirm" placeholder="••••••••" autocomplete="new-password">
+          <label>URL DA SALVARE NEI PREFERITI</label>
+          <input type="text" id="secret-url-out" readonly>
         </div>
       </div>
-      <button id="pw-save-btn">SALVA PASSWORD</button>
-      <div id="pw-msg"></div>
+      <button id="secret-copy-btn" style="display:none">COPIA URL</button>
+      <div id="secret-msg"></div>
     </div>
 
     <!-- ── Pannello foto (aperto da CATALOGO → Aggiungi foto) ─────────────── -->

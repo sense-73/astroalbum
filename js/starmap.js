@@ -224,7 +224,11 @@ function drawGrid() {
   // Label ore AR
   if (state.fov > 8) {
     ctx.fillStyle = 'rgba(100,150,200,0.20)';
-    ctx.font      = `${Math.max(8, Math.min(11, state.fov * 0.15))}px Cinzel,serif`;
+    const isMobileGrid = state.W < 600;
+    const gridLabelSz  = isMobileGrid
+      ? Math.max(11, Math.min(15, state.fov * 0.22))
+      : Math.max(8,  Math.min(11, state.fov * 0.15));
+    ctx.font      = `${gridLabelSz}px Cinzel,serif`;
     ctx.textAlign = 'center';
     for (let ra = 0; ra < 360; ra += rs) {
       const p = project(ra, 0);
@@ -263,8 +267,8 @@ function drawConstNames() {
   if (!state.constNamesAlpha || !state.constData.length) return;
   const isMobile = state.W < 600;
   const sz = isMobile
-    ? Math.max(11, Math.min(18, Math.round(600  / state.fov)))
-    : Math.max(16, Math.min(28, Math.round(900  / state.fov)));
+    ? Math.max(14, Math.min(22, Math.round(750 / state.fov)))
+    : Math.max(16, Math.min(28, Math.round(900 / state.fov)));
   const col = isMobile ? 'rgba(210,185,100,0.68)' : 'rgba(210,185,100,0.68)';
   ctx.save();
   ctx.globalAlpha  = state.constNamesAlpha;
@@ -327,8 +331,11 @@ function drawStars() {
 // ── Nomi stelle brillanti ─────────────────────────────────────────────────────
 function drawStarNames() {
   if (!state.starNamesAlpha || !state.stars.length) return;
-  const magLim = state.fov < 10 ? 4.5 : state.fov < 25 ? 3.5 : state.fov < 50 ? 2.5 : 1.8;
-  const sz     = Math.max(8, Math.min(11, Math.round(320 / state.fov)));
+  const magLim  = state.fov < 10 ? 4.5 : state.fov < 25 ? 3.5 : state.fov < 50 ? 2.5 : 1.8;
+  const isMobile = state.W < 600;
+  const sz = isMobile
+    ? Math.max(12, Math.min(16, Math.round(500 / state.fov)))
+    : Math.max(8,  Math.min(11, Math.round(320 / state.fov)));
 
   ctx.save();
   ctx.globalAlpha  = state.starNamesAlpha;

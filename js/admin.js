@@ -272,33 +272,33 @@ function initTabs() {
 }
 
 // ── Sezione cambio password ───────────────────────────────────────────────────
-const PW_HASH_KEY = 'astrogallery_pw_hash';
-const SESSION_KEY = 'astrogallery_session';
+function initUrlSection() {
+  const input   = document.getElementById('secret-word');
+  const urlOut  = document.getElementById('secret-url-out');
+  const urlRow  = document.getElementById('secret-url-row');
+  const copyBtn = document.getElementById('secret-copy-btn');
+  const msg     = document.getElementById('secret-msg');
+  if (!input) return;
 
-let _pwMsgTimer = null;
-function pwMsg(text, type = 'ok') {
-  const el = document.getElementById('pw-msg');
-  if (!el) return;
-  el.textContent = text; el.className = type; el.style.display = 'block';
-  clearTimeout(_pwMsgTimer);
-  _pwMsgTimer = setTimeout(() => el.style.display = 'none', 3500);
-}
+  input.addEventListener('input', () => {
+    const word = input.value.trim();
+    if (!word) { urlRow.style.display = 'none'; copyBtn.style.display = 'none'; return; }
+    urlOut.value          = `${location.origin}${location.pathname}?gestione=${encodeURIComponent(word)}`;
+    urlRow.style.display  = '';
+    copyBtn.style.display = '';
+  });
 
-function initPasswordSection() {
-  const saveBtn = document.getElementById('pw-save-btn');
-  if (!saveBtn) return;
-  saveBtn.addEventListener('click', async () => {
-    const newPw  = document.getElementById('pw-new').value;
-    const conf   = document.getElementById('pw-confirm').value;
-    if (!newPw)           return pwMsg('Inserisci una password', 'err');
-    if (newPw.length < 6) return pwMsg('Minimo 6 caratteri', 'err');
-    if (newPw !== conf)   return pwMsg('Le password non coincidono', 'err');
-    const hash = await sha256(newPw);
-    localStorage.setItem(PW_HASH_KEY, hash);
-    sessionStorage.setItem(SESSION_KEY, hash);
-    document.getElementById('pw-new').value    = '';
-    document.getElementById('pw-confirm').value = '';
-    pwMsg('Password salvata', 'ok');
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(urlOut.value).catch(() => {
+      urlOut.select(); document.execCommand('copy');
+    });
+    copyBtn.textContent = 'COPIATO!';
+    setTimeout(() => copyBtn.textContent = 'COPIA URL', 2500);
+    if (msg) {
+      msg.textContent = 'Salva questo URL nei preferiti del browser — è il tuo accesso admin';
+      msg.className = 'ok'; msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 5000);
+    }
   });
 }
 
@@ -994,8 +994,8 @@ export function initAdmin() {
     const importBtn = document.getElementById('import-btn');
     if (exportBtn) exportBtn.style.display = state.isAdmin ? '' : 'none';
     if (importBtn) importBtn.style.display = state.isAdmin ? '' : 'none';
-    // Se visitatore, assicura che sia sul tab catalogo
-    if (!state.isAdmin) showTab('list');
+    // Se visitatore, assicura che sia sul tab catalogo già popolato
+    if (!state.isAdmin) { showTab('list'); renderAdminList(); }
     openAdmin();
   });
   document.getElementById('admin-close-btn').addEventListener('click', closeAdmin);
@@ -1026,6 +1026,6 @@ export function initAdmin() {
   initSubmitPhoto();
   initExportImport();
   initEquipmentMemory();
-  initPasswordSection();
+  initUrlSection();
   initCloudinaryBrowser();
 }

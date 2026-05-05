@@ -10,83 +10,41 @@ import { loadData }                           from './catalog.js';
 import { D2R, R2D, s2c, c2s, raToHMSParts, declToDMSParts, sha256 } from './math.js';
 
 // ── Auth ───────────────────────────────────────────────────────────────────────
-const PW_HASH_KEY = 'astrogallery_pw_hash';
-const SESSION_KEY = 'astrogallery_session';
+const AUTH_SESSION_KEY = 'astrogallery_auth';
 
 function setAdmin(value) {
   state.isAdmin = value;
   document.body.classList.toggle('is-admin', value);
+  updateModeSwitchBtn();
 }
 
-function closeAuthModal() {
-  const modal = document.getElementById('auth-modal');
-  modal.style.transition = 'opacity .3s';
-  modal.style.opacity    = '0';
-  setTimeout(() => { modal.style.display = 'none'; }, 320);
+function updateModeSwitchBtn() {
+  const btn = document.getElementById('mode-switch-btn');
+  if (!btn) return;
+  btn.style.display = state.isAuthorized ? '' : 'none';
+  btn.textContent   = state.isAdmin ? '● VISTA OSPITE' : '● VISTA ADMIN';
 }
 
-async function initAuth() {
-  const storedHash = localStorage.getItem(PW_HASH_KEY);
-  const session    = sessionStorage.getItem(SESSION_KEY);
+function initAuth() {
+  const params = new URLSearchParams(window.location.search);
+  const secret = params.get('gestione');
 
-  // Sessione valida → auto-login admin
-  if (storedHash && session === storedHash) {
+  if (secret) {
+    state.isAuthorized = true;
+    sessionStorage.setItem(AUTH_SESSION_KEY, '1');
+    history.replaceState({}, '', window.location.pathname); // rimuove ?gestione= dall'URL
     setAdmin(true);
-    return;
-  }
-
-  // Nessuna password configurata → primo avvio, entra come admin con avviso
-  if (!storedHash) {
+  } else if (sessionStorage.getItem(AUTH_SESSION_KEY)) {
+    state.isAuthorized = true;
     setAdmin(true);
-    const toast = document.getElementById('no-pw-toast');
-    if (toast) { toast.style.display = 'block'; setTimeout(() => toast.style.display = 'none', 6000); }
-    return;
   }
-
-  // Mostra modale auth
-  const modal = document.getElementById('auth-modal');
-  modal.style.display = 'flex';
-  modal.style.opacity = '0';
-  requestAnimationFrame(() => {
-    modal.style.transition = 'opacity .35s';
-    modal.style.opacity    = '1';
-  });
+  // nessun parametro → ospite, nessuna azione
 }
 
-function initAuthModal() {
-  const pwSection = document.getElementById('auth-pw-section');
-  const pwInput   = document.getElementById('auth-pw-input');
-  const pwError   = document.getElementById('auth-pw-error');
-
-  document.getElementById('auth-explore').addEventListener('click', () => {
-    setAdmin(false);
-    closeAuthModal();
-  });
-
-  document.getElementById('auth-admin-btn').addEventListener('click', () => {
-    pwSection.style.display = 'block';
-    pwInput.focus();
-  });
-
-  const tryLogin = async () => {
-    const hash   = await sha256(pwInput.value);
-    const stored = localStorage.getItem(PW_HASH_KEY);
-    if (hash === stored) {
-      sessionStorage.setItem(SESSION_KEY, hash);
-      setAdmin(true);
-      closeAuthModal();
-    } else {
-      pwError.textContent = 'Password errata';
-      pwInput.value = '';
-      pwInput.focus();
-      setTimeout(() => { pwError.textContent = ''; }, 2200);
-    }
-  };
-
-  document.getElementById('auth-pw-submit').addEventListener('click', tryLogin);
-  document.getElementById('auth-pw-input').addEventListener('keydown', e => {
-    if (e.key === 'Enter') tryLogin();
-  });
+function initModeSwitch() {
+  const btn = document.getElementById('mode-switch-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => setAdmin(!state.isAdmin));
 }
 
 // ── Resize ────────────────────────────────────────────────────────────────────
@@ -502,11 +460,11 @@ if (layersBtn) {
 });
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-initAuthModal(); // setup listeners modale (prima del caricamento)
+initModeSwitch();
 loadObjects().then(() => {
   initAdmin();   // setup pannello admin (ha bisogno del catalogo già caricato)
 });
 loadData().then(() => {
   resize();
-  setTimeout(initAuth, 1700); // mostra auth dopo che loading screen svanisce
+  setTimeout(initAuth, 1700);
 });

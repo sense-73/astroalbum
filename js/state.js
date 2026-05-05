@@ -56,7 +56,8 @@ export const state = {
   flyToObj: null,   // oggetto DSO target del volo (per illuminare il marker all'arrivo)
 
   // Auth
-  isAdmin: false,
+  isAdmin:      false,
+  isAuthorized: false,  // true per tutta la sessione se aperto con URL segreto
 
   // Admin panel
   adminOpen: false,
