@@ -1523,5 +1523,37 @@
         }
       }
     ]
+  },
+  {
+    "id": "NGC7023",
+    "name": "Nebulosa Iris",
+    "ra": 315.125,
+    "dec": 68.16666666666667,
+    "type": "Nebulosa a Riflessione",
+    "magnitude": 7.7,
+    "distance": "1.400 al",
+    "constellation": "Cefeo",
+    "info": "Splendida nebulosa a riflessione blu nel Cefeo, illuminata dalla stella HD 200775.\nQuesta piccola nebulosa si individua circa 3,5° a sud-ovest della stella β Cephei (Alfirk) una particolare stella doppia e variabile; la nebulosa circonda una stella di magnitudine 7,7, quest'ultima facilmente rintracciabile con un binocolo. Anche la nebulosa in sé può essere visibile con un potente binocolo, se le condizioni di osservazione sono ottimali. Un telescopio di medie dimensioni è già in grado di rivelare alcuni particolari della nebulosa, come una sorta di barra centrale che si estende da nord a sud.",
+    "photos": [
+      {
+        "id": "NGC7023_1778011945625",
+        "title": "Nebulosa Iris",
+        "date": "2025-05-11",
+        "comment": "Questa nebulosa, essendo circumpolare è molto comoda da fotografare anche se non facilissima, Questa foto non avrebbe niente di eccezionale, se non fosse che è la primissima prova LRGB con la nuova camera QHY minicam 8 combo, un eccezionale strumento entry level che a costi contenuti permette foto monocromatiche con filtri.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778011740/astrogallery/NGC7023/IRIS_NEBULA_11MAG25_S_kco6qe.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778011740/astrogallery/NGC7023/IRIS_NEBULA_11MAG25_S_kco6qe.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "LRGB",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
   }
 ]
