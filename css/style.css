@@ -885,37 +885,37 @@ body.popup-cursor #starmap { cursor: default; }
 @media (max-width: 768px) {
 
   /* Mappa — UI principale */
-  #panel-title h1          { font-size: 16px; }
-  #panel-title p           { font-size: 13px; }
-  .tog-btn                 { font-size: 12px; padding: 7px 12px; }
-  #admin-btn               { font-size: 12px; padding: 7px 12px; }
-  #panel-fov               { font-size: 13px; }
-  .lbl                     { font-size: 12px; }
-  .val                     { font-size: 13px; }
+  #panel-title h1          { font-size: 16px !important; }
+  #panel-title p           { font-size: 13px !important; }
+  .tog-btn                 { font-size: 12px !important; padding: 7px 12px !important; }
+  #admin-btn               { font-size: 12px !important; padding: 7px 12px !important; }
+  #panel-fov               { font-size: 13px !important; }
+  .lbl                     { font-size: 12px !important; }
+  .val                     { font-size: 13px !important; }
 
   /* Popup marker */
-  #popup-name              { font-size: 16px; }
-  #popup-meta              { font-size: 13px; }
+  #popup-name              { font-size: 16px !important; }
+  #popup-meta              { font-size: 13px !important; }
 
   /* Admin panel — intestazione e tab */
-  #admin-head-title        { font-size: 14px; }
-  .atab                    { font-size: 12px; letter-spacing: 0.18em; padding: 12px 16px; }
+  #admin-head h2           { font-size: 14px !important; }
+  .atab                    { font-size: 12px !important; letter-spacing: 0.18em; padding: 12px 16px !important; }
 
   /* Admin panel — form */
-  .fgroup label            { font-size: 12px; }
-  .flabel                  { font-size: 12px; }
+  .fgroup label            { font-size: 12px !important; }
+  .flabel                  { font-size: 12px !important; }
   .fgroup input,
   .fgroup select,
-  .fgroup textarea         { font-size: 14px; }
-  .act-btn                 { font-size: 12px; padding: 13px 20px; }
-  .fsep                    { font-size: 12px; }
-  .fhint                   { font-size: 11px; }
-  .cu                      { font-size: 13px; }
+  .fgroup textarea         { font-size: 14px !important; }
+  .act-btn                 { font-size: 12px !important; padding: 13px 20px !important; }
+  .fsep                    { font-size: 12px !important; }
+  .fhint                   { font-size: 11px !important; }
+  .cu                      { font-size: 13px !important; }
 
   /* Catalog cards */
-  .obj-card-id             { font-size: 14px; }
-  .obj-card-name           { font-size: 13px; }
-  .obj-card-count          { font-size: 12px; }
+  .obj-card-id             { font-size: 14px !important; }
+  .obj-card-name           { font-size: 13px !important; }
+  .obj-card-count          { font-size: 12px !important; }
 
   /* Cascade foto — griglia 2 colonne come popup, immagini grandi */
   .photo-cascade-grid {
@@ -929,21 +929,21 @@ body.popup-cursor #starmap { cursor: default; }
     aspect-ratio: 4/3 !important;
     object-fit: cover !important;
   }
-  .photo-cascade-name      { font-size: 13px; }
+  .photo-cascade-name      { font-size: 13px !important; }
 
   /* Lightbox */
-  #lb-obj-name             { font-size: 16px; }
-  #lb-counter              { font-size: 13px; }
-  .lbi-section-title       { font-size: 11px; }
-  .lbi-lbl                 { font-size: 11px; }
-  .lbi-field span:last-child { font-size: 14px; }
+  #lb-obj-name             { font-size: 16px !important; }
+  #lb-counter              { font-size: 13px !important; }
+  .lbi-section-title       { font-size: 11px !important; }
+  .lbi-lbl                 { font-size: 11px !important; }
+  .lbi-field span:last-child { font-size: 14px !important; }
   #lb-info-text,
   #li-ph-comment,
-  #li-acq-notes            { font-size: 13px; }
+  #li-acq-notes            { font-size: 13px !important; }
 
   /* Auth modal */
-  .auth-title              { font-size: 17px; }
-  .auth-sub                { font-size: 13px; }
-  .auth-btn                { font-size: 13px; }
+  .auth-title              { font-size: 17px !important; }
+  .auth-sub                { font-size: 13px !important; }
+  .auth-btn                { font-size: 13px !important; }
 
 }
