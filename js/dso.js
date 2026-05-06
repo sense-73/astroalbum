@@ -99,6 +99,78 @@ const lbImg       = document.getElementById('lb-img');
 const lbInfoPanel = document.getElementById('lb-info-panel');
 const lbInfoTab   = document.getElementById('lb-info-tab');
 
+// ── Watermark + CC popup ──────────────────────────────────────────────────────
+const wmCanvas  = document.getElementById('lb-watermark');
+const ccPopup   = document.getElementById('cc-popup');
+
+// Precarica logo watermark
+const wmImg = new Image();
+wmImg.src = 'img/logo_watermark.png';
+
+function drawWatermark() {
+  if (!wmCanvas || !wmImg.complete || !wmImg.naturalWidth) return;
+  if (!lbImg.naturalWidth || !lbImg.naturalHeight) return;
+
+  const mainRect = wmCanvas.parentElement.getBoundingClientRect();
+  const imgRect  = lbImg.getBoundingClientRect();
+
+  // Calcola dimensioni reali foto con object-fit: contain
+  const scaleX   = imgRect.width  / lbImg.naturalWidth;
+  const scaleY   = imgRect.height / lbImg.naturalHeight;
+  const scale    = Math.min(scaleX, scaleY);
+  const rendW    = lbImg.naturalWidth  * scale;
+  const rendH    = lbImg.naturalHeight * scale;
+
+  // Bordi reali della foto dentro l'elemento img (centrata)
+  const photoLeft   = imgRect.left   + (imgRect.width  - rendW) / 2;
+  const photoBottom = imgRect.top    + (imgRect.height - rendH) / 2 + rendH;
+  const photoRight  = photoLeft + rendW;
+
+  // Dimensione watermark: 5% larghezza foto, max 60px
+  const WM_W = Math.round(Math.max(45, Math.min(rendW * 0.07, 80)));
+  const WM_H = Math.round(WM_W * wmImg.naturalHeight / wmImg.naturalWidth);
+  const PAD  = 10;
+
+  // Posizione relativa a lb-main
+  const dpr   = window.devicePixelRatio || 1;
+  wmCanvas.width  = WM_W * dpr;
+  wmCanvas.height = WM_H * dpr;
+  wmCanvas.style.width  = WM_W + 'px';
+  wmCanvas.style.height = WM_H + 'px';
+  wmCanvas.style.right  = (mainRect.right  - photoRight  + PAD) + 'px';
+  wmCanvas.style.bottom = (mainRect.bottom - photoBottom + PAD) + 'px';
+
+  const ctx = wmCanvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, WM_W, WM_H);
+  ctx.globalAlpha = 0.50;
+  ctx.drawImage(wmImg, 0, 0, WM_W, WM_H);
+  ctx.globalAlpha = 1;
+}
+
+// Right-click → popup CC BY
+lbImg.addEventListener('contextmenu', e => {
+  e.preventDefault();
+  if (!ccPopup) return;
+  const main   = lbImg.parentElement.getBoundingClientRect();
+  const x      = Math.min(e.clientX - main.left, main.width  - 240);
+  const y      = Math.min(e.clientY - main.top,  main.height - 120);
+  ccPopup.style.left = Math.max(8, x) + 'px';
+  ccPopup.style.top  = Math.max(8, y) + 'px';
+  ccPopup.classList.add('visible');
+});
+
+document.getElementById('cc-popup-close')?.addEventListener('click', e => {
+  e.stopPropagation(); ccPopup.classList.remove('visible');
+});
+
+document.addEventListener('click', e => {
+  if (ccPopup && !ccPopup.contains(e.target)) ccPopup.classList.remove('visible');
+});
+
+// Ridisegna watermark al resize
+window.addEventListener('resize', drawWatermark);
+
 // ── Stato zoom ────────────────────────────────────────────────────────────────
 const zoom = {
   scale: 1,
@@ -349,7 +421,7 @@ function updateLB() {
 
   // Foto
   lbImg.classList.remove('loaded');
-  lbImg.onload = () => lbImg.classList.add('loaded');
+  lbImg.onload = () => { lbImg.classList.add('loaded'); drawWatermark(); };
   lbImg.src = ph ? ph.full : '';
 
   // Info foto nel pannello laterale

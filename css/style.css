@@ -1162,3 +1162,74 @@ body.is-admin #author-edit-btn { display:block; }
   #author-details .ad-label { font-size: 18px; }
   #author-links a { font-size: 18px; padding: 8px 14px; }
 }
+
+/* ─── Watermark canvas ───────────────────────────────────────────────────────── */
+#lb-watermark {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 180px; height: auto;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 1;
+}
+
+/* ─── Popup CC BY ────────────────────────────────────────────────────────────── */
+#cc-popup {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  pointer-events: all;
+  animation: ccFadeIn .18s ease;
+}
+#cc-popup.visible { display: block; }
+
+@keyframes ccFadeIn {
+  from { opacity:0; transform:scale(.95); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+#cc-popup-inner {
+  background: rgba(4,10,28,0.94);
+  border: 1px solid rgba(100,150,220,0.25);
+  border-radius: 8px;
+  padding: 12px 14px 10px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+  position: relative;
+}
+
+#cc-icons {
+  display: flex;
+  gap: 6px;
+  color: rgba(210,185,100,0.85);
+}
+
+#cc-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px; font-weight: 300;
+  line-height: 1.7;
+  color: rgba(180,210,255,0.80);
+  margin: 0;
+}
+#cc-text strong {
+  color: rgba(210,185,100,0.90);
+  font-weight: 500;
+}
+#cc-text a {
+  color: rgba(140,175,215,0.80);
+  text-decoration: underline;
+}
+#cc-text a:hover { color: rgba(210,185,100,0.90); }
+
+#cc-popup-close {
+  position: absolute; top: 6px; right: 8px;
+  background: none; border: none;
+  color: rgba(140,175,215,0.50); font-size: 11px;
+  cursor: pointer; padding: 2px 5px;
+  transition: color .2s;
+}
+#cc-popup-close:hover { color: rgba(210,185,100,0.85); }
