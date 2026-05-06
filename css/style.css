@@ -903,7 +903,8 @@ body.popup-cursor #starmap { cursor: default; }
   #panel-title h1          { font-size: 16px !important; }
   #panel-title p           { font-size: 13px !important; }
   .tog-btn                 { font-size: 12px !important; padding: 7px 12px !important; }
-  #admin-btn               { font-size: 12px !important; padding: 7px 12px !important; }
+  #admin-btn               { font-size: 12px !important; padding: 7px 12px !important; top: 130px !important; }
+  #mode-switch-btn         { top: 172px !important; }
   #panel-fov               { font-size: 13px !important; }
   .lbl                     { font-size: 12px !important; }
   .val                     { font-size: 13px !important; }
