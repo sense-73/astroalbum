@@ -206,7 +206,7 @@ body.popup-cursor #starmap { cursor: default; }
 
 /* ─── Admin button ───────────────────────────────────────────────────────────── */
 #admin-btn {
-  position: fixed; top: 72px; left: 30px; z-index: 10; pointer-events: auto;
+  position: fixed; top: 108px; left: 30px; z-index: 10; pointer-events: auto;
   background: rgba(5,15,35,0.85); border: 1px solid rgba(100,160,240,0.40);
   color: rgba(160,200,255,0.88); font-family: 'Cinzel', serif;
   font-size: 10px; letter-spacing: 0.24em; padding: 7px 13px; cursor: pointer;
@@ -223,7 +223,7 @@ body.popup-cursor #starmap { cursor: default; }
 }
 
 #mode-switch-btn {
-  position: fixed; top: 112px; left: 30px; z-index: 10; pointer-events: auto;
+  position: fixed; top: 148px; left: 30px; z-index: 10; pointer-events: auto;
   background: rgba(2,6,20,0.72); border: 1px solid rgba(180,120,60,0.30);
   color: rgba(200,160,90,0.75); font-family: 'Cinzel', serif;
   font-size: 9px; letter-spacing: 0.22em; padding: 6px 11px; cursor: pointer;
@@ -961,4 +961,203 @@ body.popup-cursor #starmap { cursor: default; }
   .auth-sub                { font-size: 13px !important; }
   .auth-btn                { font-size: 13px !important; }
 
+}
+
+/* ─── Autore: link nel titolo ────────────────────────────────────────────────── */
+/* testo fisso "di Enrico Salis" */
+#panel-title #author-static {
+  font-family: 'Cinzel', serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.3em;
+  color: rgba(200,225,255,0.80);
+  margin-top: 3px;
+  display: block;
+  pointer-events: none;
+}
+/* solo la parte "(bio icona)" è cliccabile */
+#panel-title #author-link {
+  pointer-events: all;
+  cursor: pointer;
+  color: rgba(200,225,255,0.80);
+  transition: color .2s;
+  white-space: nowrap;
+}
+#panel-title #author-link:hover { color: rgba(210,185,100,0.90); }
+
+/* ─── Autore: popup ──────────────────────────────────────────────────────────── */
+#author-popup {
+  display: none;
+  position: fixed;
+  top: 26px;
+  left: 50%; transform: translateX(-50%);
+  width: 380px;
+  max-height: calc(100vh - 52px);
+  overflow-y: auto;
+  background: rgba(4,10,28,0.93);
+  border: 1px solid rgba(100,150,220,0.22);
+  border-radius: 10px;
+  padding: 22px 20px 18px;
+  z-index: 50;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.75);
+  backdrop-filter: blur(14px);
+  pointer-events: all;
+}
+#author-popup.visible { display: block; animation: authorFadeIn .2s ease; }
+@keyframes authorFadeIn {
+  from { opacity:0; transform:translateY(-6px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+#author-popup-close {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none;
+  color: rgba(140,175,215,0.50); font-size: 13px;
+  cursor: pointer; padding: 2px 6px; transition: color .2s;
+}
+#author-popup-close:hover { color: rgba(210,185,100,0.85); }
+
+/* Foto */
+#author-photo-wrap { display:flex; justify-content:center; margin-bottom:14px; }
+#author-photo {
+  width:80px; height:80px; border-radius:50%;
+  object-fit:cover; border:1.5px solid rgba(100,150,220,0.35);
+}
+#author-photo[src=""] { display:none; }
+
+/* Testi view */
+#author-name {
+  font-family:'Cinzel',serif; font-size:13px; font-weight:600;
+  letter-spacing:.2em; color:rgba(210,185,100,.90);
+  text-align:center; margin-bottom:4px;
+}
+#author-location {
+  font-family:'Raleway',sans-serif; font-size:9px; font-weight:300;
+  letter-spacing:.2em; color:rgba(140,175,215,.60);
+  text-align:center; margin-bottom:12px; text-transform:uppercase;
+}
+#author-bio {
+  font-family:'Raleway',sans-serif; font-size:11px; font-weight:300;
+  line-height:1.7; color:rgba(180,210,255,.75); margin-bottom:12px;
+  white-space: pre-wrap;
+}
+#author-details {
+  font-family:'Raleway',sans-serif; font-size:10px; font-weight:300;
+  line-height:1.8; color:rgba(140,175,215,.65);
+  border-top:1px solid rgba(100,150,220,.12);
+  padding-top:10px; margin-bottom:12px;
+}
+#author-details .ad-label {
+  color:rgba(180,210,255,.50); letter-spacing:.12em;
+  font-size:9px; text-transform:uppercase; margin-right:6px;
+}
+#author-links {
+  display:flex; flex-wrap:wrap; gap:6px;
+  border-top:1px solid rgba(100,150,220,.12); padding-top:10px;
+  margin-bottom:10px;
+}
+#author-links a {
+  font-family:'Raleway',sans-serif; font-size:9px; font-weight:400;
+  letter-spacing:.18em; color:rgba(140,175,215,.70);
+  text-decoration:none; border:1px solid rgba(100,150,220,.22);
+  border-radius:4px; padding:4px 9px; text-transform:uppercase;
+  transition:color .2s, border-color .2s;
+}
+#author-links a:hover { color:rgba(210,185,100,.90); border-color:rgba(210,185,100,.35); }
+
+/* Tasto modifica (solo admin) */
+#author-edit-btn {
+  display:none;
+  background:none; border:1px solid rgba(100,150,220,.22);
+  color:rgba(140,175,215,.60); font-family:'Cinzel',serif;
+  font-size:9px; letter-spacing:.2em; padding:5px 10px;
+  cursor:pointer; width:100%; margin-top:4px; transition:color .2s, border-color .2s;
+}
+#author-edit-btn:hover { color:rgba(210,185,100,.85); border-color:rgba(210,185,100,.35); }
+body.is-admin #author-edit-btn { display:block; }
+
+/* Sezione edit */
+#author-edit { display:none; }
+#author-edit.active { display:block; }
+#author-view.hidden { display:none; }
+
+.ae-field { margin-bottom:10px; }
+.ae-field label {
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:'Cinzel',serif; font-size:8px; font-weight:600;
+  letter-spacing:.2em; color:rgba(140,175,215,.55);
+  margin-bottom:4px;
+}
+.ae-field input,
+.ae-field textarea {
+  width:100%; background:rgba(10,20,50,.60);
+  border:1px solid rgba(100,150,220,.22); border-radius:4px;
+  color:rgba(190,215,255,.85); font-family:'Raleway',sans-serif;
+  font-size:11px; font-weight:300; padding:6px 8px;
+  outline:none; transition:border-color .18s; resize:vertical;
+}
+.ae-field input:focus,
+.ae-field textarea:focus { border-color:rgba(100,160,255,.55); }
+
+/* Editor link */
+.ae-link-row {
+  display:flex; gap:6px; margin-bottom:6px;
+}
+.ae-link-row input { flex:1; }
+.ae-link-row button {
+  background:none; border:1px solid rgba(180,60,60,.30);
+  color:rgba(200,100,100,.70); padding:0 8px;
+  border-radius:4px; cursor:pointer; font-size:13px;
+  transition:color .2s, border-color .2s;
+}
+.ae-link-row button:hover { color:rgba(255,100,100,.90); border-color:rgba(255,80,80,.50); }
+
+#ae-add-link {
+  background:none; border:1px solid rgba(100,150,220,.22);
+  color:rgba(140,175,215,.60); font-family:'Cinzel',serif;
+  font-size:8px; letter-spacing:.18em; padding:3px 8px;
+  border-radius:4px; cursor:pointer; transition:color .2s, border-color .2s;
+}
+#ae-add-link:hover { color:rgba(210,185,100,.85); border-color:rgba(210,185,100,.35); }
+
+#ae-actions { display:flex; gap:8px; margin-top:14px; }
+#ae-cancel-btn, #ae-save-btn {
+  flex:1; font-family:'Cinzel',serif; font-size:9px;
+  letter-spacing:.2em; padding:8px 0; border-radius:4px; cursor:pointer;
+  transition:color .2s, border-color .2s, background .2s;
+}
+#ae-cancel-btn {
+  background:none; border:1px solid rgba(100,150,220,.22);
+  color:rgba(140,175,215,.65);
+}
+#ae-cancel-btn:hover { color:rgba(200,225,255,.85); border-color:rgba(140,175,215,.45); }
+#ae-save-btn {
+  background:rgba(20,50,100,.50); border:1px solid rgba(100,160,240,.40);
+  color:rgba(160,200,255,.90);
+}
+#ae-save-btn:hover { background:rgba(30,70,150,.55); border-color:rgba(120,180,255,.70); color:#fff; }
+
+#ae-save-hint {
+  font-family:'Raleway',sans-serif; font-size:9px; font-weight:300;
+  color:rgba(140,175,215,.45); text-align:center;
+  margin-top:8px; line-height:1.6;
+}
+#ae-save-hint code {
+  color:rgba(180,210,255,.55); font-size:9px;
+}
+
+/* ─── Autore: responsive mobile ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #author-popup {
+    left: 10px; right: 10px;
+    width: auto;
+    transform: none;
+    top: 10px;
+    max-height: calc(100vh - 20px);
+  }
+  #author-name    { font-size: 26px; }
+  #author-location{ font-size: 18px; letter-spacing: .15em; }
+  #author-bio     { font-size: 22px; line-height: 1.6; }
+  #author-details { font-size: 22px; line-height: 1.7; }
+  #author-details .ad-label { font-size: 18px; }
+  #author-links a { font-size: 18px; padding: 8px 14px; }
 }

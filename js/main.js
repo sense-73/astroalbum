@@ -459,10 +459,168 @@ if (layersBtn) {
   });
 });
 
+// ── Popup autore ──────────────────────────────────────────────────────────────
+function initAuthor() {
+  const link      = document.getElementById('author-link');
+  const popup     = document.getElementById('author-popup');
+  const closeBtn  = document.getElementById('author-popup-close');
+  const editBtn   = document.getElementById('author-edit-btn');
+  const viewEl    = document.getElementById('author-view');
+  const editEl    = document.getElementById('author-edit');
+  const cancelBtn = document.getElementById('ae-cancel-btn');
+  const saveBtn   = document.getElementById('ae-save-btn');
+  const addLinkBtn= document.getElementById('ae-add-link');
+  if (!link || !popup) return;
+
+  let authorData = {};
+  let loaded = false;
+
+  function isEditing() { return editEl.classList.contains('active'); }
+
+  // ── Carica author.json ───────────────────────────────────────────────────────
+  async function loadAuthor() {
+    if (loaded) return;
+    try {
+      const res = await fetch('./data/author.json', { cache: 'no-cache' });
+      if (res.ok) authorData = await res.json();
+    } catch (e) { /* file non trovato, partiamo vuoti */ }
+    loaded = true;
+    renderView();
+  }
+
+  // ── Vista lettura ─────────────────────────────────────────────────────────────
+  function renderView() {
+    const d = authorData;
+    const photo = document.getElementById('author-photo');
+    if (d.photo) { photo.src = d.photo; photo.style.display = ''; }
+    else photo.style.display = 'none';
+
+    document.getElementById('author-name').textContent     = d.name     || '';
+    document.getElementById('author-location').textContent = d.location || '';
+    document.getElementById('author-bio').textContent      = d.bio      || '';
+
+    const det = document.getElementById('author-details');
+    det.innerHTML = '';
+    if (d.experience) det.innerHTML += `<div><span class="ad-label">Esperienza</span>${d.experience.replace(/\n/g,'<br>')}</div>`;
+    if (d.equipment)  det.innerHTML += `<div><span class="ad-label">Setup</span>${d.equipment.replace(/\n/g,'<br>')}</div>`;
+    det.style.display = (d.experience || d.equipment) ? '' : 'none';
+
+    const linksEl = document.getElementById('author-links');
+    linksEl.innerHTML = '';
+    (d.links || []).forEach(l => {
+      const a = document.createElement('a');
+      a.href = l.url; a.textContent = l.label;
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+      linksEl.appendChild(a);
+    });
+    linksEl.style.display = (d.links && d.links.length) ? '' : 'none';
+  }
+
+  // ── Apri modifica ─────────────────────────────────────────────────────────────
+  function openEdit() {
+    const d = authorData;
+    document.getElementById('ae-photo').value      = d.photo      || '';
+    document.getElementById('ae-name').value       = d.name       || '';
+    document.getElementById('ae-location').value   = d.location   || '';
+    document.getElementById('ae-bio').value        = d.bio        || '';
+    document.getElementById('ae-experience').value = d.experience || '';
+    document.getElementById('ae-equipment').value  = d.equipment  || '';
+
+    const list = document.getElementById('ae-links-list');
+    list.innerHTML = '';
+    (d.links || []).forEach(l => addLinkRow(l.label, l.url));
+
+    viewEl.classList.add('hidden');
+    editEl.classList.add('active');
+  }
+
+  // ── Chiudi modifica (torna alla vista, popup resta aperto) ────────────────────
+  function closeEdit() {
+    editEl.classList.remove('active');
+    viewEl.classList.remove('hidden');
+  }
+
+  // ── Riga link ─────────────────────────────────────────────────────────────────
+  function addLinkRow(label = '', url = '') {
+    const list = document.getElementById('ae-links-list');
+    const row  = document.createElement('div');
+    row.className = 'ae-link-row';
+    row.innerHTML = `
+      <input type="text"  placeholder="Etichetta" value="${label}" style="max-width:90px">
+      <input type="text"  placeholder="https://..." value="${url}">
+      <button title="Rimuovi">&#x2715;</button>`;
+    row.querySelector('button').addEventListener('click', () => row.remove());
+    list.appendChild(row);
+  }
+
+  // ── Salva e scarica JSON ──────────────────────────────────────────────────────
+  function saveAuthor() {
+    const rows  = document.querySelectorAll('.ae-link-row');
+    const links = [];
+    rows.forEach(row => {
+      const inputs = row.querySelectorAll('input');
+      const lbl    = inputs[0].value.trim();
+      const url    = inputs[1].value.trim();
+      if (lbl && url) links.push({ label: lbl, url });
+    });
+
+    authorData = {
+      name:       document.getElementById('ae-name').value.trim(),
+      photo:      document.getElementById('ae-photo').value.trim(),
+      location:   document.getElementById('ae-location').value.trim(),
+      bio:        document.getElementById('ae-bio').value.trim(),
+      experience: document.getElementById('ae-experience').value.trim(),
+      equipment:  document.getElementById('ae-equipment').value.trim(),
+      links,
+    };
+
+    const blob = new Blob([JSON.stringify(authorData, null, 2)], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'author.json'; a.click();
+    URL.revokeObjectURL(url);
+
+    renderView();
+    closeEdit();
+  }
+
+  // ── Event listeners ───────────────────────────────────────────────────────────
+  link.addEventListener('click', async e => {
+    e.stopPropagation();
+    await loadAuthor();
+    popup.classList.toggle('visible');
+    if (!popup.classList.contains('visible')) closeEdit();
+  });
+
+  // ✕ in edit mode: torna alla vista senza chiudere il popup
+  // ✕ in view mode: chiude il popup
+  closeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    if (isEditing()) { closeEdit(); }
+    else             { popup.classList.remove('visible'); }
+  });
+
+  editBtn.addEventListener('click',    e => { e.stopPropagation(); openEdit(); });
+  cancelBtn.addEventListener('click',  e => { e.stopPropagation(); closeEdit(); });
+  saveBtn.addEventListener('click',    e => { e.stopPropagation(); saveAuthor(); });
+  addLinkBtn.addEventListener('click', e => { e.stopPropagation(); addLinkRow(); });
+
+  // Click esterno: chiude solo se NON siamo in edit mode
+  document.addEventListener('click', e => {
+    if (popup.classList.contains('visible') &&
+        !popup.contains(e.target) &&
+        e.target !== link &&
+        !isEditing()) {
+      popup.classList.remove('visible');
+    }
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 initModeSwitch();
+initAuthor();
 loadObjects().then(() => {
-  initAdmin();   // setup pannello admin (ha bisogno del catalogo già caricato)
+  initAdmin();
 });
 loadData().then(() => {
   resize();
