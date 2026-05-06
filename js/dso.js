@@ -160,6 +160,25 @@ lbImg.addEventListener('contextmenu', e => {
   ccPopup.classList.add('visible');
 });
 
+// Long press mobile → popup CC BY
+let lpTimer = null;
+lbImg.addEventListener('touchstart', e => {
+  lpTimer = setTimeout(() => {
+    e.preventDefault();
+    if (!ccPopup) return;
+    const touch  = e.touches[0];
+    const main   = lbImg.parentElement.getBoundingClientRect();
+    const x      = Math.min(touch.clientX - main.left, main.width  - 240);
+    const y      = Math.min(touch.clientY - main.top,  main.height - 120);
+    ccPopup.style.left = Math.max(8, x) + 'px';
+    ccPopup.style.top  = Math.max(8, y) + 'px';
+    ccPopup.classList.add('visible');
+  }, 500);
+}, { passive: true });
+
+lbImg.addEventListener('touchend',   () => clearTimeout(lpTimer));
+lbImg.addEventListener('touchmove',  () => clearTimeout(lpTimer));
+
 document.getElementById('cc-popup-close')?.addEventListener('click', e => {
   e.stopPropagation(); ccPopup.classList.remove('visible');
 });

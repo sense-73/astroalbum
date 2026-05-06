@@ -463,6 +463,7 @@ body.popup-cursor #starmap { cursor: default; }
   transform-origin: center center;
   cursor: zoom-in;
   user-select: none; -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 #lb-img.loaded  { opacity: 1; }
 #lb-img.zoomed  { cursor: grab; }
