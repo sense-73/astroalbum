@@ -6,6 +6,22 @@ import { D2R, R2D, TWO_PI, norm, cross, dot, s2c, c2s, magToR } from './math.js'
 export const canvas = document.getElementById('starmap');
 export const ctx    = canvas.getContext('2d');
 
+// ── Cache immagini costellazioni (lazy load da img/const/) ────────────────────
+const constImages = new Map();
+
+function getConstImage(name) {
+  if (constImages.has(name)) return constImages.get(name); // 'loading' | 'error' | HTMLImageElement
+  constImages.set(name, 'loading');
+  const img  = new Image();
+  const slug = name.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // rimuove accenti
+    .replace(/\s+/g, '-');
+  img.onload  = () => { constImages.set(name, img); scheduleRender(); };
+  img.onerror = () => { constImages.set(name, 'error'); };
+  img.src = `img/const/${slug}.svg`;
+  return null; // prima chiamata: null → immagine non ancora pronta
+}
+
 // ── Base vettoriale della vista (con cache) ───────────────────────────────────
 //
 //  Derivazione:
@@ -279,6 +295,17 @@ function drawConstNames() {
   for (const c of state.constData) {
     const p = project(c.centRa, c.centDec);
     if (!p || p.x < 0 || p.x > state.W || p.y < 0 || p.y > state.H) continue;
+    
+    // Immagine costellazione (SVG da img/const/) sopra il nome
+    const img = getConstImage(c.name);
+    if (img && img !== 'loading' && img !== 'error') {
+      const imgH = Math.round(sz * 3.5);
+      const imgW = (img.naturalWidth && img.naturalHeight)
+        ? Math.round(imgH * img.naturalWidth / img.naturalHeight)
+        : imgH;
+      ctx.drawImage(img, p.x - imgW / 2, p.y - sz / 2 - 6 - imgH, imgW, imgH);
+    }
+
     ctx.fillStyle = 'rgba(0,4,16,0.7)';
     ctx.fillText(c.name, p.x + 1, p.y + 1);
     ctx.fillStyle = col;
