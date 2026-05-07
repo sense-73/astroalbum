@@ -105,7 +105,53 @@ const ccPopup   = document.getElementById('cc-popup');
 
 // Precarica logo watermark
 const wmImg = new Image();
+wmImg.crossOrigin = 'anonymous';
 wmImg.src = 'img/logo_watermark.png';
+
+// ── Download con watermark incorporato ───────────────────────────────────────
+async function downloadWithWatermark() {
+  const btn = document.getElementById('cc-download-btn');
+  if (btn) { btn.textContent = '…'; btn.disabled = true; }
+
+  try {
+    const res    = await fetch(lbImg.src, { mode: 'cors' });
+    const blob   = await res.blob();
+    const bitmap = await createImageBitmap(blob);
+
+    const canvas  = document.createElement('canvas');
+    canvas.width  = bitmap.width;
+    canvas.height = bitmap.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(bitmap, 0, 0);
+
+    if (wmImg.complete && wmImg.naturalWidth) {
+      const WM_W = Math.round(Math.min(bitmap.width * 0.08, 200));
+      const WM_H = Math.round(WM_W * wmImg.naturalHeight / wmImg.naturalWidth);
+      const PAD  = Math.round(bitmap.width * 0.02);
+      ctx.globalAlpha = 0.50;
+      ctx.drawImage(wmImg, bitmap.width - WM_W - PAD, bitmap.height - WM_H - PAD, WM_W, WM_H);
+      ctx.globalAlpha = 1;
+    }
+
+    canvas.toBlob(outBlob => {
+      const url = URL.createObjectURL(outBlob);
+      const a   = document.createElement('a');
+      a.href     = url;
+      a.download = `astrogallery-enrico-salis.jpg`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }, 'image/jpeg', 0.92);
+
+  } catch {
+    window.open(lbImg.src, '_blank'); // fallback: apre in nuova tab
+  } finally {
+    if (btn) { btn.textContent = '↓ Scarica'; btn.disabled = false; }
+  }
+}
+
+document.getElementById('cc-download-btn')?.addEventListener('click', e => {
+  e.stopPropagation(); downloadWithWatermark();
+});
 
 function drawWatermark() {
   if (!wmCanvas || !wmImg.complete || !wmImg.naturalWidth) return;
@@ -163,21 +209,22 @@ lbImg.addEventListener('contextmenu', e => {
 // Long press mobile → popup CC BY
 let lpTimer = null;
 lbImg.addEventListener('touchstart', e => {
+  clearTimeout(lpTimer);
+  if (e.touches.length > 1) return; // pinch zoom: ignora
   lpTimer = setTimeout(() => {
-    e.preventDefault();
     if (!ccPopup) return;
-    const touch  = e.touches[0];
-    const main   = lbImg.parentElement.getBoundingClientRect();
-    const x      = Math.min(touch.clientX - main.left, main.width  - 240);
-    const y      = Math.min(touch.clientY - main.top,  main.height - 120);
+    const touch = e.touches[0] || e.changedTouches[0];
+    const main  = lbImg.parentElement.getBoundingClientRect();
+    const x     = Math.min(touch.clientX - main.left, main.width  - 240);
+    const y     = Math.min(touch.clientY - main.top,  main.height - 160);
     ccPopup.style.left = Math.max(8, x) + 'px';
     ccPopup.style.top  = Math.max(8, y) + 'px';
     ccPopup.classList.add('visible');
-  }, 500);
+  }, 700);
 }, { passive: true });
 
-lbImg.addEventListener('touchend',   () => clearTimeout(lpTimer));
-lbImg.addEventListener('touchmove',  () => clearTimeout(lpTimer));
+lbImg.addEventListener('touchend',  () => clearTimeout(lpTimer));
+lbImg.addEventListener('touchmove', () => clearTimeout(lpTimer));
 
 document.getElementById('cc-popup-close')?.addEventListener('click', e => {
   e.stopPropagation(); ccPopup.classList.remove('visible');

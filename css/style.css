@@ -1226,6 +1226,21 @@ body.is-admin #author-edit-btn { display:block; }
 }
 #cc-text a:hover { color: rgba(210,185,100,0.90); }
 
+#cc-download-btn {
+  width: 100%;
+  background: rgba(20,50,100,.50);
+  border: 1px solid rgba(100,160,240,.40);
+  color: rgba(160,200,255,.90);
+  font-family: 'Cinzel', serif;
+  font-size: 10px; letter-spacing: .2em;
+  padding: 7px 0; border-radius: 4px;
+  cursor: pointer; transition: background .2s, border-color .2s;
+}
+#cc-download-btn:hover {
+  background: rgba(30,70,150,.60);
+  border-color: rgba(120,180,255,.70);
+  color: #fff;
+}
 #cc-popup-close {
   position: absolute; top: 6px; right: 8px;
   background: none; border: none;
