@@ -1555,5 +1555,229 @@
         }
       }
     ]
+  },
+  {
+    "id": "IC410",
+    "name": "Nebulosa Girini",
+    "ra": 80.5,
+    "dec": 33.483333333333334,
+    "type": "Regione H II",
+    "magnitude": 10,
+    "distance": "19.640 a.l.",
+    "constellation": "Auriga",
+    "info": "Regione di formazione stellare nell'Auriga con i famosi 'girini' di gas e polvere.\nIC 410, nota talvolta come Nebulosa Girino a causa dei suoi filamenti nordorientali, è una nebulosa a emissione di grandi dimensioni visibile nella costellazione dell'Auriga; ad essa è legata l'ammasso aperto NGC 1893, formato da giovani stelle massicce piuttosto disperse. La regione è sede di importanti processi di formazione stellare generanti stelle di grande massa.",
+    "photos": [
+      {
+        "id": "IC410_1778223569234",
+        "title": "Nebulosa girini",
+        "date": "2024-11-08",
+        "comment": "Sembrano proprio dei girini....",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778223449/astrogallery/IC410/ngc1893_dhln0z.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778223449/astrogallery/IC410/ngc1893_dhln0z.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "Antlia Quadband",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M108",
+    "name": "Galassia Tavola da Surf",
+    "ra": 167.87875000000003,
+    "dec": 55.67388888888889,
+    "type": "Galassia a Spirale",
+    "magnitude": 10,
+    "distance": "45 Milioni di a.l.",
+    "constellation": "Orsa Maggiore",
+    "info": "M 108 (conosciuto anche come NGC 3556 o anche con il suggestivo nome di Galassia Surfboard) è una galassia a spirale a circa 45 milioni di anni luce, nella costellazione dell'Orsa Maggiore, scoperta da Pierre Méchain nel 1781. Nel 2005, Scott D. Davis suggerì il nome, Galassia Surfboard, per il fatto che la sua forma ricorda quello di una tavola da surf.",
+    "photos": [
+      {
+        "id": "M108_1778224081839",
+        "title": "Galassia Tavola da Surf",
+        "date": "2024-11-09",
+        "comment": "Anche questa galassia circumpolare fa parte di quegli oggetti del cielo profondo (DSO) che un astrofotografo alle prime armi ritrae. Ed è incredibile come siano lì in bella mostra capolavori distanti milioni di anni luce.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778223955/astrogallery/M108/SURFGALAXY_M108_09NOV24_co44zj.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778223955/astrogallery/M108/SURFGALAXY_M108_09NOV24_co44zj.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC4631",
+    "name": "Galassia Balena",
+    "ra": 190.53333333333333,
+    "dec": 32.54138888888889,
+    "type": "Galassia a Spirale",
+    "magnitude": 9.1,
+    "distance": "12 Milioni al",
+    "constellation": "Cani da Caccia",
+    "info": "Galassia vista di taglio nei Cani da Caccia, affiancata dalla più piccola NGC 4627.\n\nSi individua 4,5 gradi a NE della stella γ Comae Berenices; si presenta in piccoli strumenti come una lunga scia luminosa. Telescopi da 200 mm di apertura mostrano che il bulge si trova in posizione leggermente decentrata, ed è attraversato da una sottile striscia di nebulosità oscura e irregolare; a nord si individua la piccola galassia ellittica NGC 4627. Si tratta di una delle spirali orientate di profilo più grandi e vicine conosciute: la sua distanza dalla Via Lattea è stimata attorno ai 12 milioni di anni-luce, il che ne fa una delle spirali giganti più prossime al nostro Gruppo Locale.",
+    "photos": [
+      {
+        "id": "NGC4631_1778225114117",
+        "title": "Balena e mazza da Hockey (NGC 4656)",
+        "date": "2024-12-02",
+        "comment": "Un altro esempio di come i nomi sono azzeccati :D",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778224866/astrogallery/NGC4631/NGC4631-NGC4656_02DIC24_loqrtu.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778224866/astrogallery/NGC4631/NGC4631-NGC4656_02DIC24_loqrtu.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "Sh2-252",
+    "name": "Nebulosa Testa di Scimmia",
+    "ra": 92.42500000000001,
+    "dec": 20.5,
+    "type": "Regione H II",
+    "magnitude": null,
+    "distance": "6500 a.l.",
+    "constellation": "Orione",
+    "info": "Sh2-252, nota talvolta anche col nome proprio Nebulosa Testa di Scimmia, è una nebulosa a emissione visibile nella costellazione di Orione.\nContiene NGC2175 (ammasso aperto).\n\nSi trova nella parte settentrionale della costellazione, al confine coi Gemelli. La sua declinazione non è particolarmente settentrionale e ciò fa sì che essa possa essere osservata agevolmente da entrambi gli emisferi celesti, sebbene gli osservatori dell'emisfero boreale siano leggermente più avvantaggiati; il periodo in cui raggiunge la più alta elevazione sull'orizzonte è compreso fra i mesi di novembre e marzo.",
+    "photos": [
+      {
+        "id": "Sh2-252_1778225462798",
+        "title": "Testa di Scimmia",
+        "date": "2024-12-02",
+        "comment": "Ecco io qui la testa di scimmia fatico a vederla, però è una bella nebulosa.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778225389/astrogallery/Sh2-252/NGC2175_02DIC24_a0hqfi.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778225389/astrogallery/Sh2-252/NGC2175_02DIC24_a0hqfi.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC2903",
+    "name": "Galassia a spirale barrata",
+    "ra": 143.04208333333332,
+    "dec": 21.500833333333333,
+    "type": "Galassia a spirale barrata",
+    "magnitude": 9.7,
+    "distance": "20.5 Milioni di a.l.",
+    "constellation": "Leone",
+    "info": "NGC 2903 è una galassia a spirale barrata nella costellazione del Leone a circa 20,5 milioni di anni luce dal Sistema solare, ubicata a 1,5 gradi a sud di Alterf (λ Leonis). È stata scoperta da William Herschel e catalogata il 16 novembre 1784. Si tratta di una galassia di magnitudine apparente 9,7 che si può osservare anche con piccoli telescopi.\n\nQuesta è una galassia per molti versi simile alla Via Lattea. La sua dimensione è solo leggermente più piccola della nostra, con un diametro di circa 80 000 anni luce. Ma, a differenza della nostra, è più giovane ed ha un ammasso di stelle massicce brillanti al posto dell'ammasso globulare.",
+    "photos": [
+      {
+        "id": "NGC2903_1778225820052",
+        "title": "ngc2903",
+        "date": "2024-12-07",
+        "comment": "Sembra fatta d'oro.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778225817/astrogallery/NGC2903/NGC2903_07DIC24_jkplkr.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778225817/astrogallery/NGC2903/NGC2903_07DIC24_jkplkr.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC2683",
+    "name": "Galassia UFO",
+    "ra": 133.17083333333332,
+    "dec": 33.42222222222222,
+    "type": "Galassia a spirale",
+    "magnitude": 9.6,
+    "distance": "25 Milioni di a.l.",
+    "constellation": "Lince",
+    "info": "NGC 2683 è una galassia a spirale visibile nella costellazione della Lince.\n\nÈ nota presso gli astrofili con la denominazione di Galassia UFO, a causa della sua forma molto simile ad un disco volante visto quasi di taglio. Si osserva sul confine con la costellazione del Cancro, e si presenta come una galassia leggermente inclinata di lato; la sua distanza è stimata sui 25 milioni di anni luce. In un telescopio amatoriale si presenta come un fuso luminoso, più spesso e brillante verso il centro. Presenta un dimensione angolare apparente di 9,3' per 2,2' d'angolo, la sua magnitudine è pari a 9,6. Questa galassia è di tipo Sb rispetto alla Sequenza di Hubble.",
+    "photos": [
+      {
+        "id": "NGC2683_1778226120897",
+        "title": "UFO",
+        "date": "2024-12-11",
+        "comment": "A Dicembre 2024 ero veramente scatenato.... altra Galassia da collezione. Merita un'altra foto, prima o poi.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778226046/astrogallery/NGC2683/NGC2683_11DIC24_s0r5nn.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778226046/astrogallery/NGC2683/NGC2683_11DIC24_s0r5nn.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Bortle 7. Udine."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M35",
+    "name": "M35",
+    "ra": 92.25416666666668,
+    "dec": 24.35,
+    "type": "Ammasso Aperto",
+    "magnitude": 5.3,
+    "distance": "2.800 al",
+    "constellation": "Gemelli",
+    "info": "Ricco ammasso aperto nei Gemelli, con in campo l'ammasso di fondo NGC 2158 più lontano.\nM 35 (noto anche come Messier 35 o NGC 2168) è un brillante ammasso aperto visibile nella costellazione boreale dei Gemelli; fu scoperto da Philippe Loys de Chéseaux nel 1745 e riscoperto indipendentemente da John Bevis prima del 1750, poi catalogato da Charles Messier nel 1764.\n\nGrazie alla sua vicinanza all'eclittica, è ben visibile da entrambi gli emisferi, sebbene gli osservatori dell'emisfero boreale siano privilegiati; spesso la Luna e i pianeti del sistema solare transitano di fronte a quest'ammasso, occultandolo o oscurandolo con la loro luce riflessa.",
+    "photos": [
+      {
+        "id": "M35_1778226507353",
+        "title": "M35",
+        "date": "2024-12-12",
+        "comment": "Ogni tanto è bene perdersi fra le stelle",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778226273/astrogallery/M35/NGC2168_12DIC24_yitbtf.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778226273/astrogallery/M35/NGC2168_12DIC24_yitbtf.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
   }
 ]
