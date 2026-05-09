@@ -1344,7 +1344,7 @@
     "name": "Nebulosa impronta fossile",
     "ra": 60.80833333333332,
     "dec": 51.316111111111105,
-    "type": "Nebulosa ad emossione",
+    "type": "Nebulosa ad emissione",
     "magnitude": null,
     "distance": "11.400 a.l.",
     "constellation": "Perseo",
