@@ -1779,5 +1779,69 @@
         }
       }
     ]
+  },
+  {
+    "id": "SNY-230815",
+    "name": "Sunny Nebula",
+    "ra": 112.35833333333333,
+    "dec": 6.8872222222222215,
+    "type": "Creatrice gas cosmico",
+    "magnitude": 10,
+    "distance": "1 metro",
+    "constellation": "Cane minore",
+    "info": "Una bellissima creazione dell'universo che emette energie positive.",
+    "photos": [
+      {
+        "id": "SNY-230815_1778321404893",
+        "title": "Sunny Nebula",
+        "date": "2023-06-23",
+        "comment": "Cucù!\nPiccolo uovo di Pasqua. Questa è Sunny, la mia cagnetta bellissima.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778318678/astrogallery/SNY-/sunny_cosmic_jkdwti.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778318678/astrogallery/SNY-/sunny_cosmic_jkdwti.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "IC5067",
+    "name": "Nebulosa Pellicano",
+    "ra": 312.5,
+    "dec": 44.333333333333336,
+    "type": "Regione H II",
+    "magnitude": 8,
+    "distance": "1960 a.l.",
+    "constellation": "Cigno",
+    "info": "La Nebulosa Pellicano (anche nota come IC 5067/70) è una regione H II visibile nella costellazione del Cigno, vicino a Deneb (la coda del cigno e la sua stella più brillante); appartiene alla stessa nube molecolare gigante della vicina Nebulosa Nord America ed è facilmente fotografabile. La sua distanza è stimata attorno ai 600±50 parsec (1956±163 anni luce).\nAl suo interno sono attivi fenomeni di formazione stellare, come testimoniato specialmente dalla presenza di oggetti HH; questi fenomeni riguardano principalmente stelle di piccola e media massa.",
+    "photos": [
+      {
+        "id": "IC5067_1778349378914",
+        "title": "Pellicano",
+        "date": "",
+        "comment": "Altra bella soddisfazione con filtro per Idrogeno e Ossigneo.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778349294/astrogallery/IC5067/Pellicano_2_dxqrwr.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778349294/astrogallery/IC5067/Pellicano_2_dxqrwr.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "SVBONY SV240",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
   }
 ]

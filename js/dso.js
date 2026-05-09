@@ -14,9 +14,13 @@ export function showPopup(obj, mx, my, fromTouch = false) {
   document.getElementById('popup-name').textContent = `${obj.id} — ${obj.name}`;
   const rH  = Math.floor(obj.ra / 15);
   const rM  = Math.floor((obj.ra / 15 - rH) * 60);
-  const ds  = obj.dec >= 0 ? '+' : '−';
-  document.getElementById('popup-meta').textContent =
-    `${obj.type}  ·  AR ${rH}h ${String(rM).padStart(2,'0')}m  ${ds}${Math.abs(obj.dec).toFixed(1)}°`;
+  const rS  = Math.floor(((obj.ra / 15 - rH) * 60 - rM) * 60);
+  const dD  = Math.floor(Math.abs(obj.dec));
+  const dM  = Math.floor((Math.abs(obj.dec) - dD) * 60);
+  const dS  = Math.floor(((Math.abs(obj.dec) - dD) * 60 - dM) * 60);
+  document.getElementById('popup-meta-type').textContent = obj.type;
+  document.getElementById('popup-meta-coords').textContent =
+    `AR ${rH}h ${String(rM).padStart(2,'0')}m ${String(rS).padStart(2,'0')}s   DEC ${obj.dec >= 0 ? '+' : '−'}${dD}° ${String(dM).padStart(2,'0')}' ${String(dS).padStart(2,'0')}"`;
 
   // Griglia thumbnail 2×N
   const grid = document.getElementById('popup-grid');
@@ -413,9 +417,14 @@ export function openLightbox(obj, idx) {
   document.getElementById('li-type').textContent  = obj.type || '—';
   document.getElementById('li-dist').textContent  = obj.distance || '—';
   document.getElementById('li-mag').textContent   = obj.magnitude != null ? obj.magnitude : '—';
-  const rH = Math.floor(obj.ra / 15), rM = Math.floor((obj.ra / 15 - rH) * 60);
-  document.getElementById('li-ra').textContent    = `${rH}h ${String(rM).padStart(2,'0')}m`;
-  document.getElementById('li-dec').textContent   = `${obj.dec >= 0 ? '+' : '−'}${Math.abs(obj.dec).toFixed(2)}°`;
+  const rH = Math.floor(obj.ra / 15);
+  const rM = Math.floor((obj.ra / 15 - rH) * 60);
+  const rS = Math.floor(((obj.ra / 15 - rH) * 60 - rM) * 60);
+  const dD = Math.floor(Math.abs(obj.dec));
+  const dM = Math.floor((Math.abs(obj.dec) - dD) * 60);
+  const dS = Math.floor(((Math.abs(obj.dec) - dD) * 60 - dM) * 60);
+  document.getElementById('li-ra').textContent    = `${rH}h ${String(rM).padStart(2,'0')}m ${String(rS).padStart(2,'0')}s`;
+  document.getElementById('li-dec').textContent   = `${obj.dec >= 0 ? '+' : '−'}${dD}° ${String(dM).padStart(2,'0')}' ${String(dS).padStart(2,'0')}"`;
   document.getElementById('li-const').textContent = obj.constellation || '—';
   const infoText = document.getElementById('lb-info-text');
   infoText.style.display = obj.info ? '' : 'none';
