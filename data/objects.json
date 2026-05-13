@@ -1843,5 +1843,171 @@
         }
       }
     ]
+  },
+  {
+    "id": "m35",
+    "name": "Ammasso Globulare M35",
+    "ra": 92.25,
+    "dec": 24.35,
+    "type": "Ammasso Aperto",
+    "magnitude": 5.3,
+    "distance": "2.800 al",
+    "constellation": "Gemelli",
+    "info": "Uno dei più grandi e luminosi ammassi globulari, contiene circa mezzo milione di stelle.\n\nM 35 (noto anche come Messier 35 o NGC 2168) è un brillante ammasso aperto visibile nella costellazione boreale dei Gemelli; fu scoperto da Philippe Loys de Chéseaux nel 1745 e riscoperto indipendentemente da John Bevis prima del 1750, poi catalogato da Charles Messier nel 1764.\n\nGrazie alla sua vicinanza all'eclittica, è ben visibile da entrambi gli emisferi, sebbene gli osservatori dell'emisfero boreale siano privilegiati; spesso la Luna e i pianeti del sistema solare transitano di fronte a quest'ammasso, occultandolo o oscurandolo con la loro luce riflessa.",
+    "photos": [
+      {
+        "id": "m35_1778687001422",
+        "title": "M35",
+        "date": "2024-12-12",
+        "comment": "Un altro modo di perdersi fra le stelle.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778686958/astrogallery/m35/NGC2168_12DIC24_xmhysx.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778686958/astrogallery/m35/NGC2168_12DIC24_xmhysx.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "m35_1778689756922",
+        "title": "M100",
+        "date": "2025-03-07",
+        "comment": "Onestamente non mi ricordavo neanche di averla fotografata, ma è la gioia di questo Hobby e di questo progetto, riscoprire tesori dimenticati.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778689656/astrogallery/m35/NGC4321_07MAR25_o6wcqs.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778689656/astrogallery/m35/NGC4321_07MAR25_o6wcqs.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M106",
+    "name": "Galassia M106",
+    "ra": 184.73958333333334,
+    "dec": 47.303888888888885,
+    "type": "Galassia a Spirale",
+    "magnitude": 8.4,
+    "distance": "23 Milioni al",
+    "constellation": "Cani da Caccia",
+    "info": "Galassia peculiare con due bracci anomali extra, composti di gas caldo, visibile nella costellazione dei Cani da Caccia; sembra che il suo interno ospiti un buco nero supermassiccio.",
+    "photos": [
+      {
+        "id": "M106_1778688017636",
+        "title": "M106 - NGC4248 - NGC4232 - NGC4231",
+        "date": "2024-12-30",
+        "comment": "Un po' di belle galassiette. Quando progetti di studiare una galssia a volte non sai bene come verranno le cose; in questo caso è stata una bella scoperta vedere le altre galassie erano ben visibili.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778687827/astrogallery/M106/M106_30DIC24_yo90la.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778687827/astrogallery/M106/M106_30DIC24_yo90la.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "NGC7479",
+    "name": "Propeller Galaxy",
+    "ra": 346.23625,
+    "dec": 12.322222222222223,
+    "type": "Galassia a spirale barrata",
+    "magnitude": 11.6,
+    "distance": "105 Milioni di a.l.",
+    "constellation": "Pegaso",
+    "info": "NGC 7479 (nota anche come C 44) è una galassia a spirale barrata visibile nella costellazione di Pegaso.\n\nPuò essere individuata soltanto con un telescopio da almeno 120mm di apertura e con un buon ingrandimento. Fra i suoi bracci è stata osservata nel 1990 una supernova, catalogata come SN 1990U; inoltre viene considerata un esempio di Galassia di Seyfert, che sta subendo un'esplosione dei fenomeni di formazione stellare sia nel nucleo che nei bracci esterni. Gli studi sulla polarizzazione indicano che in tempi astronomicamente recenti subì una fusione con un'altra galassia; si tratta di un caso particolarissimo se studiata alle frequenze delle onde radio, poiché a quelle lunghezze d'onda si osservano i bracci di spirale andare in senso contrario rispetto a quelli visibili in luce ottica.",
+    "photos": [
+      {
+        "id": "NGC7479_1778688939248",
+        "title": "Galassia Elica",
+        "date": "2024-08-25",
+        "comment": "Questa galassia ha una forma particolarissima, non so perché mi ricorda Alien... va be' scherzi della mente. Comunque è così bassa che sono riuscito a malapena a scalfirla. E' l'ennesima che mi riprometto di riprendere.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778688812/astrogallery/NGC7479/NGC7479_25AGO24_fsgzeo.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778688812/astrogallery/NGC7479/NGC7479_25AGO24_fsgzeo.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "M100",
+    "name": "NGC4321",
+    "ra": 185.72833333333335,
+    "dec": 15.821944444444444,
+    "type": "Galassia a spirale",
+    "magnitude": 10.1,
+    "distance": "52 Milioni di a.l.",
+    "constellation": "Chioma di Berenice",
+    "info": "M 100 (nota anche come NGC 4321) è una galassia a spirale che si trova in direzione della costellazione della Chioma di Berenice, alla distanza di 55 milioni di anni luce da noi.\nM100 può essere osservata con facilità da entrambi gli emisferi terrestri e da tutte le aree abitate della Terra, grazie al fatto che la sua declinazione non è eccessivamente settentrionale; dalle regioni boreali è maggiormente osservabile e si presenta estremamente alto nel cielo nelle notti di primavera, mentre dall'emisfero australe appare mediamente più basso, ad eccezione delle aree prossime all'equatore. Il periodo migliore per la sua osservazione nel cielo serale è quello compreso fra febbraio e agosto.",
+    "photos": [
+      {
+        "id": "M100_1778689921991",
+        "title": "M100",
+        "date": "2025-03-07",
+        "comment": "Onestamente non mi ricordavo neanche più di averla fotografata, ma è il bello di quest'hobby e di questo progetto, il piacere di riscoprire tesori nascosti.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778689814/astrogallery/M100/NGC4321_07MAR25_jf8wov.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778689814/astrogallery/M100/NGC4321_07MAR25_jf8wov.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "M100_1778690023066",
+        "title": "M100 annotazioni",
+        "date": "2025-03-07",
+        "comment": "Con Pixinisight si possono aggiungere le annotazioni dei diversi oggetti che popolao la foto. Qui valeva la pena.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778689948/astrogallery/M100/NGC4321_07MAR25_Annotated_lxfynm.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778689948/astrogallery/M100/NGC4321_07MAR25_Annotated_lxfynm.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
   }
 ]
