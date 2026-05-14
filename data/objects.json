@@ -2009,5 +2009,88 @@
         }
       }
     ]
+  },
+  {
+    "id": "NGC5566",
+    "name": "Galassia NGC5566",
+    "ra": 215.083125,
+    "dec": 3.9335833333333334,
+    "type": "Galassia a spirale barrata",
+    "magnitude": 10.55,
+    "distance": "65 Milioni di a.l.",
+    "constellation": "Vergine",
+    "info": "NGC 5566 è una galassia a spirale barrata nella costellazione della Vergine. Si trova a circa 65 milioni di anni luce dalla Terra ed è la galassia più grande della costellazione della Vergine, con un diametro di circa 150000 al. La galassia NGC 5566 venne scoperta il 30 aprile 1786 dall'astronomo anglo-tedesco William Herschel.",
+    "photos": [
+      {
+        "id": "NGC5566_1778791205816",
+        "title": "NGC5566",
+        "date": "2025-04-10",
+        "comment": "E anche qui, e chi si ricordava di averla fotografata... belline però!",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778791140/astrogallery/NGC5566/NGC5566_10apr25_ncft81.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778791140/astrogallery/NGC5566/NGC5566_10apr25_ncft81.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      }
+    ]
+  },
+  {
+    "id": "ngc5364",
+    "name": "Galassie in Vergine",
+    "ra": 209.05,
+    "dec": 5.014444444444444,
+    "type": "Galassia a spirale",
+    "magnitude": 11.2,
+    "distance": "70,45 Milioni di a.l.",
+    "constellation": "Vergine",
+    "info": "NGC 5364 è una galassia a spirale di grande disegno situata a 70 milioni di anni luce di distanza nella costellazione della Vergine . È inclinata rispetto alla linea di vista dalla Terra con un angolo di 47° lungo un angolo di posizione di 25°.  È membro del gruppo di galassie NGC 5364 (noto anche come LGG 362), a sua volta uno dei gruppi Virgo III disposti a est del Superammasso di galassie della Vergine.",
+    "photos": [
+      {
+        "id": "ngc5364_1778791898256",
+        "title": "Galassie sparse in Vergine",
+        "date": "2025-05-01",
+        "comment": "E qui no si può rimanere affascinati dal numero di galassie. La Vergine ne è ricchissima.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778791809/astrogallery/ngc5364/VIRGO_GALAXIES_NGC5364_imrexo.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778791809/astrogallery/ngc5364/VIRGO_GALAXIES_NGC5364_imrexo.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "Playerone Uranus C",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": "Udine. Bortle 7."
+        }
+      },
+      {
+        "id": "ngc5364_1778792113430",
+        "title": "Galassie con Annotazioni",
+        "date": "",
+        "comment": "Stessa foto con annotazioni",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1778792098/astrogallery/ngc5364/COLLAGE_GALASSIE2_mguv6n.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1778792098/astrogallery/ngc5364/COLLAGE_GALASSIE2_mguv6n.jpg",
+        "acquisition": {
+          "telescope": "",
+          "mount": "",
+          "camera": "",
+          "filters": "",
+          "frames": null,
+          "exposure": null,
+          "gain": null,
+          "temp": null,
+          "notes": ""
+        }
+      }
+    ]
   }
 ]
