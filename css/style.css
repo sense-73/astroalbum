@@ -394,7 +394,7 @@ body.popup-cursor #starmap { cursor: default; }
 /* ─── Popup DSO ──────────────────────────────────────────────────────────────── */
 #popup {
   position: fixed; z-index: 50; width: 280px;
-  background: rgba(2,6,20,0.94); border: 1px solid rgba(80,140,220,0.22);
+  background: rgba(27,45,69,0.82); border: 1.5px solid rgba(80,180,220,0.55); border-radius: 12px;
   backdrop-filter: blur(8px); pointer-events: auto;
   opacity: 0; transform: scale(0.95) translateY(4px);
   transition: opacity .18s ease, transform .18s ease; display: none;
