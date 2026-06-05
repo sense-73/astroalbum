@@ -584,6 +584,12 @@ function initAuthor() {
     closeEdit();
   }
 
+  // ── Apertura programmatica (riusata dal click e dalla prima visita) ───────────
+  async function openPopup() {
+    await loadAuthor();
+    popup.classList.add('visible');
+  }
+
   // ── Event listeners ───────────────────────────────────────────────────────────
   link.addEventListener('click', async e => {
     e.stopPropagation();
@@ -614,15 +620,25 @@ function initAuthor() {
       popup.classList.remove('visible');
     }
   });
+
+  return { openPopup };
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
+const BIO_SEEN_KEY = 'astrogallery_bio_seen';
+
 initModeSwitch();
-initAuthor();
+const author = initAuthor();
 loadObjects().then(() => {
   initAdmin();
 });
 loadData().then(() => {
   resize();
   setTimeout(initAuth, 1700);
+
+  // Prima visita su questo dispositivo: mostra la bio una sola volta
+  if (author && !localStorage.getItem(BIO_SEEN_KEY)) {
+    localStorage.setItem(BIO_SEEN_KEY, '1');
+    setTimeout(() => author.openPopup(), 1700);
+  }
 });
