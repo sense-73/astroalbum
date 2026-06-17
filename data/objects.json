@@ -1336,6 +1336,25 @@
           "temp": null,
           "notes": "Udine. Bortle 7"
         }
+      },
+      {
+        "id": "M27_1781675597314",
+        "title": "M27 HSO",
+        "date": "2026-06-16",
+        "comment": "Questa foto di poche ore è il prodotto dell'esperienza a Dorgali (la seconda), purtroppo sfortunata con poche ore di acquisizione per problemi tecnici e meteo avverso. Questa rispetto all'altra è ripresa in Ha, OIII, SII ed evidenzia la drammaticità e la potenza dei venti stellari che spazzano i gas.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1781675208/astrogallery/M27/M27_HSO_16GIU26_02_mgeir3.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1781675208/astrogallery/M27/M27_HSO_16GIU26_02_mgeir3.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "SW HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "HSO",
+          "frames": 45,
+          "exposure": 180,
+          "gain": null,
+          "temp": null,
+          "notes": "FILTER             FRAMES   SEC     PARTIAL          │\n├──────────────────────────────────────────────────────┤\n│ Ha                 10       180     0.30.00          │\n│ OIII               25       180     1.15.00          │\n│ SII                10       180     0.30.00          │\n├──────────────────────────────────────────────────────┤\n│ TOTAL              45               2.15.00          │"
+        }
       }
     ]
   },
