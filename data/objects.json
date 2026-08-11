@@ -2111,5 +2111,37 @@
         }
       }
     ]
+  },
+  {
+    "id": "IC 1848",
+    "name": "Nebulosa Anima",
+    "ra": 42.800000000000004,
+    "dec": 60.43333333333333,
+    "type": "Nebulosa a Emissione",
+    "magnitude": 6.5,
+    "distance": "7.500 al",
+    "constellation": "Cassiopea",
+    "info": "Vicina alla Nebulosa Cuore, spesso inquadrata assieme ad essa con lenti corte.\nIC 1848 (nota anche come Nebulosa Anima, Nebulosa Embrione o con la sigla W5 per Westerhout 5) è una nebulosa diffusa associata ad un ammasso aperto di stelle giovani e calde di grande massa, visibile nella costellazione di Cassiopea, verso il confine con la Giraffa. Si tratta di una delle aree in cui è più attiva la formazione stellare.",
+    "photos": [
+      {
+        "id": "IC 1848_1786453068518",
+        "title": "Nebulosa Anima",
+        "date": "2026-08-11",
+        "comment": "Tre notti di un'estate torrida e faticosa del 2026, rarissime le notti propizie, spesso coperte, ho deciso di immortalare la nebulosa anima. Quando scatto cerco sempre un simbolismo nel soggetto, e questo faticoso processo di ricerca dell'anima risuona perfettamente in questo periodo della mia vita.  \nPS questa è la prima immagine fatta con la nuova montatura ML Astro SAL33.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1786452108/astrogallery/IC%201848/SOULNEBULA_11AGO26_hjzk0f.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1786452108/astrogallery/IC%201848/SOULNEBULA_11AGO26_hjzk0f.jpg",
+        "acquisition": {
+          "telescope": "Askar FRA400",
+          "mount": "ML Astro SAL33",
+          "camera": "Playerone PoseidonC",
+          "filters": "Askar Colour Magic C1 HaOIII",
+          "frames": 216,
+          "exposure": 180,
+          "gain": 125,
+          "temp": null,
+          "notes": "Udine, Bortle 7."
+        }
+      }
+    ]
   }
 ]
