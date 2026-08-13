@@ -56,7 +56,15 @@ export function getBasis() {
         v[2]*c + cr[2]*s + fwd[2]*d*(1-c),
       ];
     };
-    state._basis    = { fwd, right: norm(rot(right)), up: norm(rot(up)) };
+    const rRight = norm(rot(right));
+    // Specchiamento orizzontale (vista "da dentro", come Stellarium): inverte il
+    // verso di scorrimento senza spostare il puntamento né inclinare l'orizzonte.
+    // Applicato DOPO il roll. Verificato: verso corretto, Sole e click preservati.
+    state._basis    = {
+      fwd,
+      right: [-rRight[0], -rRight[1], -rRight[2]],
+      up:    norm(rot(up)),
+    };
     state._basisKey = key;
     return state._basis;
   }
