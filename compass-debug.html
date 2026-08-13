@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>AstroGallery — Debug Bussola</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px; background: #05080f; color: #cfe0ff;
+    font-family: -apple-system, system-ui, sans-serif; font-size: 15px; line-height: 1.5;
+  }
+  h1 { font-size: 17px; color: #9fc0ff; margin: 0 0 4px; }
+  .sub { color: #6a86b0; font-size: 12px; margin-bottom: 16px; }
+  button {
+    background: #12326a; color: #dfe9ff; border: 1px solid #3a6ab0;
+    padding: 12px 18px; border-radius: 8px; font-size: 15px; cursor: pointer;
+    width: 100%; margin-bottom: 14px;
+  }
+  button:active { background: #1e4a90; }
+  .card {
+    background: #0a1220; border: 1px solid #1f3a66; border-radius: 8px;
+    padding: 12px 14px; margin-bottom: 12px;
+  }
+  .card h2 { font-size: 13px; color: #7fa0d0; margin: 0 0 8px; text-transform: uppercase; letter-spacing: .05em; }
+  .row { display: flex; justify-content: space-between; padding: 3px 0; font-variant-numeric: tabular-nums; }
+  .row .k { color: #8aa4cc; }
+  .row .v { color: #eef4ff; font-weight: 600; }
+  .big { font-size: 22px; }
+  .sun .v { color: #ffd24a; }
+  .dev .v { color: #7fe0ff; }
+  .diff .v { color: #ff9a6a; }
+  .hint { font-size: 12px; color: #6a86b0; margin-top: 6px; }
+  .ok { color: #7fe08a; }
+  .err { color: #ff8a6a; }
+  #loc-manual { display: none; margin-top: 8px; }
+  #loc-manual input {
+    width: 48%; background: #05080f; border: 1px solid #2a4a80; color: #dfe9ff;
+    padding: 8px; border-radius: 6px; font-size: 14px;
+  }
+  code { background: #101c30; padding: 1px 5px; border-radius: 3px; color: #9fd0ff; }
+</style>
+</head>
+<body>
+  <h1>Debug Bussola — confronto col Sole</h1>
+  <div class="sub">Apri in HTTPS. Attiva i sensori, poi punta il RETRO del telefono verso il Sole (senza guardarlo direttamente). Riporta i numeri.</div>
+
+  <button id="start">▶ Attiva sensori + posizione</button>
+
+  <div id="loc-manual">
+    <div class="hint">GPS non disponibile — inserisci posizione:</div>
+    <input id="mlat" type="number" step="0.0001" placeholder="Lat (46.06)">
+    <input id="mlon" type="number" step="0.0001" placeholder="Lon (13.24)">
+    <button id="mset" style="margin-top:8px">Imposta</button>
+  </div>
+
+  <div class="card">
+    <h2>Posizione & ora</h2>
+    <div class="row"><span class="k">Lat / Lon</span><span class="v" id="loc">—</span></div>
+    <div class="row"><span class="k">Ora locale</span><span class="v" id="time">—</span></div>
+    <div class="row"><span class="k">Permesso sensori</span><span class="v" id="perm">—</span></div>
+  </div>
+
+  <div class="card sun">
+    <h2>☀ Sole — dove È davvero</h2>
+    <div class="row"><span class="k">Azimut (0=N,90=E,180=S,270=O)</span><span class="v big" id="sun-az">—</span></div>
+    <div class="row"><span class="k">Altezza sull'orizzonte</span><span class="v big" id="sun-alt">—</span></div>
+  </div>
+
+  <div class="card dev">
+    <h2>📱 Telefono — dove PUNTA (calcolato)</h2>
+    <div class="row"><span class="k">Azimut calcolato</span><span class="v big" id="dev-az">—</span></div>
+    <div class="row"><span class="k">Altezza calcolata</span><span class="v big" id="dev-alt">—</span></div>
+  </div>
+
+  <div class="card diff">
+    <h2>Δ Differenza (telefono − Sole)</h2>
+    <div class="row"><span class="k">Δ Azimut</span><span class="v big" id="d-az">—</span></div>
+    <div class="row"><span class="k">Δ Altezza</span><span class="v big" id="d-alt">—</span></div>
+    <div class="hint">Punta il telefono al Sole: se il codice è giusto, entrambi ≈ 0°.<br>
+      Δ Azimut costante = offset bussola. Δ Azimut che cambia di segno = convenzione invertita.</div>
+  </div>
+
+  <div class="card">
+    <h2>Sensori grezzi</h2>
+    <div class="row"><span class="k">alpha</span><span class="v" id="r-alpha">—</span></div>
+    <div class="row"><span class="k">beta</span><span class="v" id="r-beta">—</span></div>
+    <div class="row"><span class="k">gamma</span><span class="v" id="r-gamma">—</span></div>
+    <div class="row"><span class="k">webkitCompassHeading</span><span class="v" id="r-heading">—</span></div>
+    <div class="row"><span class="k">compassAccuracy</span><span class="v" id="r-acc">—</span></div>
+  </div>
+
+<script>
+const D2R=Math.PI/180, R2D=180/Math.PI;
+let lat=null, lon=null;
+
+// ── Posizione del Sole (verificata in isolamento) ─────────────────────────────
+function sunAltAz(date, latDeg, lonDeg){
+  const jd=date.getTime()/86400000+2440587.5, n=jd-2451545.0;
+  let L=(280.460+0.9856474*n)%360; if(L<0)L+=360;
+  let g=(357.528+0.9856003*n)%360; if(g<0)g+=360;
+  const lambda=(L+1.915*Math.sin(g*D2R)+0.020*Math.sin(2*g*D2R))*D2R;
+  const eps=(23.439-0.0000004*n)*D2R;
+  const dec=Math.asin(Math.sin(eps)*Math.sin(lambda))*R2D;
+  let ra=Math.atan2(Math.cos(eps)*Math.sin(lambda),Math.cos(lambda))*R2D; ra=(ra%360+360)%360;
+  let gmst=(280.46061837+360.98564736629*n)%360; if(gmst<0)gmst+=360;
+  const lst=(gmst+lonDeg)%360;
+  let H=(lst-ra); H=((H+540)%360)-180;
+  const Hr=H*D2R, latR=latDeg*D2R, decR=dec*D2R;
+  const alt=Math.asin(Math.sin(latR)*Math.sin(decR)+Math.cos(latR)*Math.cos(decR)*Math.cos(Hr))*R2D;
+  let az=Math.atan2(-Math.sin(Hr),Math.tan(decR)*Math.cos(latR)-Math.sin(latR)*Math.cos(Hr))*R2D;
+  az=(az%360+360)%360;
+  return {alt,az};
+}
+
+// ── Orientamento telefono → alt/az (IDENTICA a compass.js attuale) ────────────
+function orientationToAltAz(alphaDeg, betaDeg, gammaDeg){
+  const a=alphaDeg*D2R, b=betaDeg*D2R, g=gammaDeg*D2R;
+  const cA=Math.cos(a),sA=Math.sin(a),cB=Math.cos(b),sB=Math.sin(b),cG=Math.cos(g),sG=Math.sin(g);
+  const zx=cA*sG+sA*sB*cG, zy=sA*sG-cA*sB*cG, zz=cB*cG;
+  let vx=-zx, vy=-zy, vz=-zz;
+  const alt=Math.asin(Math.max(-1,Math.min(1,vz)))*R2D;
+  let az=Math.atan2(-vx, vy)*R2D;
+  az=((az)%360+360)%360;
+  return {alt,az};
+}
+
+function fmt(x){ return x==null?'—':(x>=0?'+':'')+x.toFixed(1)+'°'; }
+function set(id,v){ document.getElementById(id).textContent=v; }
+
+function updateSun(){
+  if(lat==null) return;
+  const now=new Date();
+  set('time', now.toLocaleTimeString('it-IT'));
+  const s=sunAltAz(now,lat,lon);
+  set('sun-az', s.az.toFixed(1)+'°');
+  set('sun-alt', s.alt.toFixed(1)+'°');
+  window._sun=s;
+}
+setInterval(updateSun, 1000);
+
+function handleOrientation(ev){
+  if(ev.alpha===null) return;
+  let alpha=ev.alpha;
+  const heading=ev.webkitCompassHeading;
+  if(typeof heading==='number') alpha=360-heading;
+  set('r-alpha', ev.alpha.toFixed(1));
+  set('r-beta',  ev.beta.toFixed(1));
+  set('r-gamma', ev.gamma.toFixed(1));
+  set('r-heading', typeof heading==='number'?heading.toFixed(1):'n/d (Android?)');
+  set('r-acc', typeof ev.webkitCompassAccuracy==='number'?ev.webkitCompassAccuracy.toFixed(0):'n/d');
+
+  const d=orientationToAltAz(alpha, ev.beta, ev.gamma);
+  set('dev-az', d.az.toFixed(1)+'°');
+  set('dev-alt', d.alt.toFixed(1)+'°');
+
+  if(window._sun){
+    let dAz=d.az-window._sun.az; dAz=((dAz+540)%360)-180;
+    const dAlt=d.alt-window._sun.alt;
+    set('d-az', fmt(dAz));
+    set('d-alt', fmt(dAlt));
+  }
+}
+
+async function start(){
+  // Permesso sensori
+  const DOE=window.DeviceOrientationEvent;
+  if(DOE && typeof DOE.requestPermission==='function'){
+    try{
+      const r=await DOE.requestPermission();
+      set('perm', r==='granted'?'✓ concesso':'✗ negato');
+      if(r!=='granted') return;
+    }catch(e){ set('perm','✗ errore'); return; }
+  } else {
+    set('perm','✓ (Android/no-gate)');
+  }
+  window.addEventListener('deviceorientation', handleOrientation, true);
+
+  // Geolocalizzazione
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      p=>{ lat=p.coords.latitude; lon=p.coords.longitude;
+           set('loc', lat.toFixed(4)+', '+lon.toFixed(4)); updateSun(); },
+      ()=>{ set('loc','GPS negato — inserisci a mano');
+            document.getElementById('loc-manual').style.display='block'; },
+      {enableHighAccuracy:false, timeout:8000}
+    );
+  } else {
+    document.getElementById('loc-manual').style.display='block';
+  }
+}
+document.getElementById('start').addEventListener('click', start);
+document.getElementById('mset').addEventListener('click', ()=>{
+  lat=parseFloat(document.getElementById('mlat').value);
+  lon=parseFloat(document.getElementById('mlon').value);
+  if(!isNaN(lat)&&!isNaN(lon)){ set('loc', lat.toFixed(4)+', '+lon.toFixed(4)); updateSun();
+    document.getElementById('loc-manual').style.display='none'; }
+});
+</script>
+</body>
+</html>
