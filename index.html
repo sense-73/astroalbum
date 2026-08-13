@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="img/LOGO_ICO.svg">
-  <link rel="stylesheet" href="css/style.css?V=5.7">
+  <link rel="stylesheet" href="css/style.css?V=5.8">
 </head>
 <body>
 
@@ -81,6 +81,22 @@
   <button class="tog-btn"        id="tog-snames"><span class="dot"></span>NOMI STELLE</button>
   <button class="tog-btn"        id="tog-crosshair"><span class="dot"></span>CENTRO</button>
 </div>
+
+<!-- ── Bussola (solo mobile) ─────────────────────────────────────────────────── -->
+<button id="compass-btn" title="Bussola: punta il cielo col telefono">🧭</button>
+<button id="location-btn" title="Posizione osservatore">📍</button>
+<div id="location-menu">
+  <button class="loc-opt" id="loc-auto-btn">📍 Automatico (GPS)</button>
+  <div class="loc-manual">
+    <button class="loc-opt" id="loc-manual-btn">✏️ Manuale</button>
+    <div class="loc-fields">
+      <input id="loc-lat" type="number" step="0.0001" placeholder="Lat (es. 46.06)" inputmode="decimal">
+      <input id="loc-lon" type="number" step="0.0001" placeholder="Long (es. 13.24)" inputmode="decimal">
+    </div>
+    <div id="loc-error" style="display:none">Valori non validi</div>
+  </div>
+</div>
+<div id="compass-status" style="display:none"></div>
 
 <!-- ── Admin button ──────────────────────────────────────────────────────────── -->
 <button id="admin-btn">
@@ -423,7 +439,7 @@
 <div id="error-toast">Catalogo non disponibile — usando stelle principali</div>
 
 <!-- ── Entry point (ES module, deferred automaticamente) ─────────────────────── -->
-<script type="module" src="js/main.js?V=5.7"></script>
+<script type="module" src="js/main.js?V=5.8"></script>
 
 </body>
 </html>
