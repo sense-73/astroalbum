@@ -76,12 +76,6 @@ let _rafPending  = false;
 let _fadeActive  = false;
 const FADE_SPEED = 0.018; // ~1.2s a 60fps
 
-// Hook opzionale invocato a ogni render (registrato da main.js) — evita import
-// circolare: starmap non deve importare da main. Usato per aggiornare il
-// display coordinate col centro vista (mobile/bussola/inerzia/volo).
-let _onViewChange = null;
-export function setViewChangeHook(fn) { _onViewChange = fn; }
-
 export function scheduleRender() {
   if (_rafPending) return;
   _rafPending = true;
@@ -201,8 +195,6 @@ export function render() {
   drawShootingStar();
 
   document.getElementById('fov-disp').textContent = state.fov.toFixed(1) + '°';
-
-  if (_onViewChange) _onViewChange();  // aggiorna display coordinate (centro vista)
 }
 
 // ── Griglia AR/Dec ────────────────────────────────────────────────────────────

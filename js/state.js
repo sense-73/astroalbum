@@ -62,11 +62,6 @@ export const state = {
   // Admin panel
   adminOpen: false,
 
-  // Bussola (orientamento dispositivo)
-  compassActive: false,  // true quando la bussola guida la vista
-  observerLat:   null,    // latitudine osservatore (gradi) — GPS o manuale
-  observerLon:   null,    // longitudine osservatore (gradi, Est positivo)
-
   // Cache base vettoriale proiezione
   _basis:    null,
   _basisKey: '',
