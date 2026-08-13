@@ -88,6 +88,15 @@
     <div class="row"><span class="k">gamma</span><span class="v" id="r-gamma">—</span></div>
     <div class="row"><span class="k">webkitCompassHeading</span><span class="v" id="r-heading">—</span></div>
     <div class="row"><span class="k">compassAccuracy</span><span class="v" id="r-acc">—</span></div>
+    <div class="row"><span class="k">evento absolute?</span><span class="v" id="r-abs">—</span></div>
+    <div class="row"><span class="k">alpha ABSOLUTE</span><span class="v" id="r-aabs">—</span></div>
+  </div>
+
+  <div class="card" style="border-color:#3a6ab0">
+    <h2>📱 Telefono via ABSOLUTE (nuovo metodo)</h2>
+    <div class="row"><span class="k">Azimut (absolute)</span><span class="v big dev" id="abs-az">—</span></div>
+    <div class="row"><span class="k">Δ Azimut vs Sole</span><span class="v big diff" id="abs-daz">—</span></div>
+    <div class="hint">Questo è il metodo corretto per Android. Punta il Sole da FERMO: Δ deve essere ≈ 0.</div>
   </div>
 
 <script>
@@ -162,6 +171,18 @@ function handleOrientation(ev){
   }
 }
 
+function handleAbsolute(ev){
+  if(ev.alpha===null) return;
+  set('r-abs', ev.absolute ? '✓ sì' : 'no');
+  set('r-aabs', ev.alpha.toFixed(1));
+  const d=orientationToAltAz(ev.alpha, ev.beta, ev.gamma);
+  set('abs-az', d.az.toFixed(1)+'°');
+  if(window._sun){
+    let dAz=d.az-window._sun.az; dAz=((dAz+540)%360)-180;
+    set('abs-daz', fmt(dAz));
+  }
+}
+
 async function start(){
   // Permesso sensori
   const DOE=window.DeviceOrientationEvent;
@@ -175,6 +196,7 @@ async function start(){
     set('perm','✓ (Android/no-gate)');
   }
   window.addEventListener('deviceorientation', handleOrientation, true);
+  window.addEventListener('deviceorientationabsolute', handleAbsolute, true);
 
   // Geolocalizzazione
   if(navigator.geolocation){
