@@ -152,13 +152,20 @@ function handleOrientation(ev) {
 // l'evento relativo per non sovrascrivere con dati non ancorati al Nord.
 let absoluteSeen = false;
 function handleAbsolute(ev) {
-  if (ev && ev.alpha !== null) absoluteSeen = true;
+  if (ev && ev.alpha !== null) {
+    // Prima volta che arriva un absolute valido: da qui in poi l'evento relative
+    // (alpha NON riferito al Nord su Android) va eliminato del tutto, altrimenti
+    // i due alpha incompatibili si alternano e la vista salta di ~146°.
+    if (!absoluteSeen) {
+      absoluteSeen = true;
+      window.removeEventListener('deviceorientation', handleRelative, true);
+    }
+  }
   handleOrientation(ev);
 }
-// L'evento relativo viene ignorato una volta che l'absolute è attivo su Android.
+// Sorgente per iOS (nessun absolute, ma webkitCompassHeading valido) o fallback
+// Android senza absolute. Su Android CON absolute questo listener viene rimosso.
 function handleRelative(ev) {
-  // iOS non emette 'deviceorientationabsolute' ma popola webkitCompassHeading:
-  // in quel caso l'evento relativo è la nostra sorgente valida.
   if (absoluteSeen && typeof ev.webkitCompassHeading !== 'number') return;
   handleOrientation(ev);
 }
