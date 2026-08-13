@@ -123,12 +123,17 @@ function handleOrientation(ev) {
   if (!state.compassActive || paused || !haveLocation) return;
   if (ev.alpha === null || ev.beta === null || ev.gamma === null) return;
 
-  // Su iOS webkitCompassHeading è la bussola vera (Nord magnetico corretto).
-  // alpha su iOS è relativo all'avvio; se c'è webkitCompassHeading lo usiamo.
+  // Sorgente dell'azimut, in ordine di affidabilità:
+  //  1. iOS: webkitCompassHeading → bussola vera (Nord magnetico), heading orario.
+  //  2. Android: evento 'deviceorientationabsolute' (ev.absolute === true) →
+  //     alpha già riferito al Nord. Verificato sul campo (Δ≈0 puntando il Sole).
+  //  3. Fallback: alpha dell'evento relativo — NON ancorato al Nord, impreciso;
+  //     usato solo se non arriva nulla di meglio, correggibile con adjustCalibration.
   let alpha = ev.alpha;
   if (typeof ev.webkitCompassHeading === 'number') {
     alpha = 360 - ev.webkitCompassHeading;   // heading orario → alpha antiorario
   }
+  // (se l'evento è 'absolute', ev.alpha è già corretto: nessuna trasformazione)
 
   const { alt, az } = orientationToAltAz(alpha, ev.beta, ev.gamma);
   const lst = localSiderealTime(new Date(), state.observerLon);
@@ -137,6 +142,21 @@ function handleOrientation(ev) {
   state.viewRA  = ra;
   state.viewDec = Math.max(-89.5, Math.min(89.5, dec));
   scheduleRender();
+}
+
+// Preferenza per l'evento absolute (Android): quando è disponibile, ignoriamo
+// l'evento relativo per non sovrascrivere con dati non ancorati al Nord.
+let absoluteSeen = false;
+function handleAbsolute(ev) {
+  if (ev && ev.alpha !== null) absoluteSeen = true;
+  handleOrientation(ev);
+}
+// L'evento relativo viene ignorato una volta che l'absolute è attivo su Android.
+function handleRelative(ev) {
+  // iOS non emette 'deviceorientationabsolute' ma popola webkitCompassHeading:
+  // in quel caso l'evento relativo è la nostra sorgente valida.
+  if (absoluteSeen && typeof ev.webkitCompassHeading !== 'number') return;
+  handleOrientation(ev);
 }
 
 // ── Attiva / disattiva la bussola (dal pulsante 🧭) ───────────────────────────
@@ -162,7 +182,10 @@ export async function toggleCompass() {
   paused = false;
 
   if (!listening) {
-    window.addEventListener('deviceorientation', handleOrientation, true);
+    // Android: 'deviceorientationabsolute' dà alpha riferito al Nord vero.
+    // iOS / fallback: 'deviceorientation' con webkitCompassHeading.
+    window.addEventListener('deviceorientationabsolute', handleAbsolute, true);
+    window.addEventListener('deviceorientation', handleRelative, true);
     listening = true;
   }
   notifyUI();
@@ -175,8 +198,10 @@ export function stopCompass() {
   state.compassActive = false;
   paused = false;
   if (listening) {
-    window.removeEventListener('deviceorientation', handleOrientation, true);
+    window.removeEventListener('deviceorientationabsolute', handleAbsolute, true);
+    window.removeEventListener('deviceorientation', handleRelative, true);
     listening = false;
+    absoluteSeen = false;
   }
   notifyUI();
 }
