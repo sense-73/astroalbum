@@ -108,6 +108,18 @@
       NEGATIVA → azimut cala a destra. Questo dato dà il segno esatto.</div>
   </div>
 
+  <div class="card" style="border-color:#7a5ac0">
+    <h2>🎯 RA/Dec — punta il SOLE e confronta</h2>
+    <div class="row"><span class="k">Sole reale RA</span><span class="v" id="sun-ra">—</span></div>
+    <div class="row"><span class="k">Sole reale Dec</span><span class="v" id="sun-dec">—</span></div>
+    <div class="row"><span class="k">App calcola RA</span><span class="v" id="app-ra">—</span></div>
+    <div class="row"><span class="k">App calcola Dec</span><span class="v" id="app-dec">—</span></div>
+    <div class="row"><span class="k">Δ RA (app − sole)</span><span class="v big diff" id="app-dra">—</span></div>
+    <div class="row"><span class="k">Δ Dec</span><span class="v big diff" id="app-ddec">—</span></div>
+    <div class="hint">Punta il retro al Sole da FERMO. Se la pipeline è giusta, app RA/Dec ≈ Sole RA/Dec.<br>
+      Un Δ RA grande e costante = errore di tempo siderale (è questo che causa Gemelli↔Pegaso).</div>
+  </div>
+
 <script>
 const D2R=Math.PI/180, R2D=180/Math.PI;
 let lat=null, lon=null;
@@ -128,7 +140,22 @@ function sunAltAz(date, latDeg, lonDeg){
   const alt=Math.asin(Math.sin(latR)*Math.sin(decR)+Math.cos(latR)*Math.cos(decR)*Math.cos(Hr))*R2D;
   let az=Math.atan2(-Math.sin(Hr),Math.tan(decR)*Math.cos(latR)-Math.sin(latR)*Math.cos(Hr))*R2D;
   az=(az%360+360)%360;
-  return {alt,az};
+  return {alt,az,ra,dec};   // espone anche RA/Dec reali del Sole
+}
+
+// Pipeline IDENTICA all'app: tempo siderale + alt/az → RA/Dec
+function lstApp(date,lonDeg){
+  const jd=date.getTime()/86400000+2440587.5, d=jd-2451545.0;
+  const gmst=((280.46061837+360.98564736629*d)%360+360)%360;
+  return ((gmst+lonDeg)%360+360)%360;
+}
+function altAzToEquApp(altDeg,azDeg,latDeg,lstDeg){
+  const alt=altDeg*D2R,az=azDeg*D2R,lat=latDeg*D2R;
+  const dec=Math.asin(Math.max(-1,Math.min(1,Math.sin(alt)*Math.sin(lat)+Math.cos(alt)*Math.cos(lat)*Math.cos(az))));
+  const cosH=(Math.sin(alt)-Math.sin(lat)*Math.sin(dec))/(Math.cos(lat)*Math.cos(dec));
+  const sinH=-Math.sin(az)*Math.cos(alt)/Math.cos(dec);
+  const ra=((lstDeg-Math.atan2(sinH,Math.max(-1,Math.min(1,cosH)))*R2D)%360+360)%360;
+  return {ra,dec:dec*R2D};
 }
 
 // ── Orientamento telefono → alt/az (IDENTICA a compass.js attuale) ────────────
@@ -153,6 +180,8 @@ function updateSun(){
   const s=sunAltAz(now,lat,lon);
   set('sun-az', s.az.toFixed(1)+'°');
   set('sun-alt', s.alt.toFixed(1)+'°');
+  set('sun-ra', (s.ra/15).toFixed(2)+'h ('+s.ra.toFixed(1)+'°)');
+  set('sun-dec', s.dec.toFixed(1)+'°');
   window._sun=s;
 }
 setInterval(updateSun, 1000);
@@ -189,6 +218,14 @@ function handleAbsolute(ev){
   if(window._sun){
     let dAz=d.az-window._sun.az; dAz=((dAz+540)%360)-180;
     set('abs-daz', fmt(dAz));
+    // Pipeline app completa: alt/az → RA/Dec, confronto col Sole reale
+    const L=lstApp(new Date(), lon);
+    const eq=altAzToEquApp(d.alt, d.az, lat, L);
+    set('app-ra', (eq.ra/15).toFixed(2)+'h ('+eq.ra.toFixed(1)+'°)');
+    set('app-dec', eq.dec.toFixed(1)+'°');
+    let dRa=eq.ra-window._sun.ra; dRa=((dRa+540)%360)-180;
+    set('app-dra', fmt(dRa));
+    set('app-ddec', fmt(eq.dec-window._sun.dec));
   }
   // Verso rotazione: confronta azimut attuale con quello di ~mezzo secondo fa
   set('mv-az', d.az.toFixed(1)+'°');
