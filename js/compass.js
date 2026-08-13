@@ -110,9 +110,12 @@ function orientationToAltAz(alphaDeg, betaDeg, gammaDeg) {
   // Frame mondo del deviceorientation: X=Est, Y=Nord, Z=su (verticale locale)
   // altezza = angolo sopra l'orizzonte; azimut = da Nord verso Est
   const alt = Math.asin(Math.max(-1, Math.min(1, vz))) * R2D;
-  // -vx: la convenzione alpha del deviceorientation è ANTIORARIA (cresce verso
-  // Ovest); negando la componente Est otteniamo azimut ORARIO da Nord verso Est.
-  let az = Math.atan2(-vx, vy) * R2D;        // 0=N, 90=E, 180=S, 270=O
+  // Verso azimut invertito (atan2(vx,...) invece di atan2(-vx,...)) per ottenere
+  // lo scorrimento tipo realtà aumentata: muovendo il telefono a destra le stelle
+  // scorrono a sinistra, come guardando attraverso una finestra sul cielo.
+  // NB: da riverificare col Sole — se il puntamento assoluto risultasse invertito,
+  // ripristinare atan2(-vx, vy).
+  let az = Math.atan2(vx, vy) * R2D;
   az = ((az + calibOffset) % 360 + 360) % 360;
 
   return { alt, az };
