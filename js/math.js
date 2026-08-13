@@ -91,3 +91,39 @@ export async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
+
+// ─── Bussola: conversioni per orientamento dispositivo ───────────────────────
+
+// Tempo siderale locale (gradi [0,360)) — da Date + longitudine (Est positivo)
+export const localSiderealTime = (date, lonDeg) => {
+  const jd = date.getTime() / 86400000 + 2440587.5;  // Unix ms → Julian Date
+  const d  = jd - 2451545.0;                          // giorni da J2000.0
+  const gmst = ((280.46061837 + 360.98564736629 * d) % 360 + 360) % 360;
+  return ((gmst + lonDeg) % 360 + 360) % 360;
+};
+
+// Alt-Az → Equatoriale {ra, dec} (gradi). az da Nord verso Est (0=N,90=E,180=S)
+export const altAzToEqu = (altDeg, azDeg, latDeg, lstDeg) => {
+  const alt = altDeg * D2R, az = azDeg * D2R, lat = latDeg * D2R;
+  const dec = Math.asin(Math.max(-1, Math.min(1,
+    Math.sin(alt) * Math.sin(lat) + Math.cos(alt) * Math.cos(lat) * Math.cos(az))));
+  const cosH = (Math.sin(alt) - Math.sin(lat) * Math.sin(dec)) / (Math.cos(lat) * Math.cos(dec));
+  const sinH = -Math.sin(az) * Math.cos(alt) / Math.cos(dec);
+  const ra = ((lstDeg - Math.atan2(sinH, Math.max(-1, Math.min(1, cosH))) * R2D) % 360 + 360) % 360;
+  return { ra, dec: dec * R2D };
+};
+
+// Angolo di parallasse (gradi): rotazione per tenere l'orizzonte dritto nella
+// vista bussola. È l'angolo tra "Nord celeste" e "zenit" nel punto puntato.
+// Verificato: applicare -parallacticAngle come roll rende l'orizzonte orizzontale.
+export const parallacticAngle = (altDeg, azDeg, latDeg) => {
+  const alt = altDeg * D2R, az = azDeg * D2R, lat = latDeg * D2R;
+  const dec = Math.asin(Math.max(-1, Math.min(1,
+    Math.sin(alt) * Math.sin(lat) + Math.cos(alt) * Math.cos(lat) * Math.cos(az))));
+  const sinH = -Math.sin(az) * Math.cos(alt) / Math.cos(dec);
+  const cosH = (Math.sin(alt) - Math.sin(lat) * Math.sin(dec)) / (Math.cos(lat) * Math.cos(dec));
+  const H = Math.atan2(sinH, cosH);
+  const sinq = Math.sin(H) * Math.cos(lat) / Math.cos(alt);
+  const cosq = (Math.sin(lat) - Math.sin(dec) * Math.sin(alt)) / (Math.cos(dec) * Math.cos(alt));
+  return Math.atan2(sinq, cosq) * R2D;
+};

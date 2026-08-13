@@ -30,7 +30,8 @@ function getConstImage(name) {
 //    up    = normalize(cross(right, fwd))     → nord sullo schermo ✓
 //
 export function getBasis() {
-  const key = state.viewRA.toFixed(4) + ':' + state.viewDec.toFixed(4);
+  const key = state.viewRA.toFixed(4) + ':' + state.viewDec.toFixed(4)
+            + ':' + (state.compassActive ? state.viewRoll.toFixed(4) : '0');
   if (state._basis && state._basisKey === key) return state._basis;
 
   const fwd = s2c(state.viewRA, state.viewDec);
@@ -40,6 +41,33 @@ export function getBasis() {
 
   const right = norm(cross(fwd, wUp));
   const up    = norm(cross(right, fwd));
+
+  // Roll d'orizzonte (solo in modalità bussola): ruota right/up attorno all'asse
+  // di vista fwd, così l'orizzonte resta dritto come in Stellarium. Il drag col
+  // dito non è toccato (viewRoll=0 fuori dalla bussola). Rotazione di Rodrigues,
+  // fwd unitario. Verificato: orizzonte dritto su tutti gli orientamenti testati.
+  if (state.compassActive && state.viewRoll) {
+    const c = Math.cos(state.viewRoll), s = Math.sin(state.viewRoll);
+    const rot = v => {
+      const cr = cross(fwd, v), d = dot(fwd, v);
+      return [
+        v[0]*c + cr[0]*s + fwd[0]*d*(1-c),
+        v[1]*c + cr[1]*s + fwd[1]*d*(1-c),
+        v[2]*c + cr[2]*s + fwd[2]*d*(1-c),
+      ];
+    };
+    const rRight = norm(rot(right));
+    // Specchiamento orizzontale (vista "da dentro", come Stellarium): inverte il
+    // verso di scorrimento senza spostare il puntamento né inclinare l'orizzonte.
+    // Applicato DOPO il roll. Verificato: verso corretto, Sole e click preservati.
+    state._basis    = {
+      fwd,
+      right: [-rRight[0], -rRight[1], -rRight[2]],
+      up:    norm(rot(up)),
+    };
+    state._basisKey = key;
+    return state._basis;
+  }
 
   state._basis    = { fwd, right, up };
   state._basisKey = key;
@@ -75,6 +103,12 @@ export function unproject(px, py) {
 let _rafPending  = false;
 let _fadeActive  = false;
 const FADE_SPEED = 0.018; // ~1.2s a 60fps
+
+// Hook opzionale invocato a ogni render (registrato da main.js) — evita import
+// circolare: starmap non deve importare da main. Usato per aggiornare il
+// display coordinate col centro vista (mobile/bussola/inerzia/volo).
+let _onViewChange = null;
+export function setViewChangeHook(fn) { _onViewChange = fn; }
 
 export function scheduleRender() {
   if (_rafPending) return;
@@ -195,6 +229,8 @@ export function render() {
   drawShootingStar();
 
   document.getElementById('fov-disp').textContent = state.fov.toFixed(1) + '°';
+
+  if (_onViewChange) _onViewChange();  // aggiorna display coordinate (centro vista)
 }
 
 // ── Griglia AR/Dec ────────────────────────────────────────────────────────────

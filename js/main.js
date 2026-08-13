@@ -1,13 +1,15 @@
 // ─── Entry point: interazione, toggle, init ───────────────────────────────────
 import { state }                              from './state.js';
 import { canvas, resize, scheduleRender,
-         project, unproject, startFade }    from './starmap.js';
+         project, unproject, startFade, setViewChangeHook } from './starmap.js';
 import { showPopup, scheduleHide,
          openLightbox, closeLightbox, navLB } from './dso.js';
 import { initAdmin, closeAdmin, getRaDecimal, getDeclDecimal } from './admin.js';
 import { loadObjects }                        from './data.js';
 import { loadData }                           from './catalog.js';
 import { D2R, R2D, s2c, c2s, raToHMSParts, declToDMSParts, sha256 } from './math.js';
+import { compassButtonPressed, pauseCompass, setManualLocation,
+         setCompassUICallback, getCompassState } from './compass.js';
 
 // ── Auth ───────────────────────────────────────────────────────────────────────
 const AUTH_SESSION_KEY = 'astrogallery_auth';
@@ -51,8 +53,16 @@ function initModeSwitch() {
 window.addEventListener('resize', resize);
 
 // ── Coordinate display ────────────────────────────────────────────────────────
-function updateCoordsDisplay(mx, my) {
-  const { ra, dec } = c2s(unproject(mx, my));
+// Con (mx,my): coordinate del punto sotto il mouse (desktop, hover).
+// Senza argomenti: coordinate del CENTRO vista (mobile/bussola/inerzia/volo).
+export function updateCoordsDisplay(mx, my) {
+  let ra, dec;
+  if (mx === undefined || my === undefined) {
+    ra  = state.viewRA;
+    dec = state.viewDec;
+  } else {
+    ({ ra, dec } = c2s(unproject(mx, my)));
+  }
   const raH  = Math.floor(ra / 15);
   const raM  = Math.floor((ra / 15 - raH) * 60);
   const sign = dec >= 0 ? '+' : '−';
@@ -199,10 +209,15 @@ let dragViewStart  = null;
 let mouseHasMoved  = false;
 let popupTimer     = null;
 let canvasMouseDown = false; // true solo se il mousedown è partito dal canvas
+let mouseOverCanvas = false; // true mentre il mouse è sopra il canvas (desktop)
+
+canvas.addEventListener('mouseenter', () => { mouseOverCanvas = true;  });
+canvas.addEventListener('mouseleave', () => { mouseOverCanvas = false; });
 
 canvas.addEventListener('mousedown', e => {
   if (state.lbObject) return;
   canvasMouseDown = true;
+  pauseCompass();  // Opzione B: il drag mette in pausa la bussola
   // Interrompi qualsiasi inerzia o snap in corso
   state.inertia.active = false;
   state.snapTarget     = null;
@@ -322,6 +337,7 @@ let lastPinchDist = 0;
 canvas.addEventListener('touchstart', e => {
   e.preventDefault();
   if (e.touches.length === 1) {
+    pauseCompass();  // Opzione B: il drag mette in pausa la bussola
     // Interrompi inerzia in corso
     state.inertia.active = false;
     state.snapTarget     = null;
@@ -624,10 +640,84 @@ function initAuthor() {
   return { openPopup };
 }
 
+// ── Bussola: collega pulsanti 🧭 / 📍 e indicatore di stato ───────────────────
+function initCompass() {
+  const btn      = document.getElementById('compass-btn');
+  const locBtn   = document.getElementById('location-btn');
+  const locMenu  = document.getElementById('location-menu');
+  const statusEl = document.getElementById('compass-status');
+  if (!btn) return;  // controlli non presenti nell'HTML → nulla da fare
+
+  // Aggiorna aspetto pulsante + testo di stato in base allo stato bussola
+  setCompassUICallback((cs) => {
+    btn.classList.toggle('active', cs.active && !cs.paused);
+    btn.classList.toggle('paused', cs.active && cs.paused);
+    if (statusEl) {
+      if (!cs.active)            statusEl.textContent = '';
+      else if (!cs.haveLocation) statusEl.textContent = 'attesa posizione…';
+      else if (cs.paused)        statusEl.textContent = 'in pausa — tocca 🧭 per riprendere';
+      else                       statusEl.textContent = '';
+      statusEl.style.display = statusEl.textContent ? 'block' : 'none';
+    }
+  });
+
+  // Pulsante bussola: gestisce spento → acceso → pausa/riprendi
+  btn.addEventListener('click', async () => {
+    const res = await compassButtonPressed();
+    if (res && res.error === 'permission') {
+      if (statusEl) {
+        statusEl.textContent = 'permesso sensori negato';
+        statusEl.style.display = 'block';
+      }
+    } else if (res && res.needLocation) {
+      // GPS non disponibile → apri il menu per l'inserimento manuale
+      if (locMenu) locMenu.classList.add('open');
+    }
+  });
+
+  // Menu localizzazione 📍
+  if (locBtn && locMenu) {
+    locBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      locMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!locMenu.contains(e.target) && e.target !== locBtn)
+        locMenu.classList.remove('open');
+    });
+
+    // Voce "Automatico (GPS)"
+    const autoBtn = document.getElementById('loc-auto-btn');
+    if (autoBtn) autoBtn.addEventListener('click', () => {
+      state.observerLat = null; state.observerLon = null;
+      locMenu.classList.remove('open');
+      // Riattiva il flusso: se la bussola è accesa, ripremere richiederà il GPS
+      compassButtonPressed();
+    });
+
+    // Voce "Manuale": legge i due campi lat/long
+    const manBtn = document.getElementById('loc-manual-btn');
+    if (manBtn) manBtn.addEventListener('click', () => {
+      const lat = document.getElementById('loc-lat').value;
+      const lon = document.getElementById('loc-lon').value;
+      if (setManualLocation(lat, lon)) {
+        locMenu.classList.remove('open');
+      } else {
+        const err = document.getElementById('loc-error');
+        if (err) err.style.display = 'block';
+      }
+    });
+  }
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 const BIO_SEEN_KEY = 'astrogallery_bio_seen';
 
 initModeSwitch();
+initCompass();
+// Aggiorna il display coordinate col centro vista a ogni render, tranne quando
+// il mouse è sopra il canvas (desktop: lì vince il punto sotto il puntatore).
+setViewChangeHook(() => { if (!mouseOverCanvas) updateCoordsDisplay(); });
 const author = initAuthor();
 loadObjects().then(() => {
   initAdmin();
