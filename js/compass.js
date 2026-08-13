@@ -9,7 +9,7 @@
 
 import { state } from './state.js';
 import { scheduleRender } from './starmap.js';
-import { D2R, R2D, localSiderealTime, altAzToEqu, parallacticAngle } from './math.js';
+import { D2R, R2D, localSiderealTime, altAzToEqu } from './math.js';
 
 // ── Stato interno del modulo ──────────────────────────────────────────────────
 let listening    = false;   // listener deviceorientation attivo
@@ -110,9 +110,8 @@ function orientationToAltAz(alphaDeg, betaDeg, gammaDeg) {
   // Frame mondo del deviceorientation: X=Est, Y=Nord, Z=su (verticale locale)
   // altezza = angolo sopra l'orizzonte; azimut = da Nord verso Est
   const alt = Math.asin(Math.max(-1, Math.min(1, vz))) * R2D;
-  // -vx: convenzione alpha ANTIORARIA → azimut ORARIO da Nord verso Est.
-  // Verificato col Sole (Δ≈0). L'effetto "diagonale" non era il segno azimut ma
-  // il roll d'orizzonte mancante, ora gestito via state.viewRoll (parallasse).
+  // -vx: la convenzione alpha del deviceorientation è ANTIORARIA (cresce verso
+  // Ovest); negando la componente Est otteniamo azimut ORARIO da Nord verso Est.
   let az = Math.atan2(-vx, vy) * R2D;        // 0=N, 90=E, 180=S, 270=O
   az = ((az + calibOffset) % 360 + 360) % 360;
 
@@ -142,9 +141,6 @@ function handleOrientation(ev) {
 
   state.viewRA  = ra;
   state.viewDec = Math.max(-89.5, Math.min(89.5, dec));
-  // Roll = -angolo di parallasse: ruota la vista per tenere l'orizzonte dritto
-  // come Stellarium. Applicato in getBasis solo quando compassActive è true.
-  state.viewRoll = -parallacticAngle(alt, az, state.observerLat) * D2R;
   scheduleRender();
 }
 
@@ -152,20 +148,13 @@ function handleOrientation(ev) {
 // l'evento relativo per non sovrascrivere con dati non ancorati al Nord.
 let absoluteSeen = false;
 function handleAbsolute(ev) {
-  if (ev && ev.alpha !== null) {
-    // Prima volta che arriva un absolute valido: da qui in poi l'evento relative
-    // (alpha NON riferito al Nord su Android) va eliminato del tutto, altrimenti
-    // i due alpha incompatibili si alternano e la vista salta di ~146°.
-    if (!absoluteSeen) {
-      absoluteSeen = true;
-      window.removeEventListener('deviceorientation', handleRelative, true);
-    }
-  }
+  if (ev && ev.alpha !== null) absoluteSeen = true;
   handleOrientation(ev);
 }
-// Sorgente per iOS (nessun absolute, ma webkitCompassHeading valido) o fallback
-// Android senza absolute. Su Android CON absolute questo listener viene rimosso.
+// L'evento relativo viene ignorato una volta che l'absolute è attivo su Android.
 function handleRelative(ev) {
+  // iOS non emette 'deviceorientationabsolute' ma popola webkitCompassHeading:
+  // in quel caso l'evento relativo è la nostra sorgente valida.
   if (absoluteSeen && typeof ev.webkitCompassHeading !== 'number') return;
   handleOrientation(ev);
 }
@@ -208,7 +197,6 @@ export async function toggleCompass() {
 export function stopCompass() {
   state.compassActive = false;
   paused = false;
-  state.viewRoll = 0;  // ripristina vista non ruotata per il drag col dito
   if (listening) {
     window.removeEventListener('deviceorientationabsolute', handleAbsolute, true);
     window.removeEventListener('deviceorientation', handleRelative, true);

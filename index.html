@@ -82,6 +82,22 @@
   <button class="tog-btn"        id="tog-crosshair"><span class="dot"></span>CENTRO</button>
 </div>
 
+<!-- ── Bussola (solo mobile) ─────────────────────────────────────────────────── -->
+<button id="compass-btn" title="Bussola: punta il cielo col telefono">🧭</button>
+<button id="location-btn" title="Posizione osservatore">📍</button>
+<div id="location-menu">
+  <button class="loc-opt" id="loc-auto-btn">📍 Automatico (GPS)</button>
+  <div class="loc-manual">
+    <button class="loc-opt" id="loc-manual-btn">✏️ Manuale</button>
+    <div class="loc-fields">
+      <input id="loc-lat" type="number" step="0.0001" placeholder="Lat (es. 46.06)" inputmode="decimal">
+      <input id="loc-lon" type="number" step="0.0001" placeholder="Long (es. 13.24)" inputmode="decimal">
+    </div>
+    <div id="loc-error" style="display:none">Valori non validi</div>
+  </div>
+</div>
+<div id="compass-status" style="display:none"></div>
+
 <!-- ── Admin button ──────────────────────────────────────────────────────────── -->
 <button id="admin-btn">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
