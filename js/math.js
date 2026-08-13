@@ -112,3 +112,18 @@ export const altAzToEqu = (altDeg, azDeg, latDeg, lstDeg) => {
   const ra = ((lstDeg - Math.atan2(sinH, Math.max(-1, Math.min(1, cosH))) * R2D) % 360 + 360) % 360;
   return { ra, dec: dec * R2D };
 };
+
+// Angolo di parallasse (gradi): rotazione per tenere l'orizzonte dritto nella
+// vista bussola. È l'angolo tra "Nord celeste" e "zenit" nel punto puntato.
+// Verificato: applicare -parallacticAngle come roll rende l'orizzonte orizzontale.
+export const parallacticAngle = (altDeg, azDeg, latDeg) => {
+  const alt = altDeg * D2R, az = azDeg * D2R, lat = latDeg * D2R;
+  const dec = Math.asin(Math.max(-1, Math.min(1,
+    Math.sin(alt) * Math.sin(lat) + Math.cos(alt) * Math.cos(lat) * Math.cos(az))));
+  const sinH = -Math.sin(az) * Math.cos(alt) / Math.cos(dec);
+  const cosH = (Math.sin(alt) - Math.sin(lat) * Math.sin(dec)) / (Math.cos(lat) * Math.cos(dec));
+  const H = Math.atan2(sinH, cosH);
+  const sinq = Math.sin(H) * Math.cos(lat) / Math.cos(alt);
+  const cosq = (Math.sin(lat) - Math.sin(dec) * Math.sin(alt)) / (Math.cos(dec) * Math.cos(alt));
+  return Math.atan2(sinq, cosq) * R2D;
+};

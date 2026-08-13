@@ -9,7 +9,7 @@
 
 import { state } from './state.js';
 import { scheduleRender } from './starmap.js';
-import { D2R, R2D, localSiderealTime, altAzToEqu } from './math.js';
+import { D2R, R2D, localSiderealTime, altAzToEqu, parallacticAngle } from './math.js';
 
 // ── Stato interno del modulo ──────────────────────────────────────────────────
 let listening    = false;   // listener deviceorientation attivo
@@ -110,12 +110,10 @@ function orientationToAltAz(alphaDeg, betaDeg, gammaDeg) {
   // Frame mondo del deviceorientation: X=Est, Y=Nord, Z=su (verticale locale)
   // altezza = angolo sopra l'orizzonte; azimut = da Nord verso Est
   const alt = Math.asin(Math.max(-1, Math.min(1, vz))) * R2D;
-  // Verso azimut invertito (atan2(vx,...) invece di atan2(-vx,...)) per ottenere
-  // lo scorrimento tipo realtà aumentata: muovendo il telefono a destra le stelle
-  // scorrono a sinistra, come guardando attraverso una finestra sul cielo.
-  // NB: da riverificare col Sole — se il puntamento assoluto risultasse invertito,
-  // ripristinare atan2(-vx, vy).
-  let az = Math.atan2(vx, vy) * R2D;
+  // -vx: convenzione alpha ANTIORARIA → azimut ORARIO da Nord verso Est.
+  // Verificato col Sole (Δ≈0). L'effetto "diagonale" non era il segno azimut ma
+  // il roll d'orizzonte mancante, ora gestito via state.viewRoll (parallasse).
+  let az = Math.atan2(-vx, vy) * R2D;        // 0=N, 90=E, 180=S, 270=O
   az = ((az + calibOffset) % 360 + 360) % 360;
 
   return { alt, az };
@@ -144,6 +142,9 @@ function handleOrientation(ev) {
 
   state.viewRA  = ra;
   state.viewDec = Math.max(-89.5, Math.min(89.5, dec));
+  // Roll = -angolo di parallasse: ruota la vista per tenere l'orizzonte dritto
+  // come Stellarium. Applicato in getBasis solo quando compassActive è true.
+  state.viewRoll = -parallacticAngle(alt, az, state.observerLat) * D2R;
   scheduleRender();
 }
 
@@ -200,6 +201,7 @@ export async function toggleCompass() {
 export function stopCompass() {
   state.compassActive = false;
   paused = false;
+  state.viewRoll = 0;  // ripristina vista non ruotata per il drag col dito
   if (listening) {
     window.removeEventListener('deviceorientationabsolute', handleAbsolute, true);
     window.removeEventListener('deviceorientation', handleRelative, true);

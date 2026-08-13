@@ -66,6 +66,7 @@ export const state = {
   compassActive: false,  // true quando la bussola guida la vista
   observerLat:   null,    // latitudine osservatore (gradi) — GPS o manuale
   observerLon:   null,    // longitudine osservatore (gradi, Est positivo)
+  viewRoll:      0,        // rotazione vista (rad) per orizzonte dritto in modalità bussola
 
   // Cache base vettoriale proiezione
   _basis:    null,
