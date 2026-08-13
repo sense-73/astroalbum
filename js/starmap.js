@@ -41,7 +41,15 @@ export function getBasis() {
   const right = norm(cross(fwd, wUp));
   const up    = norm(cross(right, fwd));
 
-  state._basis    = { fwd, right, up };
+  // Vista "da dentro" (come Stellarium / occhio nudo): specchia l'asse
+  // orizzontale Est-Ovest. Invertendo `right` va invertito anche `up`, altrimenti
+  // la vista si capovolge in verticale. project() e unproject() usano gli stessi
+  // vettori, quindi click e marker DSO restano coerenti (round-trip verificato).
+  state._basis    = {
+    fwd,
+    right: [-right[0], -right[1], -right[2]],
+    up:    [-up[0],    -up[1],    -up[2]],
+  };
   state._basisKey = key;
   return state._basis;
 }
