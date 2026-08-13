@@ -99,6 +99,15 @@
     <div class="hint">Questo è il metodo corretto per Android. Punta il Sole da FERMO: Δ deve essere ≈ 0.</div>
   </div>
 
+  <div class="card" style="border-color:#c07a3a">
+    <h2>🔄 Verso rotazione — MUOVI a DESTRA e guarda qui</h2>
+    <div class="row"><span class="k">Azimut ora</span><span class="v big" id="mv-az">—</span></div>
+    <div class="row"><span class="k">Variazione (ultimo ~mezzo sec)</span><span class="v big diff" id="mv-delta">—</span></div>
+    <div class="hint">Tieni il telefono verticale, ruota il corpo verso DESTRA (verso Est).<br>
+      Variazione POSITIVA muovendo a destra → azimut cresce a destra.<br>
+      NEGATIVA → azimut cala a destra. Questo dato dà il segno esatto.</div>
+  </div>
+
 <script>
 const D2R=Math.PI/180, R2D=180/Math.PI;
 let lat=null, lon=null;
@@ -180,6 +189,17 @@ function handleAbsolute(ev){
   if(window._sun){
     let dAz=d.az-window._sun.az; dAz=((dAz+540)%360)-180;
     set('abs-daz', fmt(dAz));
+  }
+  // Verso rotazione: confronta azimut attuale con quello di ~mezzo secondo fa
+  set('mv-az', d.az.toFixed(1)+'°');
+  const now=performance.now();
+  if(!window._azHist) window._azHist=[];
+  window._azHist.push({t:now, az:d.az});
+  window._azHist=window._azHist.filter(e=>now-e.t<600); // ultimi 600ms
+  if(window._azHist.length>1){
+    const old=window._azHist[0];
+    let dv=d.az-old.az; dv=((dv+540)%360)-180; // variazione con wrap
+    set('mv-delta', (dv>=0?'+':'')+dv.toFixed(1)+'°');
   }
 }
 
