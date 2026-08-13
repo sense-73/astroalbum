@@ -1,7 +1,7 @@
 // ─── Entry point: interazione, toggle, init ───────────────────────────────────
 import { state }                              from './state.js';
 import { canvas, resize, scheduleRender,
-         project, unproject, startFade }    from './starmap.js';
+         project, unproject, startFade, setViewChangeHook } from './starmap.js';
 import { showPopup, scheduleHide,
          openLightbox, closeLightbox, navLB } from './dso.js';
 import { initAdmin, closeAdmin, getRaDecimal, getDeclDecimal } from './admin.js';
@@ -51,8 +51,16 @@ function initModeSwitch() {
 window.addEventListener('resize', resize);
 
 // ── Coordinate display ────────────────────────────────────────────────────────
-function updateCoordsDisplay(mx, my) {
-  const { ra, dec } = c2s(unproject(mx, my));
+// Con (mx,my): coordinate del punto sotto il mouse (desktop, hover).
+// Senza argomenti: coordinate del CENTRO vista (mobile).
+export function updateCoordsDisplay(mx, my) {
+  let ra, dec;
+  if (mx === undefined || my === undefined) {
+    ra  = state.viewRA;
+    dec = state.viewDec;
+  } else {
+    ({ ra, dec } = c2s(unproject(mx, my)));
+  }
   const raH  = Math.floor(ra / 15);
   const raM  = Math.floor((ra / 15 - raH) * 60);
   const sign = dec >= 0 ? '+' : '−';
@@ -199,6 +207,10 @@ let dragViewStart  = null;
 let mouseHasMoved  = false;
 let popupTimer     = null;
 let canvasMouseDown = false; // true solo se il mousedown è partito dal canvas
+let mouseOverCanvas = false; // true mentre il mouse è sopra il canvas (desktop)
+
+canvas.addEventListener('mouseenter', () => { mouseOverCanvas = true;  });
+canvas.addEventListener('mouseleave', () => { mouseOverCanvas = false; });
 
 canvas.addEventListener('mousedown', e => {
   if (state.lbObject) return;
@@ -628,6 +640,9 @@ function initAuthor() {
 const BIO_SEEN_KEY = 'astrogallery_bio_seen';
 
 initModeSwitch();
+// Coordinate col centro vista a ogni render (mobile), tranne quando il mouse è
+// sul canvas (desktop: lì vince il punto sotto il puntatore).
+setViewChangeHook(() => { if (!mouseOverCanvas) updateCoordsDisplay(); });
 const author = initAuthor();
 loadObjects().then(() => {
   initAdmin();
