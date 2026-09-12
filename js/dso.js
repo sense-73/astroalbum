@@ -456,6 +456,13 @@ export function closeLightbox() {
   document.body.classList.remove('popup-cursor');
   lbInfoPanel.classList.remove('open');
   state.lbObject = null;
+
+  // Rimuove obj/photo dall'URL, preservando eventuali altri parametri
+  const params = new URLSearchParams(window.location.search);
+  params.delete('obj');
+  params.delete('photo');
+  const qs = params.toString();
+  history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''));
 }
 
 export function navLB(delta) {
@@ -464,8 +471,17 @@ export function navLB(delta) {
   updateLB();
 }
 
+// ── Sincronizza URL con oggetto/foto correnti nella lightbox (deep link) ──────
+function syncURL() {
+  const params = new URLSearchParams(window.location.search);
+  params.set('obj',   state.lbObject.id);
+  params.set('photo', state.lbIndex + 1);
+  history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
+}
+
 function updateLB() {
   if (!state.lbObject) return;
+  syncURL();
   const photos = state.lbObject.photos || [];
   const ph     = photos[state.lbIndex];
 

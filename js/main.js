@@ -639,15 +639,34 @@ function initAuthor() {
 // ── Init ──────────────────────────────────────────────────────────────────────
 const BIO_SEEN_KEY = 'astrogallery_bio_seen';
 
+// ── Deep link: apre direttamente un DSO/foto se presenti in URL (?obj=&photo=) ─
+function handleDeepLink() {
+  const params = new URLSearchParams(window.location.search);
+  const objId  = params.get('obj');
+  if (!objId) return;
+
+  const obj = state.allObjects.find(o => o.id === objId);
+  if (!obj) return; // id non più valido: ignora silenziosamente
+
+  const photos = obj.photos || [];
+  let idx = parseInt(params.get('photo'), 10) - 1;
+  if (isNaN(idx) || idx < 0 || idx >= photos.length) idx = 0;
+
+  state.viewRA  = obj.ra;
+  state.viewDec = obj.dec;
+  scheduleRender();
+  openLightbox(obj, idx);
+}
+
 initModeSwitch();
 // Coordinate col centro vista a ogni render (mobile), tranne quando il mouse è
 // sul canvas (desktop: lì vince il punto sotto il puntatore).
 setViewChangeHook(() => { if (!mouseOverCanvas) updateCoordsDisplay(); });
 const author = initAuthor();
-loadObjects().then(() => {
+const objectsReady = loadObjects().then(() => {
   initAdmin();
 });
-loadData().then(() => {
+const dataReady = loadData().then(() => {
   resize();
   setTimeout(initAuth, 1700);
 
@@ -657,3 +676,5 @@ loadData().then(() => {
     setTimeout(() => author.openPopup(), 1700);
   }
 });
+
+Promise.all([objectsReady, dataReady]).then(handleDeepLink);
