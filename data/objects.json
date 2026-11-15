@@ -1457,6 +1457,25 @@
           "temp": null,
           "notes": "Udine. Bortle 7."
         }
+      },
+      {
+        "id": "M81_1794778549811",
+        "title": "M81 HD",
+        "date": "2026-11-15",
+        "comment": "Ho voluto riprendere la galassia di Bode, soggetto difficile perché molto luminosa al centro e tenue nei bracci, le foto precedenti non le davano giustizia.",
+        "full": "https://res.cloudinary.com/dutqdpc2a/image/upload/v1794778407/astrogallery/M81/M81_15NOV26_cwbanu.jpg",
+        "thumb": "https://res.cloudinary.com/dutqdpc2a/image/upload/w_320,h_240,c_fill/v1794778407/astrogallery/M81/M81_15NOV26_cwbanu.jpg",
+        "acquisition": {
+          "telescope": "Comethunter",
+          "mount": "HEQ5 PRO",
+          "camera": "QHY minicam 8 combo mono",
+          "filters": "LRGBHaOIII",
+          "frames": 614,
+          "exposure": null,
+          "gain": 80,
+          "temp": -10,
+          "notes": "Bortle 7 \n┌──────────────────────────────────────────────────────┐\n│                         M81                          │\n├──────────────────────────────────────────────────────┤\n│ FILTER             FRAMES   SEC     PARTIAL          │\n├──────────────────────────────────────────────────────┤\n│ Ha                 14       300     1.10.00          │\n│ OIII               38       300     3.10.00          │\n│ Blue               82       120     2.44.00          │\n│ Green              99       120     3.18.00          │\n│ Red                82       120     2.44.00          │\n│ Luminance          299      30      2.29.30          │\n├──────────────────────────────────────────────────────┤\n│ TOTAL              614              15.35.30         │\n├──────────────────────────────────────────────────────┤\n│ Size: 3856x2180                                      │\n│ Binning: 1×                                          │\n│ Mount: HEQ5-PRO                                      │\n│ Sessions: 4                                          │\n│ Drizzle: 2×                                          │\n└──────────────────────────────────────────────────────┘"
+        }
       }
     ]
   },
